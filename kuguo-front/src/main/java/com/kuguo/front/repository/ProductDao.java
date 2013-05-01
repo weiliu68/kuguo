@@ -1,10 +1,12 @@
 package com.kuguo.front.repository;
 
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-import org.springframework.data.repository.PagingAndSortingRepository;
+import java.util.List;
 
 import com.kuguo.front.entity.Product;
 
-public interface ProductDao extends PagingAndSortingRepository<Product, Long>,
-		JpaSpecificationExecutor<Product> {
+@MyBatisRepository
+public interface ProductDao {
+	List<Product> getAll();
+	
+	Product get(Long id);
 }
