@@ -10,4 +10,13 @@
 	<select id="get" parameterType="int" resultType="Product">
 		select * from product where id = #{id}
 	</select>
+	
+	<insert id="save" parameterType="Product" useGeneratedKeys="true" keyProperty="id">
+		insert into product (
+			name,picture,order_link,description,brand,price,user_id,channel
+		)
+		values (
+			#{name}, #{picture}, #{order_link}, #{description}, #{brand}, #{price}, #{user.id}, #{channel}
+		)
+	</insert>
 </mapper> 
