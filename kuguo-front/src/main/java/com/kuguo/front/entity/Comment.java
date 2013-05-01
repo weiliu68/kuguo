@@ -11,8 +11,8 @@ public class Comment extends IdEntity {
 	private String content;
 	private int agree_num;
 	private int disagree_num;
-//	private User user_id;
-//	private Product product_id;
+	// private User user_id;
+	private Product product;
 	private Date create_time;
 
 	public String getContent() {
@@ -45,6 +45,14 @@ public class Comment extends IdEntity {
 
 	public void setCreate_time(Date create_time) {
 		this.create_time = create_time;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
 }

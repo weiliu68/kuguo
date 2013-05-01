@@ -1,5 +1,6 @@
 package com.kuguo.front.web.product;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletRequest;
@@ -20,20 +21,13 @@ import org.springside.modules.web.Servlets;
 
 import com.google.common.collect.Maps;
 import com.kuguo.front.entity.Product;
-import com.kuguo.front.service.account.ShiroDbRealm.ShiroUser;
-import com.kuguo.front.service.task.ProductService;
+import com.kuguo.front.service.ProductService;
 
 @Controller
 @RequestMapping(value = "/product")
 public class ProductController {
 	
-	private static final int PAGE_SIZE = 6;
-	
-	private static Map<String,String> sortTypes = Maps.newLinkedHashMap();
-	static {
-		sortTypes.put("auto",	 "自动");
-		sortTypes.put("name", "测试");
-	}
+//	private static final int PAGE_SIZE = 6;
 	
 	@Autowired
 	private ProductService productService;
@@ -41,17 +35,9 @@ public class ProductController {
 	@RequestMapping(value = "")
 	public String list(@RequestParam(value = "sortType",defaultValue = "auto") String sortType,
 			@RequestParam(value = "page",defaultValue = "1") int pageNumber, Model model,ServletRequest request) {
-		Map<String, Object> searchParams = Servlets.getParametersStartingWith(request, "search_");
-		Long userId = getCurrentUserId();
-		
-		Page<Product> products = productService.findAll(searchParams, pageNumber, PAGE_SIZE, sortType);
+		List<Product> products = productService.getProductsByPage(pageNumber);
 		model.addAttribute("products",products);
-		model.addAttribute("sortType",sortType);
-		model.addAttribute("sortTypes", sortTypes);
-		model.addAttribute("searchParams",Servlets.encodeParameterStringWithPrefix(searchParams, "search_"));
-		
 		return "product/productList";
-		
 	}
 	
 	@RequestMapping(value = "create", method = RequestMethod.GET)
@@ -85,13 +71,6 @@ public class ProductController {
 		return "redirect:/product/";
 	}
 	
-	@RequestMapping(value = "delete/{id}")
-	public String delete(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
-		productService.deleteProduct(id);
-		redirectAttributes.addFlashAttribute("message", "删除任务完成");
-		return "redirect:/product/";
-	}
-	
 	@ModelAttribute("preloadProduct")
 	public Product getProduct(@RequestParam(value = "id", required = false) Long id) {
 		if(id != null) {
@@ -100,13 +79,7 @@ public class ProductController {
 		return null;
 	}
 	
-
-	private Long getCurrentUserId() {
-		ShiroUser user = (ShiroUser)SecurityUtils.getSubject().getPrincipal();
-		return user.id;
+	@RequestMapping(value = "/taobao/info" , method = RequestMethod.POST)
+	public void getFromTaobao(String url){
 	}
-	
-	
-	
-	
 }

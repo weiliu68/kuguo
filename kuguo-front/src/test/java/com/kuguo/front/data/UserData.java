@@ -1,12 +1,12 @@
 package com.kuguo.front.data;
 
-import com.kuguo.front.entity.User;
+import com.kuguo.front.entity.UserTask;
 import org.springside.modules.test.data.RandomData;
 
 public class UserData {
 
-	public static User randomNewUser() {
-		User user = new User();
+	public static UserTask randomNewUser() {
+		UserTask user = new UserTask();
 		user.setLoginName(RandomData.randomName("user"));
 		user.setName(RandomData.randomName("User"));
 		user.setPlainPassword(RandomData.randomName("password"));

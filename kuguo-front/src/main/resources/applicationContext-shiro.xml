@@ -29,7 +29,8 @@
 				/api/** = anon
 				/register/** = anon
 				/admin/** = roles[admin]
-				/** = user
+				/** = anon
+				/activity = user
 			</value>
 		</property>
 	</bean>
