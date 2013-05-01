@@ -3,12 +3,16 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace必须指向Dao接口 -->
 <mapper namespace="com.kuguo.front.repository.ProductDao">
-	<select id="getAll" resultType="list">
-		select * from product
+	<resultMap type="product" id="product">
+		<result column="name" property="name"/>
+	</resultMap>
+
+	<select id="getAll" parameterType="int" resultMap="product">
+		select * from product limit #{page},20
 	</select>
 	
 	<select id="get" parameterType="int" resultType="Product">
-		select * from product where id = #{id}
+		select * from product where id = #{id} limit 
 	</select>
 	
 	<insert id="save" parameterType="Product" useGeneratedKeys="true" keyProperty="id">
