@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import com.kuguo.front.entity.User;
+import com.kuguo.front.entity.UserTask;
 import com.kuguo.front.service.account.AccountService;
 
 /**
@@ -30,7 +30,7 @@ public class UserAdminController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String list(Model model) {
-		List<User> users = accountService.getAllUser();
+		List<UserTask> users = accountService.getAllUser();
 		model.addAttribute("users", users);
 
 		return "account/adminUserList";
@@ -43,7 +43,7 @@ public class UserAdminController {
 	}
 
 	@RequestMapping(value = "update", method = RequestMethod.POST)
-	public String update(@Valid @ModelAttribute("preloadUser") User user, RedirectAttributes redirectAttributes) {
+	public String update(@Valid @ModelAttribute("preloadUser") UserTask user, RedirectAttributes redirectAttributes) {
 		accountService.updateUser(user);
 		redirectAttributes.addFlashAttribute("message", "更新用户" + user.getLoginName() + "成功");
 		return "redirect:/admin/user";
@@ -51,7 +51,7 @@ public class UserAdminController {
 
 	@RequestMapping(value = "delete/{id}")
 	public String delete(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
-		User user = accountService.getUser(id);
+		UserTask user = accountService.getUser(id);
 		accountService.deleteUser(id);
 		redirectAttributes.addFlashAttribute("message", "删除用户" + user.getLoginName() + "成功");
 		return "redirect:/admin/user";
@@ -62,7 +62,7 @@ public class UserAdminController {
 	 * 因为仅update()方法的form中有id属性，因此本方法在该方法中执行.
 	 */
 	@ModelAttribute("preloadUser")
-	public User getUser(@RequestParam(value = "id", required = false) Long id) {
+	public UserTask getUser(@RequestParam(value = "id", required = false) Long id) {
 		if (id != null) {
 			return accountService.getUser(id);
 		}
