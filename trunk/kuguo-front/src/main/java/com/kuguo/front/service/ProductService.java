@@ -1,10 +1,9 @@
-package com.kuguo.front.service.task;
+package com.kuguo.front.service;
 
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
@@ -17,42 +16,24 @@ import org.springside.modules.persistence.SearchFilter.Operator;
 
 import com.kuguo.front.entity.Product;
 import com.kuguo.front.repository.ProductDao;
+import com.kuguo.front.utils.Constant;
 
 @Component
 @Transactional(readOnly = true)
 public class ProductService {
 	private ProductDao productDao;
+	
+	public List<Product> getProductsByPage(int page){
+		return productDao.getAll(page*Constant.PAGE_NUMBER);
+	}
 
 	public Product getProduct(Long id) {
-		return productDao.findOne(id);
+		return productDao.get(id);
 	}
 
 	@Transactional(readOnly = false)
 	public void saveProduct(Product entity) {
 		productDao.save(entity);
-	}
-
-	@Transactional(readOnly = false)
-	public void deleteProduct(Long id) {
-		productDao.delete(id);
-	}
-
-	public List<Product> getAllProduct() {
-		return (List<Product>) productDao.findAll();
-	}
-
-	public Page<Product> getUserProduct(Long userId,
-			Map<String, Object> searchParams, int pageNumber, int pageSize,
-			String sortType) {
-		PageRequest pageRequest = buildPageRequest(pageNumber, pageSize,sortType);
-		Specification<Product> spec = buildSpecification(userId,searchParams);
-		return productDao.findAll(spec, pageRequest);
-	}
-	
-	public Page<Product> findAll(Map<String, Object> searchParams, int pageNumber, int pageSize,
-			String sortType) {
-		PageRequest pageRequest = buildPageRequest(pageNumber, pageSize,sortType);
-		return productDao.findAll(pageRequest);
 	}
 
 	private Specification<Product> buildSpecification(Long userId,

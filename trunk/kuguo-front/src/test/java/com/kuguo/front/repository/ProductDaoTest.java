@@ -1,5 +1,8 @@
 package com.kuguo.front.repository;
 
+import java.util.List;
+import java.util.Map;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.DirtiesContext;
@@ -32,5 +35,11 @@ public class ProductDaoTest extends SpringTransactionalTestCase {
 		product.setPrice(0);
 		product.setChannel("");
 		productDao.save(product);
+	}
+	
+	@Test
+	public void getAll(){
+		List<Product> all = productDao.getAll(20);
+		assertNotNull(all);
 	}
 }

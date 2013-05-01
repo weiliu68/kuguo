@@ -20,8 +20,7 @@ public class Product extends IdEntity {
 	private String brand;
 	private Date create_time;
 	private int hots;
-
-	// private User user_id;
+	private User user;
 
 	public int getFavorite_num() {
 		return favorite_num;
@@ -105,4 +104,11 @@ public class Product extends IdEntity {
 		this.hots = hots;
 	}
 
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 }

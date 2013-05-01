@@ -9,8 +9,9 @@ import javax.persistence.Table;
 @Table(name = "label")
 public class Label extends IdEntity {
 	private String name;
-	private User create_user_id;
+	private User create_user;
 	private Date create_time;
+	
 	public String getName() {
 		return name;
 	}

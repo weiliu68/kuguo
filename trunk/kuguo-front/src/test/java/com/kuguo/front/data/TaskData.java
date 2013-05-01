@@ -1,7 +1,7 @@
 package com.kuguo.front.data;
 
 import com.kuguo.front.entity.Task;
-import com.kuguo.front.entity.User;
+import com.kuguo.front.entity.UserTask;
 import org.springside.modules.test.data.RandomData;
 
 /**
@@ -14,7 +14,7 @@ public class TaskData {
 	public static Task randomTask() {
 		Task task = new Task();
 		task.setTitle(randomTitle());
-		User user = new User(1L);
+		UserTask user = new UserTask(1L);
 		task.setUser(user);
 		return task;
 	}
