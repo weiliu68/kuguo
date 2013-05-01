@@ -9,9 +9,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import com.kuguo.front.entity.User;
+import com.kuguo.front.entity.UserTask;
 import com.kuguo.front.repository.TaskDao;
-import com.kuguo.front.repository.UserDao;
+import com.kuguo.front.repository.UserTaskDao;
 import com.kuguo.front.service.ServiceException;
 import com.kuguo.front.service.account.ShiroDbRealm.ShiroUser;
 import org.springside.modules.security.utils.Digests;
@@ -34,24 +34,24 @@ public class AccountService {
 
 	private static Logger logger = LoggerFactory.getLogger(AccountService.class);
 
-	private UserDao userDao;
+	private UserTaskDao userDao;
 	private TaskDao taskDao;
 	private DateProvider dateProvider = DateProvider.DEFAULT;
 
-	public List<User> getAllUser() {
-		return (List<User>) userDao.findAll();
+	public List<UserTask> getAllUser() {
+		return (List<UserTask>) userDao.findAll();
 	}
 
-	public User getUser(Long id) {
+	public UserTask getUser(Long id) {
 		return userDao.findOne(id);
 	}
 
-	public User findUserByLoginName(String loginName) {
+	public UserTask findUserByLoginName(String loginName) {
 		return userDao.findByLoginName(loginName);
 	}
 
 	@Transactional(readOnly = false)
-	public void registerUser(User user) {
+	public void registerUser(UserTask user) {
 		entryptPassword(user);
 		user.setRoles("user");
 		user.setRegisterDate(dateProvider.getDate());
@@ -60,7 +60,7 @@ public class AccountService {
 	}
 
 	@Transactional(readOnly = false)
-	public void updateUser(User user) {
+	public void updateUser(UserTask user) {
 		if (StringUtils.isNotBlank(user.getPlainPassword())) {
 			entryptPassword(user);
 		}
@@ -96,7 +96,7 @@ public class AccountService {
 	/**
 	 * 设定安全的密码，生成随机的salt并经过1024次 sha-1 hash
 	 */
-	private void entryptPassword(User user) {
+	private void entryptPassword(UserTask user) {
 		byte[] salt = Digests.generateSalt(SALT_SIZE);
 		user.setSalt(Encodes.encodeHex(salt));
 
@@ -105,7 +105,7 @@ public class AccountService {
 	}
 
 	@Autowired
-	public void setUserDao(UserDao userDao) {
+	public void setUserDao(UserTaskDao userDao) {
 		this.userDao = userDao;
 	}
 

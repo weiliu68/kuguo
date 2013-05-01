@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.kuguo.front.entity.Task;
-import com.kuguo.front.entity.User;
+import com.kuguo.front.entity.UserTask;
 import com.kuguo.front.service.account.ShiroDbRealm.ShiroUser;
 import com.kuguo.front.service.task.TaskService;
 import org.springside.modules.web.Servlets;
@@ -77,7 +77,7 @@ public class TaskController {
 
 	@RequestMapping(value = "create", method = RequestMethod.POST)
 	public String create(@Valid Task newTask, RedirectAttributes redirectAttributes) {
-		User user = new User(getCurrentUserId());
+		UserTask user = new UserTask(getCurrentUserId());
 		newTask.setUser(user);
 
 		taskService.saveTask(newTask);

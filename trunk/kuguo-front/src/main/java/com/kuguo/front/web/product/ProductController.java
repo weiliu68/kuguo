@@ -27,7 +27,7 @@ import com.kuguo.front.service.task.ProductService;
 @RequestMapping(value = "/product")
 public class ProductController {
 	
-	private static final int PAGE_SIZE = 3;
+	private static final int PAGE_SIZE = 6;
 	
 	private static Map<String,String> sortTypes = Maps.newLinkedHashMap();
 	static {

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.kuguo.front.entity.User;
+import com.kuguo.front.entity.UserTask;
 import com.kuguo.front.service.account.AccountService;
 import com.kuguo.front.service.account.ShiroDbRealm.ShiroUser;
 
@@ -34,14 +34,14 @@ public class ProfileController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String update(@Valid @ModelAttribute("preloadUser") User user) {
+	public String update(@Valid @ModelAttribute("preloadUser") UserTask user) {
 		accountService.updateUser(user);
 		updateCurrentUserName(user.getName());
 		return "redirect:/";
 	}
 
 	@ModelAttribute("preloadUser")
-	public User getUser(@RequestParam(value = "id", required = false) Long id) {
+	public UserTask getUser(@RequestParam(value = "id", required = false) Long id) {
 		if (id != null) {
 			return accountService.getUser(id);
 		}
