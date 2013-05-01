@@ -4,10 +4,10 @@
 
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html style="overflow-x: hidden; overflow-y: scroll;" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>QuickStart示例:<sitemesh:title/></title>
+<title><sitemesh:title/></title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="Pragma" content="no-cache" />
@@ -22,17 +22,46 @@
 <script src="${ctx}/static/jquery-validation/1.10.0/messages_bs_zh.js" type="text/javascript"></script>
 
 
-<sitemesh:head/>
-</head>
+        
+    
 
-<body>
-	<div class="container">
-		<%@ include file="/WEB-INF/layouts/header.jsp"%>
-		<div id="content">
-			<sitemesh:body/>
-		</div>
-		<%@ include file="/WEB-INF/layouts/footer.jsp"%>
-	</div>
-	<script src="${ctx}/static/bootstrap/2.2.2/js/bootstrap.min.js" type="text/javascript"></script>
-</body>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <meta content="库果,kuguo" property="og:site_name">
+        <meta content="http://www.similarercom" property="og:url">
+        <meta content="库果,kuguo" property="og:title">
+
+
+        
+            <meta name="description" content="这里是库果网">
+            <meta name="keywords" content="库果网">
+        
+    
+        
+    <link media="all" rel="stylesheet" type="text/css" href="${ctx}/static/styles/selection.css" />
+
+
+        <link rel="icon" type="image/ico" href="http://static.guoku.com/static/images/favicon.ico">
+
+        <script type="text/javascript">
+        if (window.ActiveXObject) {
+            var ua = navigator.userAgent.toLowerCase();
+            var ie=ua.match(/msie ([\d.]+)/)[1]
+            if(ie==6.0)
+                location.href = "/ie6/";
+        }
+        </script>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <div id="popup-layer"></div>
+            <%@ include file="/WEB-INF/layouts/header.jsp"%>
+            <div class="clear"></div>
+            <sitemesh:body/>
+            <%@ include file="/WEB-INF/layouts/footer.jsp"%>
+            <%@ include file="/WEB-INF/layouts/right.jsp"%>
+        </div>
+    </body>
 </html>
