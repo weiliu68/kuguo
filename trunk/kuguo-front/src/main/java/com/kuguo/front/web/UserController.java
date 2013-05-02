@@ -32,7 +32,10 @@ public class UserController {
 	@RequestMapping(value = "/register",method = RequestMethod.POST)
 	public String create(@Valid User newUser,
 			RedirectAttributes redirectAttributes) {
-		return "redirect:/user/";
+		//TODO:1. 保存用户入库、注意密码处理
+		
+		//TODO:登录
+		return "redirect:/product";
 	}
 
 	@ResponseBody
