@@ -12,13 +12,15 @@
 			u.description,
 			u.head,
 			count(p.user_id) n
-		from
+		from 
 			Product p,User u
+		where
+			p.user_id = u.id
 		group by
 			p.user_id
 		order by
 			n
-		desc
+		desc 
 		limit 5;
 	</select>
 </mapper>
