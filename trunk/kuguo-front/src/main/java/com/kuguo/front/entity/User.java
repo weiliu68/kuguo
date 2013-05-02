@@ -3,10 +3,13 @@ package com.kuguo.front.entity;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table(name = "user")
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class User extends IdEntity {
 	private String name;
 	private String email;
@@ -15,6 +18,7 @@ public class User extends IdEntity {
 	private String address;
 	private String gender;
 	private String website;
+	private String description;
 
 	@NotBlank
 	public String getName() {
@@ -74,4 +78,11 @@ public class User extends IdEntity {
 		this.website = website;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 }
