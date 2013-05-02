@@ -5,7 +5,7 @@
 
 <html>
 <head>
-<title>任务管理</title>
+<title>首页</title>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
     <div class="main-left selected-body" id="main-left">
         <h1>
             所有
-            <span>最近更新：10 分钟前</span>
+            <span>最近更新： 分钟前</span>
         </h1>
         
             
@@ -31,9 +31,9 @@
             </h3>
     
             <div class="image">
-                <a href="/detail/3667b03c/" target=_blank>
+                <a href="/detail/${product.id }/" target=_blank>
                     <div class="img-mask"></div>
-                    <img src="${product.picture }" alt="《小「食」光》lacuisine" title="《小「食」光》lacuisine"/>
+                    <img src="${product.picture }" alt="" title=""/>
                 </a>
             </div>
     
@@ -41,7 +41,7 @@
 
 
     <div class="like need-login">
-        <span></span>喜爱&nbsp;<em>20</em>
+        <span></span>喜爱&nbsp;<em>${product.favorite_num }</em>
     </div>
 
 
@@ -90,7 +90,7 @@
  
             
             <div class="note-time right">
-                3 小时前 
+                ${product.create_time}  
             </div>
             
             
