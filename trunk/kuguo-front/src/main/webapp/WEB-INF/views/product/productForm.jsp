@@ -4,7 +4,7 @@
 
 <html>
 <head>
-	<title>任务管理</title>
+	<title>商品添加</title>
 	
 	<script>
 		$(document).ready(function() {
@@ -20,11 +20,11 @@
 	<form id="inputForm" action="${ctx}/product/${action}" method="post" class="form-horizontal">
 		<input type="hidden" name="id" value="${product.id}"/>
 		<fieldset>
-			<legend><small>管理任务</small></legend>
+			<legend><small>管理商品</small></legend>
 			<div class="control-group">
 				<label for="product_title" class="control-label">商品名称:</label>
 				<div class="controls">
-					<input type="text" id="product_title" name="name"  value="${product.name}" class="input-large required" minlength="3"/>
+					<input type="text" id="product_title" name="name"  value="${product.name}" class="input-large required" minlength="2"/>
 				</div>
 			</div>	
 			<div class="control-group">
