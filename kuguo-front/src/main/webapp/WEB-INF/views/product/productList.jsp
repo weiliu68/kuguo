@@ -16,9 +16,6 @@
             所有
             <span>最近更新： 分钟前</span>
         </h1>
-        
-            
-
 
 
 	<c:forEach items="${products }" var="product">
@@ -49,10 +46,6 @@
     
         <div class="entity-notes">
             
- 
- 
-
-
     <div class="note">
         <div class="avatar">
             <a href="/u/10/likes/" target=_blank>
@@ -60,12 +53,10 @@
 
            </a>
         </div>
-        <a class="name c333" href="/u/10/likes/" target=_blank>
-            Lynn
+        <a class="name c333" href="" target=_blank>
+           用户昵称${product.user.name}
         </a>
-        
-            <span class="desc">仁义大哥</span>
-        
+            <span class="desc">...</span>
         <p class="with-tag">${product.description }</p>
         <div class="link-row">
             
@@ -93,12 +84,7 @@
                 ${product.create_time}  
             </div>
             
-            
-            
-
-            
-
-
+   
             <a class="right note-weibo-share" href="javascript:void(0);">分享</a>
 
             <div class="clear"></div>
@@ -133,25 +119,11 @@
     </div>
     </c:forEach>
 
-
-
-
-    
-   
-
-
-       
-
-
-
-
-   
+        
+            <a href="${ctx}/product?page=0" class="paging-btn">下一页</a>
         
         
-            <a href="${ctx }/product?page=2" class="paging-btn">下一页</a>
-        
-        
-            <a href="javascript:void(0);" class="paging-btn invalid">上一页</a>
+            <a href="" class="paging-btn invalid">上一页</a>
         
         
     </div>
@@ -160,111 +132,39 @@
             <div class="sider-login with-border">
     <p>果库，尽收世上好物！</p>
     <p class="sider-login-bottom">
-        <a class="btn-v2" href="/register/">注册帐号</a>已有帐号，<a class="green" href="/login/">从这里登录</a>
+        <a class="btn-v2" href="${pageContext.request.contextPath}/user/create">注册帐号</a>已有帐号，<a class="green" href="/login/">从这里登录</a>
     </p>
 </div>
 
+        
         
         <div class="siderbar with-border">
             <div class="aside">
                     <a  class="all-cate active " href="/selected/">
                         所有
                     </a>
+                    <c:forEach items="${channels}" var="channel">
                 <ul>
                     
                         <li>·
                             <a class="link-v1" href="/selected/?c=1">
-                                女装
-                            </a>
-                        </li>
-                    
-                        <li>·
-                            <a class="link-v1" href="/selected/?c=2">
-                                男装
-                            </a>
-                        </li>
-                    
-                        <li>·
-                            <a class="link-v1" href="/selected/?c=3">
-                                孩童
-                            </a>
-                        </li>
-                    
-                        <li>·
-                            <a class="link-v1" href="/selected/?c=4">
-                                配饰
-                            </a>
-                        </li>
-                    
-                        <li>·
-                            <a class="link-v1" href="/selected/?c=5">
-                                美容
-                            </a>
-                        </li>
-                    
-                        <li>·
-                            <a class="link-v1" href="/selected/?c=6">
-                                科技
-                            </a>
-                        </li>
-                    
-                        <li>·
-                            <a class="link-v1" href="/selected/?c=7">
-                                居家
-                            </a>
-                        </li>
-                    
-                        <li>·
-                            <a class="link-v1" href="/selected/?c=8">
-                                户外
-                            </a>
-                        </li>
-                    
-                        <li>·
-                            <a class="link-v1" href="/selected/?c=9">
-                                文化
-                            </a>
-                        </li>
-                    
-                        <li>·
-                            <a class="link-v1" href="/selected/?c=10">
-                                美食
-                            </a>
-                        </li>
-                    
-                        <li>·
-                            <a class="link-v1" href="/selected/?c=11">
-                                玩乐
+                                ${channel.name}
                             </a>
                         </li>
                     
                 </ul>
+                </c:forEach>
             </div>
 
             
     <div class="aside">
         <h3>热门的标签</h3>
         
+        <c:forEach items="${labels}" var="label">
             <p class="hottag">
-                <span>#</span><a class="c666" href="/t/2674049e/" target=_blank>地震了该怎么办</a>
+                <span>#</span><a class="c666" href="/t/2674049e/" target=_blank>${label.name}</a>
             </p>
-        
-            <p class="hottag">
-                <span>#</span><a class="c666" href="/t/f488a9c8/" target=_blank>我是一名演员</a>
-            </p>
-        
-            <p class="hottag">
-                <span>#</span><a class="c666" href="/t/dec8557a/" target=_blank>博士之选</a>
-            </p>
-        
-            <p class="hottag">
-                <span>#</span><a class="c666" href="/t/f0008ca2/" target=_blank>唉哟唉哟唉哟</a>
-            </p>
-        
-            <p class="hottag">
-                <span>#</span><a class="c666" href="/t/79b74465/" target=_blank>你若不举便是晴天</a>
-            </p>
-        
+        </c:forEach>
     </div>
 
 
@@ -280,7 +180,7 @@
     <div class="aside">
         <h3>热门的用户</h3>
         
-
+<c:forEach items="${users}" var="user">
     <div class="note">
         <div class="avatar">
             <a href="/u/7/likes/" target=_blank >
@@ -289,74 +189,13 @@
             </a>
         </div>
         <a class="name c333" href="/u/7/likes/" target=_blank>
-            liuting
+            ${user.name }
         </a>
         <span class="desc l24"></span>
         
         <div class="clear"></div>
     </div>
-
-    <div class="note">
-        <div class="avatar">
-            <a href="/u/74862/likes/" target=_blank >
-                <img src="http://image.guoku.com/avatar/small_74862_195cfdd693e52fd87d189ddf72343025.jpg" width="50" height="50" />
-
-            </a>
-        </div>
-        <a class="name c333" href="/u/74862/likes/" target=_blank>
-            得吃多少唐僧
-        </a>
-        <span class="desc l24">嗨，墙角见。</span>
-        
-        <div class="clear"></div>
-    </div>
-
-    <div class="note">
-        <div class="avatar">
-            <a href="/u/68310/likes/" target=_blank >
-                <img src="http://image.guoku.com/avatar/small_68310_ec00955cc2d89bd587f1256373f44574.jpg" width="50" height="50" />
-
-            </a>
-        </div>
-        <a class="name c333" href="/u/68310/likes/" target=_blank>
-            都给我跪下 !
-        </a>
-        <span class="desc l24"></span>
-        
-        <div class="clear"></div>
-    </div>
-
-    <div class="note">
-        <div class="avatar">
-            <a href="/u/95424/likes/" target=_blank >
-                <img src="http://image.guoku.com/avatar/small_95424_0a5062581e51aa0092730926a061dfe6.jpg" width="50" height="50" />
-
-            </a>
-        </div>
-        <a class="name c333" href="/u/95424/likes/" target=_blank>
-            2 花
-        </a>
-        <span class="desc l24"></span>
-        
-        <div class="clear"></div>
-    </div>
-
-    <div class="note">
-        <div class="avatar">
-            <a href="/u/542/likes/" target=_blank >
-                <img src="http://image.guoku.com/avatar/small_542_d8e5550a18cdbb09ffb808c33d017eca.jpg" width="50" height="50" />
-
-            </a>
-        </div>
-        <a class="name c333" href="/u/542/likes/" target=_blank>
-            攒RP既来之则安之
-        </a>
-        <span class="desc l24">小透明抖~抖~抖~~~</span>
-        
-        <div class="clear"></div>
-    </div>
-
-
+   </c:forEach>
     </div>
 
 
