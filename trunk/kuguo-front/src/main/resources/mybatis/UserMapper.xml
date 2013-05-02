@@ -5,8 +5,20 @@
 	<resultMap type="user" id="user">
 		<result column="name" property="name" />
 	</resultMap>
-	
+
 	<select id="getHotUsers" parameterType="int" resultType="user">
-		select user_id,count(user_id) n from product group by user_id order by n desc limit #{number};
+		select
+			u.name,
+			u.description,
+			u.head,
+			count(p.user_id) n
+		from
+			Product p,User u
+		group by
+			p.user_id
+		order by
+			n
+		desc
+		limit 5;
 	</select>
 </mapper>
