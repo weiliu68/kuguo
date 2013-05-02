@@ -3,7 +3,11 @@ package com.kuguo.front.entity;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.sun.istack.internal.NotNull;
 
 @Entity
 @Table(name = "product_comment")
@@ -11,7 +15,7 @@ public class Comment extends IdEntity {
 	private String content;
 	private int agree_num;
 	private int disagree_num;
-	// private User user_id;
+	private User user;
 	private Product product;
 	private Date create_time;
 
@@ -53,6 +57,17 @@ public class Comment extends IdEntity {
 
 	public void setProduct(Product product) {
 		this.product = product;
+	}
+
+	@NotNull
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 }
