@@ -21,10 +21,13 @@ import org.springside.modules.web.Servlets;
 
 import com.google.common.collect.Maps;
 import com.kuguo.front.entity.Channel;
+import com.kuguo.front.entity.Label;
 import com.kuguo.front.entity.Product;
 import com.kuguo.front.entity.User;
 import com.kuguo.front.service.ChannelService;
+import com.kuguo.front.service.LabelService;
 import com.kuguo.front.service.ProductService;
+import com.kuguo.front.service.UserService;
 
 @Controller
 @RequestMapping(value = "/product")
@@ -37,13 +40,23 @@ public class ProductController {
 	@Autowired
 	private ChannelService channelService;
 	
+	@Autowired
+	private LabelService labelService;
+	
+	@Autowired
+	private UserService userService;
+	
 	@RequestMapping(value = "")
 	public String list(@RequestParam(value = "sortType",defaultValue = "auto") String sortType,
 			@RequestParam(value = "page",defaultValue = "1") int pageNumber, Model model,ServletRequest request) {
 		List<Product> products = productService.getProductsByPage(pageNumber);
 		List<Channel> channels = channelService.getAllChannel(); 
+		List<Label> labels = labelService.getLabel();
+		List<User> users = userService.getHotUsers(5);
 		model.addAttribute("products",products);
 		model.addAttribute("channels",channels);
+		model.addAttribute("labels", labels);
+		model.addAttribute("users", users);
 		
 		return "product/productList";
 	}
