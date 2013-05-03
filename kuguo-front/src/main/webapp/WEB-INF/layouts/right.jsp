@@ -8,7 +8,7 @@
                             <div class="content">
                                 <p>
                                     <b>登录</b> | 没有帐号？ 
-                                    <a href="/register/" class="green">请注册</a>
+                                    <a href="${pageContext.request.contextPath}/register" class="green">请注册</a>
                                 </p>
                                 <div class="row">
                                     <label>邮箱</label>
@@ -25,12 +25,5 @@
                             </div>
                         </form>
                     </div>
-                    <div class="bottom">
-                            <div class="content">
-                                第三方帐号登录
-                                <a href="/sina/login/"><img src="http://static.guoku.com/static/images/weibo_20x16.jpg" alt="新浪微博">新浪微博</a>
-                                <a href="/taobao/login/"><img src="http://static.guoku.com/static/images/taobao_20x15.jpg"  alt="淘宝网">淘宝网</a>
-                            
-                            </div>
-                    </div>
+
                 </div>

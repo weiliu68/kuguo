@@ -1,6 +1,5 @@
 package com.kuguo.front.service;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +14,14 @@ import com.kuguo.front.repository.UserDao;
 public class UserService {
 	@Autowired
 	private UserDao userDao;
-	
+
 	public List<User> getHotUsers(int number) {
 		return userDao.getHotUsers(number);
 	}
+
+	@Transactional(readOnly = false)
+	public void saveUser(User user) {
+		userDao.save(user);
+	}
+
 }

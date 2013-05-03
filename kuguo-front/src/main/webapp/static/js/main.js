@@ -1418,8 +1418,8 @@ function initForm() {
 			}
 		})
 	}
-//	$("form").submit(function() {
-//		if ($(this).attr("enable") != "true")
-//			return false
-//	})
+	$("form").submit(function() {
+		if ($(this).attr("enable") != "true")
+			return false
+	})
 }
