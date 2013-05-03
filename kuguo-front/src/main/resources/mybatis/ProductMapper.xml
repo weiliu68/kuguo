@@ -5,8 +5,12 @@
 <mapper namespace="com.kuguo.front.repository.ProductDao">
 	<resultMap type="product" id="product">
 		<result column="name" property="name"/>
+		<result column="description" property="description"/>
+		<result column="id" property="id"/>
+		<result column="picture" property="picture"/>
+		<result column="hots" property="hots"/>
 		<association property="user" column="user_id" javaType="User">
-			<result property="id" column="user_id"/>
+			<id property="id" column="user_id"/>
 			<result property="name" column="user_name"/>
 			<result property="head" column="user_head"/>
 		</association>
@@ -14,6 +18,8 @@
 
 	<select id="getAll" parameterType="int" resultMap="product">
 		select 
+			p.create_time,
+			p.id,
 			p.name,
 			p.description,
 			p.hots,
