@@ -53,13 +53,6 @@
 
 	<!-- 依赖项定义 -->
 	<dependencies>
-		<!-- SPRINGSIDE -->
-		<dependency>
-			<groupId>org.springside</groupId>
-			<artifactId>springside-core</artifactId>
-			<version>${springside.version}</version>
-		</dependency>
-
 		<!-- AOP begin -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -264,13 +257,6 @@
 		<!-- GENERAL UTILS end -->
 
 		<!-- TEST begin -->
-		<dependency>
-			<groupId>org.springside</groupId>
-			<artifactId>springside-test</artifactId>
-			<version>${springside.version}</version>
-			<scope>test</scope>
-		</dependency>
-
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
