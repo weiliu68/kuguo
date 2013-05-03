@@ -33,6 +33,8 @@ public class UserController {
 	public String create(@Valid User newUser,
 			RedirectAttributes redirectAttributes) {
 		//TODO:1. 保存用户入库、注意密码处理
+		User user = new User();
+		
 		
 		//TODO:登录
 		return "redirect:/product";

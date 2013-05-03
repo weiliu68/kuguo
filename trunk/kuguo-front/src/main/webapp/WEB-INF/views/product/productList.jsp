@@ -48,15 +48,15 @@
             
     <div class="note">
         <div class="avatar">
-            <a href="/u/10/likes/" target=_blank>
-               <img src="http://image.guoku.com/avatar/small_10_8a50623705c04427f5584db51a42ab10.jpg" width="50" height="50" />
+            <a href="/u/${product.user.id }/likes/" target=_blank>
+               <img src="${product.user.head }" width="50" height="50" />
 
            </a>
         </div>
         <a class="name c333" href="" target=_blank>
-           用户昵称${product.user.name}
+           ${product.user.name}
         </a>
-            <span class="desc">...</span>
+            <span class="desc">${product.user.description}</span>
         <p class="with-tag">${product.description }</p>
         <div class="link-row">
             
@@ -103,7 +103,6 @@
                 
             </div>
 
-            
                 <div class="fold-note">
                     
                     
@@ -132,7 +131,7 @@
             <div class="sider-login with-border">
     <p>果库，尽收世上好物！</p>
     <p class="sider-login-bottom">
-        <a class="btn-v2" href="${pageContext.request.contextPath}/user/create">注册帐号</a>已有帐号，<a class="green" href="/login/">从这里登录</a>
+        <a class="btn-v2" href="${pageContext.request.contextPath}/register">注册帐号</a>已有帐号，<a class="green" href="/login/">从这里登录</a>
     </p>
 </div>
 
@@ -143,17 +142,17 @@
                     <a  class="all-cate active " href="/selected/">
                         所有
                     </a>
-                    <c:forEach items="${channels}" var="channel">
                 <ul>
+                    <c:forEach items="${channels}" var="channel">
                     
                         <li>·
-                            <a class="link-v1" href="/selected/?c=1">
+                            <a class="link-v1" href="/selected/?c=${channel.id}">
                                 ${channel.name}
                             </a>
                         </li>
                     
-                </ul>
                 </c:forEach>
+                </ul>
             </div>
 
             
@@ -168,30 +167,23 @@
     </div>
 
 
-            
-
-
-
-
-            
-
-
-
     <div class="aside">
         <h3>热门的用户</h3>
         
 <c:forEach items="${users}" var="user">
     <div class="note">
         <div class="avatar">
-            <a href="/u/7/likes/" target=_blank >
-                <img src="http://image.guoku.com/avatar/small_7_24431b0d7737b0d5637f29b0086e2a7f.jpg" width="50" height="50" />
+            <a href="/u/${user.id}/likes/" target=_blank >
+                <img src="${user.head }" width="50" height="50" />
 
             </a>
         </div>
-        <a class="name c333" href="/u/7/likes/" target=_blank>
-            ${user.name }
+        <a class="name c333" href="/u/${user.id}/likes/" target=_blank>
+            ${user.name}
         </a>
-        <span class="desc l24"></span>
+        <span class="desc l24">
+        	${user.description}
+        </span>
         
         <div class="clear"></div>
     </div>
@@ -199,7 +191,7 @@
     </div>
 
 
-            <div class="aside mobile-download">
+    <div class="aside mobile-download">
     <h3>下载果库客户端</h3>
     <p>
         <a href="http://itunes.apple.com/cn/app/id477652209?mt=8" target="_blank" bi="download_iphone">iPhone</a> /
