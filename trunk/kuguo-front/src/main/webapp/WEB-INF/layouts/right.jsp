@@ -8,7 +8,7 @@
                             <div class="content">
                                 <p>
                                     <b>登录</b> | 没有帐号？ 
-                                    <a href="${pageContext.request.contextPath}/register" class="green">请注册</a>
+                                    <a href="${ctx}/register" class="green">请注册</a>
                                 </p>
                                 <div class="row">
                                     <label>邮箱</label>
