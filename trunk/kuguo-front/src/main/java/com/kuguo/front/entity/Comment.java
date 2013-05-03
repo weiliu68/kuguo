@@ -7,8 +7,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.sun.istack.internal.NotNull;
-
 @Entity
 @Table(name = "product_comment")
 public class Comment extends IdEntity {
@@ -59,7 +57,6 @@ public class Comment extends IdEntity {
 		this.product = product;
 	}
 
-	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	public User getUser() {
