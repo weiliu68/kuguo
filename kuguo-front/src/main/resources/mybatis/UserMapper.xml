@@ -39,16 +39,7 @@
 		)
 	</insert>
 
-	<select id="get" parameterType="int" resultType="User">
-		select * from User where id = #{id}
-	</select>
-	<select id="get" parameterType="int" resultType="User">
-		select * from User where id = #{id}
-	</select>
-	<select id="get" parameterType="int" resultType="User">
-		select * from User where id = #{id}
-	</select>
-	
+
 	<update id="update" parameterType="User">
 	  update User set
 	    name = #{name},
