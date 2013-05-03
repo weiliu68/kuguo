@@ -30,26 +30,6 @@
 
 					<li><span> · </span> <a href="/discover/?cat=1"> 女装 </a></li>
 
-					<li><span> · </span> <a href="/discover/?cat=2"> 男装 </a></li>
-
-					<li><span> · </span> <a href="/discover/?cat=3"> 孩童 </a></li>
-
-					<li><span> · </span> <a href="/discover/?cat=4"> 配饰 </a></li>
-
-					<li><span> · </span> <a href="/discover/?cat=5"> 美容 </a></li>
-
-					<li><span> · </span> <a href="/discover/?cat=6"> 科技 </a></li>
-
-					<li><span> · </span> <a href="/discover/?cat=7"> 居家 </a></li>
-
-					<li><span> · </span> <a href="/discover/?cat=8"> 户外 </a></li>
-
-					<li><span> · </span> <a href="/discover/?cat=9"> 文化 </a></li>
-
-					<li><span> · </span> <a href="/discover/?cat=10"> 美食 </a></li>
-
-					<li><span> · </span> <a href="/discover/?cat=11"> 玩乐 </a></li>
-
 				</ul>
 				<a class="btn-v2" href="/entity/new/">添加一件商品</a>
 				<div class="clear"></div>
