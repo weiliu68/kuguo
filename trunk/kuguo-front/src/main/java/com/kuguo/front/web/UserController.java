@@ -32,11 +32,11 @@ public class UserController {
 	@RequestMapping(value = "/register",method = RequestMethod.POST)
 	public String create(@Valid User newUser,
 			RedirectAttributes redirectAttributes) {
-		//TODO:1. 保存用户入库、注意密码处理
-		User user = new User();
-		
+		//TODO:1. 保存用户入库、注意密码处理		
+		userService.saveUser(newUser);
 		
 		//TODO:登录
+		
 		return "redirect:/product";
 	}
 
@@ -45,6 +45,7 @@ public class UserController {
 	public String checkEmailValide(@RequestParam String email){
 		//TODO: 校验邮箱是否已注册
 		
-		return "true";
+			return "true";			
+	
 	}
 }
