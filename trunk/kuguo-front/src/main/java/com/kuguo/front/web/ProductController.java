@@ -68,7 +68,6 @@ public class ProductController {
 		newProduct.setUser(user);
 
 		productService.saveProduct(newProduct);
-		redirectAttributes.addFlashAttribute("message", "创建任务成功");
 		return "redirect:/product/";
 	}
 
@@ -82,7 +81,6 @@ public class ProductController {
 	@RequestMapping(value = "update", method = RequestMethod.POST)
 	public String update(@Valid @ModelAttribute("preloadProduct") Product product, RedirectAttributes redirectAttributes) {
 		productService.saveProduct(product);
-		redirectAttributes.addFlashAttribute("message", "更新任务完成");
 		return "redirect:/product/";
 	}
 

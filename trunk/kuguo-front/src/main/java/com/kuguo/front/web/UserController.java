@@ -23,44 +23,54 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping(value = "/register",method = RequestMethod.GET)
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String createForm(Model model) {
 		model.addAttribute("user", new User());
 		model.addAttribute("action", "create");
 		return "user/register";
 	}
 
-	@RequestMapping(value = "/register",method = RequestMethod.POST)
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String create(@Valid User newUser,
 			RedirectAttributes redirectAttributes) {
-		//TODO:1. 保存用户入库、注意密码处理		
+		// TODO:1. 保存用户入库、注意密码处理
+
 		userService.saveUser(newUser);
-		
-		//TODO:登录
-		
+
+		// TODO:登录
+
 		return "redirect:/product";
 	}
 
 	@ResponseBody
-	@RequestMapping(value="/check_email_availability",method=RequestMethod.POST)
-	public String checkEmailValide(@RequestParam String email){
-		//TODO: 校验邮箱是否已注册
-		
-			return "true";			
-	
+	@RequestMapping(value = "/check_email_availability", method = RequestMethod.POST)
+	public String checkEmailValide(@RequestParam String email) {
+		// TODO: 校验邮箱是否已注册
+
+		return "true";
+
 	}
-	
+
 	@RequestMapping(value = "update/{id}", method = RequestMethod.GET)
-	public String updateFrom(@PathVariable("id") Long id,Model model) {
+	public String updateFrom(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("user", userService.getUser(id));
 		model.addAttribute("action", "update");
 		return "user/setting";
 	}
-	
+
 	@RequestMapping(value = "update", method = RequestMethod.POST)
-	public String update(@Valid @ModelAttribute("preloadUser") User user, RedirectAttributes redirectAttributes) {
+	public String update(@Valid @ModelAttribute("preloadUser") User user,
+			RedirectAttributes redirectAttributes) {
 		userService.saveUser(user);
 		return "redirect:/";
 	}
-	
+
+	@ModelAttribute("preloadUser")
+	public User getUser(@RequestParam(value = "id", required = false) Long id) {
+		if (id != null) {
+			return userService.getUser(id);
+		}
+		return null;
+	}
+
 }
