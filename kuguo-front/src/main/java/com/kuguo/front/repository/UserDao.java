@@ -9,5 +9,10 @@ public interface UserDao {
 	List<User> getHotUsers(int number);
 
 	void save(User user);
+
+	void update(User user);
+
+	User get(Long id);
 	
+
 }

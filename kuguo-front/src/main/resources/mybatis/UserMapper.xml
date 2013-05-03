@@ -4,6 +4,9 @@
 <mapper namespace="com.kuguo.front.repository.UserDao">
 	<resultMap type="user" id="user">
 		<result column="name" property="name" />
+		<result column="description" property="description"/>
+		<result column="head" property="head"/>
+		
 	</resultMap>
 
 	<select id="getHotUsers" parameterType="int" resultType="user">
@@ -23,6 +26,11 @@
 		desc
 		limit 5;
 	</select>
+		
+	<select id="get" parameterType="int" resultType="User">
+		select * from User where id = #{id}
+	</select>
+	
 	<insert id="save" parameterType="User" useGeneratedKeys="true" keyProperty="id">
 		insert into user (
 			name, password, email,head,address,gender,website,description
@@ -30,5 +38,29 @@
 			#{name}, #{password}, #{email},#{head},#{address},#{gender},#{website},#{description}
 		)
 	</insert>
+
+	<select id="get" parameterType="int" resultType="User">
+		select * from User where id = #{id}
+	</select>
+	<select id="get" parameterType="int" resultType="User">
+		select * from User where id = #{id}
+	</select>
+	<select id="get" parameterType="int" resultType="User">
+		select * from User where id = #{id}
+	</select>
+	
+	<update id="update" parameterType="User">
+	  update User set
+	    name = #{name},
+	    password = #{password},
+	    email = #{email},
+	    head = #{head},
+	    address = #{address},
+	    gender = #{gender},
+	    website = #{website},
+	    description = #{description}
+	  where id = #{id}
+	</update>
+	
 	
 </mapper>

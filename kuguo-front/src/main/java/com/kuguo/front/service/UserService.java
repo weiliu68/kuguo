@@ -24,4 +24,13 @@ public class UserService {
 		userDao.save(user);
 	}
 
+	@Transactional(readOnly = false)
+	public void updateUser(User user) {
+		userDao.update(user);
+	}
+
+	public User getUser(Long id) {
+		return userDao.get(id);
+	}
+
 }
