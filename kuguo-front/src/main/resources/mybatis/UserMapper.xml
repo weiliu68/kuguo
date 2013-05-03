@@ -20,7 +20,15 @@
 			p.user_id
 		order by
 			n
-		desc 
+		desc
 		limit 5;
 	</select>
+	<insert id="save" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+		insert into user (
+			name, password, email,head,address,gender,website,description
+		) values (
+			#{name}, #{password}, #{email},#{head},#{address},#{gender},#{website},#{description}
+		)
+	</insert>
+	
 </mapper>
