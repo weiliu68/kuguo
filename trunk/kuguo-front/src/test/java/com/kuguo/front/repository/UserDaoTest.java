@@ -18,19 +18,4 @@ public class UserDaoTest extends SpringTransactionalTestCase {
 	private UserDao userDao;
 
 
-	@Test
-	public void getUser() {
-		User user = userDao.get(1L);
-		assertNotNull(user);
-	}
-	
-	@Test
-	public void saveUser() {
-		User user = new User();
-		user.setName("username");
-		user.setEmail("aaa");
-		user.setPassword("password");
-		userDao.save(user);
-
-	}
 }
