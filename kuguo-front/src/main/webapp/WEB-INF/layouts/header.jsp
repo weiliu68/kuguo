@@ -24,11 +24,11 @@
                     
                         
                             <div class="header-nav-right">
-                                <a href="${pageContext.request.contextPath}/register">
+                                <a href="${ctx}/register">
                                     注册
                                 </a>
                                 | 
-                                <a href="/login/">
+                                <a href="${ctx}/login">
                                     登录
                                 </a>
                             </div>
