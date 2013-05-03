@@ -131,7 +131,7 @@
             <div class="sider-login with-border">
     <p>果库，尽收世上好物！</p>
     <p class="sider-login-bottom">
-        <a class="btn-v2" href="${pageContext.request.contextPath}/register">注册帐号</a>已有帐号，<a class="green" href="/login/">从这里登录</a>
+        <a class="btn-v2" href="${ctx}/register">注册帐号</a>已有帐号，<a class="green" href="${ctx}/login/">从这里登录</a>
     </p>
 </div>
 
