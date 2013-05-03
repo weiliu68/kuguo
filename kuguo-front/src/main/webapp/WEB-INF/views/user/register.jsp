@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html style="overflow-x: hidden; overflow-y: scroll;" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -35,7 +34,7 @@
                             <div class="content">
                                 <p>
                                     <b>注册一个新的帐号</b> | 已有帐号？ 
-                                    <a href="/login/" class="green">请登录</a>
+                                    <a href="${ctx}/login/" class="green">请登录</a>
                                 </p>
                                 <div class="row">
                                     <label>昵称</label>
