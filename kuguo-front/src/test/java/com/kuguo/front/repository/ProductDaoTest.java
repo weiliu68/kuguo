@@ -7,9 +7,9 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
-import org.springside.modules.test.spring.SpringTransactionalTestCase;
 import static org.junit.Assert.*;
 
+import com.kuguo.front.SpringTransactionalTestCase;
 import com.kuguo.front.entity.Product;
 
 @DirtiesContext
