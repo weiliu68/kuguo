@@ -1,6 +1,6 @@
 # --------------------------------------------------------
 # Host:                         127.0.0.1
-# Database:                     kugou
+# Database:                     kuguo
 # Server version:               5.0.18-nt
 # Server OS:                    Win32
 # HeidiSQL version:             Version 4.0, Revision 2864
@@ -11,13 +11,13 @@
 /*!40101 SET NAMES utf8 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 
-# Dumping database structure for kugou
-DROP DATABASE IF EXISTS `kugou`;
-CREATE DATABASE IF NOT EXISTS `kugou` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `kugou`;
+# Dumping database structure for kuguo
+DROP DATABASE IF EXISTS `kuguo`;
+CREATE DATABASE IF NOT EXISTS `kuguo` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `kuguo`;
 
 
-# Dumping structure for table kugou.channel
+# Dumping structure for table kuguo.channel
 DROP TABLE IF EXISTS `channel`;
 CREATE TABLE IF NOT EXISTS `channel` (
   `id` int(11) NOT NULL auto_increment,
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `channel` (
 # Data exporting was unselected.
 
 
-# Dumping structure for table kugou.label
+# Dumping structure for table kuguo.label
 DROP TABLE IF EXISTS `label`;
 CREATE TABLE IF NOT EXISTS `label` (
   `id` int(11) NOT NULL auto_increment,
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `label` (
 # Data exporting was unselected.
 
 
-# Dumping structure for table kugou.message
+# Dumping structure for table kuguo.message
 DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
   `id` int(11) NOT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `message` (
 # Data exporting was unselected.
 
 
-# Dumping structure for table kugou.product
+# Dumping structure for table kuguo.product
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE IF NOT EXISTS `product` (
   `id` int(11) NOT NULL,
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `product` (
 # Data exporting was unselected.
 
 
-# Dumping structure for table kugou.product_comment
+# Dumping structure for table kuguo.product_comment
 DROP TABLE IF EXISTS `product_comment`;
 CREATE TABLE IF NOT EXISTS `product_comment` (
   `id` int(11) NOT NULL auto_increment,
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `product_comment` (
 # Data exporting was unselected.
 
 
-# Dumping structure for table kugou.product_hots
+# Dumping structure for table kuguo.product_hots
 DROP TABLE IF EXISTS `product_hots`;
 CREATE TABLE IF NOT EXISTS `product_hots` (
   `user_id` int(11) NOT NULL default '0',
@@ -125,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `product_hots` (
 # Data exporting was unselected.
 
 
-# Dumping structure for table kugou.product_label
+# Dumping structure for table kuguo.product_label
 DROP TABLE IF EXISTS `product_label`;
 CREATE TABLE IF NOT EXISTS `product_label` (
   `product_id` int(11) NOT NULL,
@@ -139,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `product_label` (
 # Data exporting was unselected.
 
 
-# Dumping structure for table kugou.product_like
+# Dumping structure for table kuguo.product_like
 DROP TABLE IF EXISTS `product_like`;
 CREATE TABLE IF NOT EXISTS `product_like` (
   `product_id` int(11) NOT NULL default '0',
@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `product_like` (
 # Data exporting was unselected.
 
 
-# Dumping structure for table kugou.user
+# Dumping structure for table kuguo.user
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL auto_increment,
@@ -171,7 +171,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 # Data exporting was unselected.
 
 
-# Dumping structure for table kugou.user_friend
+# Dumping structure for table kuguo.user_friend
 DROP TABLE IF EXISTS `user_friend`;
 CREATE TABLE IF NOT EXISTS `user_friend` (
   `user_id` int(11) NOT NULL default '0',
