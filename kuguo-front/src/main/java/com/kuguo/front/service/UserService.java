@@ -8,10 +8,16 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.kuguo.front.entity.User;
 import com.kuguo.front.repository.UserDao;
+import com.kuguo.front.utils.Digests;
+import com.kuguo.front.utils.Encodes;
 
 @Component
 @Transactional(readOnly = true)
 public class UserService {
+	
+	public static final int HASH_INTERATIONS = 1024;
+	private static final int SALT_SIZE = 8;
+	
 	@Autowired
 	private UserDao userDao;
 
@@ -21,6 +27,13 @@ public class UserService {
 
 	@Transactional(readOnly = false)
 	public void saveUser(User user) {
+		
+		byte[] salt = Digests.generateSalt(SALT_SIZE);
+		user.setSalt(Encodes.encodeHex(salt));
+		
+		byte[] hashPassword = Digests.sha1(user.getPassword().getBytes(),salt,HASH_INTERATIONS);
+		user.setPassword(Encodes.encodeHex(hashPassword));
+		
 		userDao.save(user);
 	}
 
