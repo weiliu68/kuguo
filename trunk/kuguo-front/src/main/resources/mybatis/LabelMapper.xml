@@ -6,8 +6,11 @@
 		<result column="name" property="name"/>
 	</resultMap>
 	
-	<select id="get" parameterType="int" resultMap="label" >
-		select * from label
+	<select id="getHotLabel" parameterType="int" resultMap="label" >
+		select
+			l.name
+		from
+			label l	
 	</select>
 	
 </mapper>

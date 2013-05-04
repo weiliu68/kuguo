@@ -38,6 +38,30 @@
 		select * from product where id = #{id}
 	</select>
 	
+	<select id="getPop" parameterType="int" resultMap="product">
+		select 
+			p.create_time,
+			p.id,
+			p.name,
+			p.description,
+			p.hots,
+			p.picture,
+			p.user_id,
+			u.name user_name,
+			u.head user_head,
+			count(p.hots) n
+		from 
+			product p,user u 
+		where 
+			p.user_id = u.id
+		group by
+			p.hots
+		order by
+			n
+		desc
+		limit 30;
+	</select>
+	
 	<insert id="save" parameterType="Product" useGeneratedKeys="true" keyProperty="id">
 		insert into product (
 			name,picture,order_link,description,brand,price,user_id,channel
@@ -46,4 +70,6 @@
 			#{name}, #{picture}, #{order_link}, #{description}, #{brand}, #{price}, #{user.id}, #{channel}
 		)
 	</insert>
+	
+	
 </mapper> 
