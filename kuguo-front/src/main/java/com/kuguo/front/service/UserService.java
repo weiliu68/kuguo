@@ -17,6 +17,7 @@ public class UserService {
 	
 	public static final int HASH_INTERATIONS = 1024;
 	private static final int SALT_SIZE = 8;
+	public static final String HASH_ALGORITHM = "SHA-1";
 	
 	@Autowired
 	private UserDao userDao;
@@ -49,6 +50,23 @@ public class UserService {
 
 	public User getUser(Long id) {
 		return userDao.get(id);
+	}
+
+	public User validate(String email, String password) {
+		// 1. 根据email获取用户(主要包含password和salt用来验证登录)
+		User user = userDao.getUserByEmail(email);
+		if (user != null) {
+			byte[] salt = Encodes.decodeHex(user.getSalt());
+			String hashPassword = Encodes.encodeHex(Digests.sha1(password.getBytes(), salt, HASH_INTERATIONS));
+			if (hashPassword.equals(user.getPassword())) {
+				return user;
+			}
+		}
+		return null;
+	}
+
+	public User findUserByEmail(String email) {
+		return userDao.getUserByEmail(email);
 	}
 
 }
