@@ -27,14 +27,19 @@ public class UserService {
 
 	@Transactional(readOnly = false)
 	public void saveUser(User user) {
-		
+		entryptPassword(user);
+		userDao.save(user);
+	}
+	
+	/**
+	 * 设定安全的密码，生成随机的salt并经过1024次 sha-1 hash
+	 */
+	private void entryptPassword(User user) {
 		byte[] salt = Digests.generateSalt(SALT_SIZE);
 		user.setSalt(Encodes.encodeHex(salt));
-		
-		byte[] hashPassword = Digests.sha1(user.getPassword().getBytes(),salt,HASH_INTERATIONS);
+
+		byte[] hashPassword = Digests.sha1(user.getPlainPassword().getBytes(), salt, HASH_INTERATIONS);
 		user.setPassword(Encodes.encodeHex(hashPassword));
-		
-		userDao.save(user);
 	}
 
 	@Transactional(readOnly = false)
