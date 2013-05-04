@@ -27,7 +27,7 @@
                     <div class="top">
                         <div class="big_logo">
                             <a href="/selected/">
-                                <img src="${ctx}/static/images/guoku_icon_56.png" />
+                                <img src="${ctx}/static/images/guoku_icon_56.png"/>
                             </a>
                         </div>
                         <form action="${ctx}/register/" class="rl-form" id="sign-in-up-form1" method="post" enable="true">

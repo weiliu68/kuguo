@@ -83,7 +83,7 @@ public class ProductController {
 		productService.saveProduct(product);
 		return "redirect:/product/";
 	}
-
+	
 	@ModelAttribute("preloadProduct")
 	public Product getProduct(@RequestParam(value = "id", required = false) Long id) {
 		if (id != null) {

@@ -16,6 +16,15 @@ public class User extends IdEntity {
 	private String gender;
 	private String website;
 	private String description;
+	private String salt;
+
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
 
 	@NotBlank
 	public String getName() {
