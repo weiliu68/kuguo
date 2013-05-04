@@ -22,6 +22,10 @@ public class ProductService {
 		return productDao.getAll(page * Constant.PAGE_NUMBER);
 	}
 
+	public List<Product> getPopProducts(int num) {
+		return productDao.getPop(num);
+	}
+	
 	public Product getProduct(Long id) {
 		return productDao.get(id);
 	}
