@@ -12,4 +12,6 @@ public interface ProductDao {
 	Product get(Long id);
 
 	void save(Product product);
+
+	List<Product> getPop(int num);
 }

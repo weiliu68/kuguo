@@ -15,8 +15,8 @@ public class LabelService {
 	@Autowired
 	private LabelDao labelDao;
 	
-	public List<Label> getLabel() {
-		return labelDao.get();
+	public List<Label> getLabel(int num) {
+		return labelDao.getHotLabel(num);
 	}
 	
 
