@@ -37,7 +37,7 @@
 	<select id="get" parameterType="int" resultType="Product">
 		select * from product where id = #{id}
 	</select>
-	
+<!-- 	
 	<select id="getPop" parameterType="int" resultMap="product">
 		select 
 			p.create_time,
@@ -60,7 +60,7 @@
 			n
 		desc
 		limit 30;
-	</select>
+	</select> -->
 	
 	<insert id="save" parameterType="Product" useGeneratedKeys="true" keyProperty="id">
 		insert into product (
