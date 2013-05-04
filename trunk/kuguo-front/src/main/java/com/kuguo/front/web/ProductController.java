@@ -45,7 +45,7 @@ public class ProductController {
 			@RequestParam(value = "page", defaultValue = "1") int pageNumber, Model model, ServletRequest request) {
 		List<Product> products = productService.getProductsByPage(pageNumber);
 		List<Channel> channels = channelService.getAllChannel();
-		List<Label> labels = labelService.getLabel();
+		List<Label> labels = labelService.getLabel(5);
 		List<User> users = userService.getHotUsers(5);
 		model.addAttribute("products", products);
 		model.addAttribute("channels", channels);
@@ -54,6 +54,17 @@ public class ProductController {
 
 		return "product/productList";
 	}
+	
+//	@RequestMapping(value = "popular")
+//	public String poplist(@RequestParam(value = "sortType", defaultValue = "auto") String sortType,
+//			 Model model, ServletRequest request) {
+//			List<Product> products = productService.getPopProducts(30);
+//			List<Channel> channels = channelService.getAllChannel();
+//			model.addAttribute("products", products);
+//			model.addAttribute("channels", channels);
+//			
+//			return "popular/popularList";
+//		}
 
 	@RequestMapping(value = "create", method = RequestMethod.GET)
 	public String createForm(Model model) {
@@ -95,4 +106,8 @@ public class ProductController {
 	@RequestMapping(value = "/taobao/info", method = RequestMethod.POST)
 	public void getFromTaobao(String url) {
 	}
+	
+	
+	
+	
 }
