@@ -33,9 +33,9 @@
 	
 	<insert id="save" parameterType="User" useGeneratedKeys="true" keyProperty="id">
 		insert into user (
-			name, password, email,head,address,gender,website,description
+			name, password, email,head,address,gender,website,description,salt
 		) values (
-			#{name}, #{password}, #{email},#{head},#{address},#{gender},#{website},#{description}
+			#{name}, #{password}, #{email},#{head},#{address},#{gender},#{website},#{description},#{salt}
 		)
 	</insert>
 
