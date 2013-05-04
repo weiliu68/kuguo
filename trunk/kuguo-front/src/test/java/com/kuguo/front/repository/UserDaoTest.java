@@ -12,4 +12,5 @@ public class UserDaoTest extends SpringTransactionalTestCase {
 	@Autowired
 	private UserDao userDao;
 
+
 }
