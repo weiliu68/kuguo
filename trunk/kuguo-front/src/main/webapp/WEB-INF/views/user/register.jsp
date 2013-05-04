@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="row">
                                     <label>密码（至少 6 位数字或字母）</label>
-                                    密码:<input name="password" type="password" value=""/><br />
+                                    密码:<input name="plainPassword" type="password" value=""/><br />
                                 </div>
                                 <input type="checkbox" checked />
                                 <span>同意果库<a href="/agreement/">《使用协议》</a></span>
