@@ -31,7 +31,7 @@
                                 <img src="${ctx}/static/images/guoku_icon_56.png" />
                             </a>
                         </div>
-                        <form action="/login/" class="rl-form" id="login-in-form" method="post" enable="true">
+                        <form action="${ctx }/login/" class="rl-form" id="login-in-form" method="post" enable="true">
                             <div class="content">
                                 <p>
                                     <b>登录</b> | 没有帐号？ 
@@ -40,7 +40,7 @@
                                 
                                 <div class="row">
                                     <label>邮箱</label>
-                                    <input name="email" type="text" value="" />
+                                    <input name="username" type="text" value="" />
                                     
                                 </div>
                                 <div class="row">
