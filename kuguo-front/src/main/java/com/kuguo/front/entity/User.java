@@ -10,6 +10,7 @@ import org.hibernate.validator.constraints.NotBlank;
 public class User extends IdEntity {
 	private String name;
 	private String email;
+	private String plainPassword;
 	private String password;
 	private String head;
 	private String address;
@@ -42,6 +43,14 @@ public class User extends IdEntity {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getPlainPassword() {
+		return plainPassword;
+	}
+
+	public void setPlainPassword(String plainPassword) {
+		this.plainPassword = plainPassword;
 	}
 
 	public String getPassword() {
