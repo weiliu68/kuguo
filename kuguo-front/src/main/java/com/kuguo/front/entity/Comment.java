@@ -7,6 +7,8 @@ public class Comment extends IdEntity {
 	private int poke;
 	private int hoot;
 	private Date create_time;
+	private User user;
+	private Long productId;
 
 	public String getContent() {
 		return content;
@@ -40,4 +42,19 @@ public class Comment extends IdEntity {
 		this.create_time = create_time;
 	}
 
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Long getProductId() {
+		return productId;
+	}
+
+	public void setProductId(Long productId) {
+		this.productId = productId;
+	}
 }

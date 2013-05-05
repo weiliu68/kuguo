@@ -1,7 +1,6 @@
 package com.kuguo.front.repository;
 
 import java.util.List;
-import java.util.Map;
 
 import com.kuguo.front.entity.Product;
 
