@@ -19,6 +19,7 @@
 			location.href = "/ie6/";
 	}
 </script>
+<sitemesh:head/>
 </head>
 <body>
 	<div id="wrapper">
