@@ -114,6 +114,8 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value = "/taobao/info", method = RequestMethod.POST)
-	public void getFromTaobao(String url) {
+	public String getFromTaobao(String url, Model model) {
+		model.addAttribute("item", productService.getTaobaoItemByUrl(url));
+		return "product/newProduct";
 	}
 }
