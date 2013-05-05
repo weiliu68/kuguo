@@ -53,14 +53,14 @@ public class ProductController {
 		model.addAttribute("labels", labels);
 		model.addAttribute("users", users);
 
-		return "product/selected";
+		return "selected";
 	}
 	
 	@RequestMapping(value = "/popular")
 	public String poplist(Model model, ServletRequest request) {
 		List<Product> products = productService.getPopProducts();
 		model.addAttribute("products", products);
-		return "popular/popularList";
+		return "popular";
 	}
 
 	@RequestMapping(value = "/discover")
@@ -69,7 +69,7 @@ public class ProductController {
 		List<Channel> channels = channelService.getAllChannel();
 		model.addAttribute("channels", channels);
 		model.addAttribute("products", products);
-		return "discover/discover";
+		return "discover";
 	}
 	
 	@RequestMapping(value = "/activity")
