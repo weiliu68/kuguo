@@ -17,7 +17,7 @@
 </head>
 
 <body>
-	<form id="inputForm" action="${ctx}/product/${action}" method="post" class="form-horizontal">
+	<form id="inputForm" action="${ctx}/entity/new/" method="post" class="form-horizontal">
 		<input type="hidden" name="id" value="${product.id}"/>
 		<fieldset>
 			<legend><small>管理商品</small></legend>
@@ -25,12 +25,6 @@
 				<label for="product_title" class="control-label">商品名称:</label>
 				<div class="controls">
 					<input type="text" id="product_title" name="name"  value="${product.name}" class="input-large required" minlength="2"/>
-				</div>
-			</div>	
-			<div class="control-group">
-				<label for="description" class="control-label">商品描述:</label>
-				<div class="controls">
-					<textarea id="description" name="description" class="input-large">${product.description}</textarea>
 				</div>
 			</div>	
 			<div class="control-group">
@@ -46,13 +40,7 @@
 					<textarea id="channel" name="channel" class="input-large">${product.channel}</textarea>
 				</div>
 			</div>	
-			
-			<div class="control-group">
-				<label for="favorite_num" class="control-label">喜爱数:</label>
-				<div class="controls">
-					<textarea id="favorite_num" name="favorite_num" class="input-large">${product.favorite_num}</textarea>
-				</div>
-			</div>	
+
 			
 			<div class="control-group">
 				<label for="brand" class="control-label">品牌:</label>

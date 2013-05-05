@@ -52,24 +52,24 @@
 	
 	<select id="getPop" parameterType="int" resultMap="product">
 		select 
-			p.create_time,
 			p.id,
-			p.name,
 			p.hots,
+			p.name,
 			p.picture,
 			p.user_id,
 			u.name user_name,
 			u.head user_head,
-			count(p.hots) n
+			u.bio user_bio,
+			c.id comment_id,
+			c.content comment_content,
+			c.poke comment_poke,
+			c.hoot comment_hoot,
+			c.create_time comment_time
 		from 
-			product p,user u 
+			product p,user u,product_comment c
 		where 
-			p.user_id = u.id
-		group by
-			p.hots
-		order by
-			n
-		desc
+			p.user_id = u.id and
+			p.comment_id = c.id
 	</select>
 	
 	<insert id="save" parameterType="Product" useGeneratedKeys="true" keyProperty="id">

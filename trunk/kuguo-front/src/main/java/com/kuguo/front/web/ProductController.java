@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kuguo.front.entity.Channel;
-import com.kuguo.front.entity.Comment;
 import com.kuguo.front.entity.Label;
 import com.kuguo.front.entity.Product;
 import com.kuguo.front.entity.User;
@@ -59,12 +58,32 @@ public class ProductController {
 	
 	@RequestMapping(value = "/popular")
 	public String poplist(Model model, ServletRequest request) {
-		List<Product> products = productService.getPopProducts(30);
+		List<Product> products = productService.getPopProducts();
 		model.addAttribute("products", products);
-
 		return "popular/popularList";
 	}
 
+	@RequestMapping(value = "/discover")
+	public String discover(Model model) {
+		List<Product> products = productService.getPopProducts();
+		List<Channel> channels = channelService.getAllChannel();
+		model.addAttribute("channels", channels);
+		model.addAttribute("products", products);
+		return "discover/discover";
+	}
+	
+	@RequestMapping(value = "/activity")
+	public String activity(Model model) {		
+		List<Channel> channels = channelService.getAllChannel();
+		List<Label> labels = labelService.getLabel(5);
+		List<User> users = userService.getHotUsers(5);
+		model.addAttribute("channels", channels);
+		model.addAttribute("labels", labels);
+		model.addAttribute("users", users);
+		return "activity";
+	}
+	
+	
 	@RequestMapping(value = "/entity/new/", method = RequestMethod.GET)
 	public String createForm(Model model) {
 		model.addAttribute("product", new Product());
@@ -78,7 +97,7 @@ public class ProductController {
 		newProduct.setUser(user);
 
 		productService.saveProduct(newProduct);
-		return "redirect:/product/";
+		return "redirect:/selected/";
 	}
 
 	@RequestMapping(value = "/detail/{id}/", method = RequestMethod.GET)
@@ -91,7 +110,7 @@ public class ProductController {
 	@RequestMapping(value = "/entity/note/update/{id}/", method = RequestMethod.POST)
 	public String update(@Valid @ModelAttribute("preloadProduct") Product product, RedirectAttributes redirectAttributes) {
 		productService.saveProduct(product);
-		return "redirect:/product/";
+		return "redirect:/selected/";
 	}
 	
 	@RequestMapping(value = "/taobao/info", method = RequestMethod.POST)

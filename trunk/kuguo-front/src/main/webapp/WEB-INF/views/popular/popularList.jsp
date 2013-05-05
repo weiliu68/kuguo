@@ -9,7 +9,7 @@
    <title>热门 - 果库</title>
 
         
-    <link media="all" rel="stylesheet" type="text/css" href="${ctx }/static/styles/discover.css" />
+    <link media="all" rel="stylesheet" type="text/css" href="${ctx}/static/styles/discover.css" />
 
 
         <link rel="icon" type="image/ico" href="${ctx}/static/images/favicon.ico">
@@ -27,7 +27,8 @@
 
     <body>
         <div id="wrapper">
-        
+         <div id="popup-layer"></div>
+        <div class="clear"></div>
             
         <div id="navigation" class="with-border">
             <div class="nav-desc">
@@ -48,35 +49,29 @@
                 
     <div class="main-container with-border" id="main-container">
     
-    
-    
-        <ul class="items-list">
+    <ul class="items-list">
             
-                
 
-
-
-<c:forEach items="products" var="product">
+<c:forEach items="${products}" var="product">
     <li>
         <div class="image">
-            <a href="/detail/61cdc299/" target=_blank >
+            <a href="/detail/" target=_blank >
                 <div class="img-mask"></div>
-                <img src="" alt="VATIRI 随手杯" title="VATIRI 随手杯" />
+                <img src="${product.picture}" alt="${product.name }" title="${product.name }" />
             </a>
         </div>
         <div class="item-info">
             <a href="/u/22045/likes/" target=_blank >
-                <img src="http://image.guoku.com/avatar/small_22045_57c98cc9076d59d57b3335eaf062b4ab.jpg" width="35" height="35" />
+                <img src="${product.user.head}" width="35" height="35" />
 
             </a>
             <a href="/u/22045/likes/" target=_blank >
-                
+                ${product.user.name }
             </a>
-            <br />
+                      <br/>
+                <label>&nbsp;${product.comment.create_time}</label>
             
-                <label>&nbsp;24 小时前</label>
-            
-            <p class="with-tag">VATIRI 随手杯。第三代，流线型瓶身设计，密封螺旋瓶盖，配合丹宁/绒面皮革材质隔热带，用着舒适，看起来高级又时尚，适合你。</p>
+            <p class="with-tag">${product.comment.content}</p>
         </div>
         <div class="like-row">
             
@@ -85,20 +80,13 @@
     <div class="like " thelink="/entity/like/81931/0/">
         <span></span>喜爱&nbsp;<em>1425</em>
     </div>
-
-
-            
-                /
-                <div class="heat">
-                    24 小时热度 1424 
-                </div>
             
         </div>
         
             <div class="avatar-container">
                 
                     <a href="/u/85801/likes/" target=_blank>
-                        <img src="http://image.guoku.com/avatar/small_85801_65d5c20d7ea12a32961d0882e1a612c1.jpe" width="25" height="25" />
+                        <img src="" width="25" height="25" />
 
                     </a>
                 
@@ -154,6 +142,5 @@
     </body>
 </html>
     
-
-    <script type="text/javascript" src="http://static.guoku.com/static/js/343529a82201d2afd88a7957d3cf484f/jquery.min.js"></script>
-    <script type="text/javascript" src="http://static.guoku.com/static/js/343529a82201d2afd88a7957d3cf484f/main.js"></script>
+        <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="${ctx}/static/js/main.js"></script>
