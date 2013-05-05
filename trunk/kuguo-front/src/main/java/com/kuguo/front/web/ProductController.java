@@ -53,7 +53,7 @@ public class ProductController {
 		model.addAttribute("labels", labels);
 		model.addAttribute("users", users);
 
-		return "product/productList";
+		return "product/selected";
 	}
 	
 	@RequestMapping(value = "/popular")
@@ -83,39 +83,10 @@ public class ProductController {
 		return "activity";
 	}
 	
-	
-	@RequestMapping(value = "/entity/new/", method = RequestMethod.GET)
-	public String createForm(Model model) {
-		model.addAttribute("product", new Product());
-		model.addAttribute("action", "create");
-		return "product/productForm";
-	}
-
-	@RequestMapping(value = "/entity/new/", method = RequestMethod.POST)
-	public String create(@Valid Product newProduct, RedirectAttributes redirectAttributes) {
-		User user = new User();
-		newProduct.setUser(user);
-
-		productService.saveProduct(newProduct);
-		return "redirect:/selected/";
-	}
-
 	@RequestMapping(value = "/detail/{id}/", method = RequestMethod.GET)
 	public String updateForm(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("product", productService.getProduct(id));
 		model.addAttribute("action", "update");
-		return "product/productForm";
-	}
-
-	@RequestMapping(value = "/entity/note/update/{id}/", method = RequestMethod.POST)
-	public String update(@Valid @ModelAttribute("preloadProduct") Product product, RedirectAttributes redirectAttributes) {
-		productService.saveProduct(product);
-		return "redirect:/selected/";
-	}
-	
-	@RequestMapping(value = "/taobao/info", method = RequestMethod.POST)
-	public String getFromTaobao(String url, Model model) {
-		model.addAttribute("item", productService.getTaobaoItemByUrl(url));
-		return "product/taobaoItemInfo";
+		return "product/detail";
 	}
 }
