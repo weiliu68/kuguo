@@ -8,8 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>欢迎加入果库</title>
-        <link rel="icon" type="image/png" href="http://static.guoku.com/static/images/guoku_favicon.png">
-        <link media="all" rel="stylesheet" type="text/css" href="http://static.guoku.com/static/css/343529a82201d2afd88a7957d3cf484f/register.css" />
+        <link media="all" rel="stylesheet" type="text/css" href="${ctx }/static/styles/register.css" />
 
         <script type="text/javascript">
         if (window.ActiveXObject) {
@@ -35,7 +34,7 @@
                             <div class="content">
                                 <p>
                                     <b>登录</b> | 没有帐号？ 
-                                    <a href="/register/" class="green">请注册</a>
+                                    <a href="${ctx }/register" class="green">请注册</a>
                                 </p>
                                 
                                 <div class="row">
@@ -74,5 +73,6 @@
         </div>
         <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="${ctx}/static/jquery-validation/1.10.0/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="${ctx}/static/js/main.js"></script>    </body> 
+        <script type="text/javascript" src="${ctx}/static/js/main.js"></script>  
+   </body> 
 </html>
