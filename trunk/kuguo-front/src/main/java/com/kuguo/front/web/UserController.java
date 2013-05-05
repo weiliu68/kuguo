@@ -1,5 +1,7 @@
 package com.kuguo.front.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
@@ -12,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.kuguo.front.entity.Label;
 import com.kuguo.front.entity.User;
+import com.kuguo.front.service.LabelService;
 import com.kuguo.front.service.UserService;
 
 @Controller
@@ -21,6 +25,9 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private LabelService labelService;
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String createForm(Model model) {
@@ -33,7 +40,22 @@ public class UserController {
 		//1. 保存用户入库、注意密码处理
 		userService.saveUser(newUser);
 		// 2.登录
-		return "redirect:/product";
+		return "redirect:/selected";
+	}
+	
+	@RequestMapping(value = "/likes")
+	public String likes() {
+		
+		return "likes";
+	}
+	
+	@RequestMapping(value = "/message")
+	public String message(Model model) {
+		List<Label> labels = labelService.getLabel(5);
+		List<User> users = userService.getHotUsers(5);
+		model.addAttribute("labels", labels);
+		model.addAttribute("users", users);
+		return "message";
 	}
 
 	@ResponseBody
@@ -51,6 +73,6 @@ public class UserController {
 	@RequestMapping(value = "/setting", method = RequestMethod.POST)
 	public String update(@Valid User user, RedirectAttributes redirectAttributes) {
 		userService.saveUser(user);
-		return "redirect:/";
+		return "redirect:/selected";
 	}
 }

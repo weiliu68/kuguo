@@ -25,11 +25,7 @@
 
     <body>
         <div id="wrapper">
-            <div id="popup-layer"></div>
-       
-            <div class="clear"></div>
-        
-            
+           
             
         
             <div id="main">
@@ -129,7 +125,7 @@
         <h3>热门的标签</h3>
         <c:forEach items="${labels}" var="label">
             <p class="hottag">
-                <span>#</span><a class="c666" href="/t/7485c5b4/" target=_blank>${label.name }</a>
+                <span>#</span><a class="c666" href="/t/${label.id }/" target=_blank>${label.name }</a>
             </p>
         </c:forEach>
     </div>

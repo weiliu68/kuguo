@@ -22,7 +22,7 @@
                             发现 
                         </a>
                         <shiro:user>
-                        <a href="/u/<shiro:principal property="id"/>/likes/">
+                        <a href="${ctx}/likes/">
                                 我的果库
                             </a>
                         </shiro:user>
@@ -55,7 +55,7 @@
                             </div>
                         </div>
                     	<div class="header-nav-right">
-                            <a href="/message/">
+                            <a href="${ctx}/message/">
                                 消息
                             </a>
                         </div>

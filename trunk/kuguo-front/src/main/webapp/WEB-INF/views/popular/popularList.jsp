@@ -8,12 +8,7 @@
         
    <title>热门 - 果库</title>
 
-        
-    <link media="all" rel="stylesheet" type="text/css" href="${ctx}/static/styles/discover.css" />
-
-
-        <link rel="icon" type="image/ico" href="${ctx}/static/images/favicon.ico">
-
+       
         <script type="text/javascript">
         if (window.ActiveXObject) {
             var ua = navigator.userAgent.toLowerCase();
@@ -27,9 +22,7 @@
 
     <body>
         <div id="wrapper">
-         <div id="popup-layer"></div>
-        <div class="clear"></div>
-            
+
         <div id="navigation" class="with-border">
             <div class="nav-desc">
                 <a class="nav-popular active" href="/popular/">24 小时</a>
