@@ -49,8 +49,8 @@
                                 </a>
                                 <ul class="drop" style="display: none; width: 87px;">
                                     
-                                    <li><a href="/setting/" target="_blank">设置</a></li>
-                                    <li><a href="/logout/">退出</a></li>
+                                    <li><a href="${ctx }/setting/" target="_blank">设置</a></li>
+                                    <li><a href="${ctx }/logout/">退出</a></li>
                                 </ul>
                             </div>
                         </div>

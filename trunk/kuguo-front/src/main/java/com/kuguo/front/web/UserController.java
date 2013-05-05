@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -44,9 +45,9 @@ public class UserController {
 		return "redirect:/selected";
 	}
 	
-	@RequestMapping(value = "/likes")
-	public String likes() {
-		
+	@RequestMapping(value = "/u/{id}/likes/")
+	public String likes(@PathVariable("id") Long id,Model model) {
+		model.addAttribute("user", userService.getUser(id));
 		return "likes";
 	}
 	
@@ -63,7 +64,7 @@ public class UserController {
 	@RequestMapping(value = "/check_email_availability", method = RequestMethod.POST)
 	public String checkEmailValide(@RequestParam String email) {
 		// TODO: 校验邮箱是否已注册
-		return "true";
+		return "true";	
 	}
 
 	@RequestMapping(value = "/setting", method = RequestMethod.GET)
