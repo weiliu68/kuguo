@@ -49,6 +49,14 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
+		<repository>
+			<id>googlecode</id>
+			<name>googlecode Central Repository</name>
+			<url>https://kuguo-repo.googlecode.com/svn/trunk/release</url>	
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
 	</repositories>
 
 	<!-- 依赖项定义 -->
@@ -255,6 +263,14 @@
 			<version>${guava.version}</version>
 		</dependency>
 		<!-- GENERAL UTILS end -->
+		
+		<!-- Taobao API begin -->
+		<dependency>
+			<groupId>com.taobao</groupId>
+			<artifactId>taobao-api</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<!-- Taobao API end-->
 
 		<!-- TEST begin -->
 		<dependency>
