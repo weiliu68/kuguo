@@ -30,7 +30,7 @@
 				/register/** = anon
 				/** = anon
 				/activity = user
-				/selected = user
+				/taobao/info = user
 			</value>
 		</property>
 	</bean>
