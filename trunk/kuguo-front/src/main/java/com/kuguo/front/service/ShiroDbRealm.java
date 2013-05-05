@@ -52,7 +52,7 @@ public class ShiroDbRealm extends AuthorizingRealm {
 		User user = userService.findUserByEmail(token.getUsername());
 		if (user != null) {
 			byte[] salt = Encodes.decodeHex(user.getSalt());
-			return new SimpleAuthenticationInfo(new ShiroUser(user.getEmail(), user.getName()), user.getPassword(),
+			return new SimpleAuthenticationInfo(new ShiroUser(user.getEmail(), user.getName(), user.getId()), user.getPassword(),
 					ByteSource.Util.bytes(salt), getName());
 		} else {
 			return null;
@@ -91,10 +91,12 @@ public class ShiroDbRealm extends AuthorizingRealm {
 		private static final long serialVersionUID = -1373760761780840081L;
 		public String email;
 		public String name;
+		public Long id;
 
-		public ShiroUser(String email, String name) {
+		public ShiroUser(String email, String name, Long id) {
 			this.email = email;
 			this.name = name;
+			this.id = id;
 		}
 		
 		public String getEmail() {
@@ -103,6 +105,10 @@ public class ShiroDbRealm extends AuthorizingRealm {
 
 		public String getName() {
 			return name;
+		}
+		
+		public Long getId() {
+			return id;
 		}
 
 		/**
