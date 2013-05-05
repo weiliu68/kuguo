@@ -6,7 +6,7 @@
 		<pattern>/static/*</pattern>
 		<pattern>/api/*</pattern>
 		<pattern>/taobao/info</pattern>
-		<pattern>/entity/new</pattern>
+		<pattern>/entity/taobao/info</pattern>
 	</excludes>
 	
 	<decorator name="default" page="default.jsp">
