@@ -39,7 +39,7 @@ public class ProductController {
 	
 
 	@RequestMapping(value = "/selected")
-	public String list(@RequestParam(value = "page", defaultValue = "1") int pageNumber, Model model) {
+	public String list(@RequestParam(value = "page", defaultValue = "0") int pageNumber, Model model) {
 		List<Product> products = productService.getProductsByPage(pageNumber);
 		List<Channel> channels = channelService.getAllChannel();
 		List<Label> labels = labelService.getLabel(5);

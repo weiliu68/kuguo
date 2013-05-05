@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.kuguo.front.entity.Comment;
 import com.kuguo.front.entity.Product;
+import com.kuguo.front.repository.CommentDao;
 import com.kuguo.front.repository.ProductDao;
 import com.kuguo.front.repository.TaobaoDao;
 import com.kuguo.front.utils.Constant;
@@ -16,6 +18,7 @@ import com.taobao.api.domain.Item;
 @Transactional(readOnly = true)
 public class ProductService {
 	private ProductDao productDao;
+	private CommentDao commentDao;
 	private TaobaoDao taobaoDao;
 
 	public List<Product> getProductsByPage(int page) {
@@ -25,7 +28,7 @@ public class ProductService {
 	public List<Product> getPopProducts() {
 		return productDao.getPop();
 	}
-	
+
 	public Product getProduct(Long id) {
 		return productDao.get(id);
 	}
@@ -33,6 +36,9 @@ public class ProductService {
 	@Transactional(readOnly = false)
 	public void saveProduct(Product entity) {
 		productDao.save(entity);
+		Comment comment = entity.getComment();
+		comment.setProductId(entity.getId());
+		commentDao.save(comment);
 	}
 
 	public Item getTaobaoItemByUrl(String url) {
@@ -42,6 +48,11 @@ public class ProductService {
 	@Autowired
 	public void setProductDao(ProductDao productDao) {
 		this.productDao = productDao;
+	}
+
+	@Autowired
+	public void setCommentDao(CommentDao commentDao) {
+		this.commentDao = commentDao;
 	}
 
 	@Autowired

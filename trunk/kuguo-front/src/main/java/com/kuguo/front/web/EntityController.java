@@ -2,6 +2,7 @@ package com.kuguo.front.web;
 
 import javax.validation.Valid;
 
+import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.kuguo.front.entity.Product;
 import com.kuguo.front.entity.User;
 import com.kuguo.front.service.ProductService;
+import com.kuguo.front.service.ShiroDbRealm.ShiroUser;
 
 @Controller
 @RequestMapping(value = "/entity")
@@ -34,9 +36,11 @@ public class EntityController {
 
 	@RequestMapping(value = "/new", method = RequestMethod.POST)
 	public String create(@Valid Product newProduct, RedirectAttributes redirectAttributes) {
+		ShiroUser currentUser = (ShiroUser)SecurityUtils.getSubject().getPrincipal();
 		User user = new User();
+		user.setId(currentUser.getId());
 		newProduct.setUser(user);
-
+		newProduct.getComment().setUser(user);
 		productService.saveProduct(newProduct);
 		return "redirect:/selected/";
 	}
