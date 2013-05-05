@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 
 <html>
@@ -56,8 +57,8 @@
         <a class="name c333" href="" target=_blank>
            ${product.user.name}
         </a>
-            <span class="desc">${product.user.description}</span>
-        <p class="with-tag">${product.description }</p>
+            <span class="desc">${product.user.bio}</span>
+        <p class="with-tag">${product.comment.content}</p>
         <div class="link-row">
             
                 <div class="approve-btn left need-login">
@@ -67,21 +68,21 @@
 
             <span class="splite-icon left"></span>
             
-                <div class="disapprove-btn left need-login">
+                <div class="disapprove-btn left need-login" thelink="/entity/note/poke/147604/">
                     <span></span><em></em>
                 </div>
             
             
             <span class="splite-icon left"></span>
             
-                <div class="comment-btn left  need-login">
+                <div class="comment-btn left  need-login" thelink="/entity/note/poke/147604/">
                     <span></span><em></em>
                 </div>
             
  
             
             <div class="note-time right">
-                ${product.create_time}  
+                ${product.comment.create_time}  
             </div>
             
    
@@ -94,9 +95,19 @@
             <div class="container">
                 
             </div>
-            
+            <shiro:user>
+                <div class="new-comment">
+                    <form action="/entity/note/comment/create/" class="new-comment-form" method="POST" onsubmit="return false;">
+                        <input name="entity_note_id" type="hidden" value="147684" /> 
+                        <input name="comment" type="text" class="content" value="写下你的评论…" defaultValue="写下你的评论…" autocomplete="off" />
+                        <input type="submit" class="btn-v1 disable right" value="评论" />
+                        <a href="javascript:void(0);" class="right new-comment-cancel">取消</a>
+                    </form>
+                    <div class="clear"></div>
+                </div>
+                </shiro:user>
+            </div>
         </div>
-    </div>
 
 
             <div class="hidden-area dn">
@@ -106,11 +117,16 @@
                 <div class="fold-note">
                     
                     
-                        
+                        <shiro:guest>
                             <a href="javascript:void(0);" class="need-login">
                                写点评 
                             </a>
-                        
+                        </shiro:guest>
+                        <shiro:user>
+                            <a href="/detail/524ea73e/#new" target="_blank">
+                               写点评 
+                            </a>                       
+                       </shiro:user>
                     
                 </div>
             
@@ -119,7 +135,7 @@
     </c:forEach>
 
         
-            <a href="${ctx}/product?page=0" class="paging-btn">下一页</a>
+            <a href="${ctx}/selected?page=0" class="paging-btn">下一页</a>
         
         
             <a href="" class="paging-btn invalid">上一页</a>
@@ -127,14 +143,14 @@
         
     </div>
     <div class="main-right" id="main-right">
-        
+        <shiro:guest>
             <div class="sider-login with-border">
-    <p>果库，尽收世上好物！</p>
-    <p class="sider-login-bottom">
-        <a class="btn-v2" href="${ctx}/register">注册帐号</a>已有帐号，<a class="green" href="${ctx}/login/">从这里登录</a>
-    </p>
-</div>
-
+			    <p>果库，尽收世上好物！</p>
+			    <p class="sider-login-bottom">
+			        <a class="btn-v2" href="${ctx}/register">注册帐号</a>已有帐号，<a class="green" href="${ctx}/login/">从这里登录</a>
+			    </p>
+			</div>
+		</shiro:guest>
         
         
         <div class="siderbar with-border">
@@ -182,7 +198,7 @@
             ${user.name}
         </a>
         <span class="desc l24">
-        	${user.description}
+        	${user.bio}
         </span>
         
         <div class="clear"></div>

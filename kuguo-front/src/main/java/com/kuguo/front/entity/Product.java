@@ -13,7 +13,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = "product")
 public class Product extends IdEntity {
 	private String name;
-	private String description;
 	private String channel;
 	private double price;
 	private int favorite_num;
@@ -50,13 +49,12 @@ public class Product extends IdEntity {
 		this.name = name;
 	}
 
-	@NotBlank
-	public String getDescription() {
-		return description;
+	public Comment getComment() {
+		return comment;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setComment(Comment comment) {
+		this.comment = comment;
 	}
 
 	public String getChannel() {

@@ -4,7 +4,7 @@
 <mapper namespace="com.kuguo.front.repository.UserDao">
 	<resultMap type="user" id="user">
 		<result column="name" property="name" />
-		<result column="description" property="description"/>
+		<result column="bio" property="bio"/>
 		<result column="head" property="head"/>
 		
 	</resultMap>
@@ -12,7 +12,7 @@
 	<select id="getHotUsers" parameterType="int" resultType="user">
 		select
 			u.name,
-			u.description,
+			u.bio,
 			u.head,
 			count(p.user_id) n
 		from 
@@ -33,9 +33,9 @@
 	
 	<insert id="save" parameterType="User" useGeneratedKeys="true" keyProperty="id">
 		insert into user (
-			name, password, email,head,address,gender,website,description,salt
+			name, password, email,head,address,gender,website,bio,salt
 		) values (
-			#{name}, #{password}, #{email},#{head},#{address},#{gender},#{website},#{description},#{salt}
+			#{name}, #{password}, #{email},#{head},#{address},#{gender},#{website},#{bio},#{salt}
 		)
 	</insert>
 
@@ -49,9 +49,11 @@
 	    address = #{address},
 	    gender = #{gender},
 	    website = #{website},
-	    description = #{description}
+	    bio = #{bio}
 	  where id = #{id}
 	</update>
 	
-	
+	<select id="getUserByEmail" parameterType="string" resultType="User">
+		select * from User where email = #{email}
+	</select>
 </mapper>

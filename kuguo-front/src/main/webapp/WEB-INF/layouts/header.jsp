@@ -9,7 +9,7 @@
                         <a href="/selected/"><img src="http://static.guoku.com/static/images/guoku_icon_32.png" alt="Logo" height="32"></a>
                     </div>
                     <div class="header-nav">
-                        <a class="active" href="${ctx}/product?page=0">
+                        <a class="active" href="${ctx}/selected/">
                             精选
                         </a>
                         <a href="${ctx}/activity/">

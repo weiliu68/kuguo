@@ -16,10 +16,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kuguo.front.entity.Channel;
+import com.kuguo.front.entity.Comment;
 import com.kuguo.front.entity.Label;
 import com.kuguo.front.entity.Product;
 import com.kuguo.front.entity.User;
 import com.kuguo.front.service.ChannelService;
+import com.kuguo.front.service.CommentService;
 import com.kuguo.front.service.LabelService;
 import com.kuguo.front.service.ProductService;
 import com.kuguo.front.service.UserService;
@@ -39,11 +41,12 @@ public class ProductController {
 
 	@Autowired
 	private UserService userService;
+	
 
 	@RequestMapping(value = "/selected")
 	public String list(@RequestParam(value = "page", defaultValue = "1") int pageNumber, Model model) {
 		List<Product> products = productService.getProductsByPage(pageNumber);
-		List<Channel> channels = channelService.getHotLables(5);
+		List<Channel> channels = channelService.getAllChannel();
 		List<Label> labels = labelService.getLabel(5);
 		List<User> users = userService.getHotUsers(5);
 		model.addAttribute("products", products);
