@@ -42,6 +42,18 @@
 
 	<!-- JSR303 Validator定义 -->
  	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+ 	
+ 	<bean id="taobaoClient" class="com.taobao.api.DefaultTaobaoClient">
+ 		<constructor-arg index="0">
+ 			<value>${taobao.api.url}</value>
+ 		</constructor-arg>
+ 		<constructor-arg index="1">
+ 			<value>${taobao.api.appkey}</value>
+ 		</constructor-arg>
+ 		<constructor-arg index="2">
+ 			<value>${taobao.api.appsecret}</value>
+ 		</constructor-arg>
+ 	</bean>
 	
 	<!-- production环境 -->
  	<beans profile="production">
