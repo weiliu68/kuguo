@@ -23,6 +23,7 @@ public class Product extends IdEntity {
 	private Date create_time;
 	private int hots;
 	private User user;
+	private Comment comment;
 
 	public int getFavorite_num() {
 		return favorite_num;

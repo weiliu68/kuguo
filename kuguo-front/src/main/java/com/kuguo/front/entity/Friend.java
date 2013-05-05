@@ -8,15 +8,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "user_friend")
 public class Friend extends IdEntity {
 	private User user;
 	private User friend;
 	private Date create_time;
 
-	@OneToOne
-	@JoinColumn(name = "user_id")
 	public User getUser() {
 		return user;
 	}
@@ -25,8 +21,6 @@ public class Friend extends IdEntity {
 		this.user = user;
 	}
 	
-	@ManyToOne
-	@JoinColumn(name = "friend_id")
 	public User getFriend() {
 		return friend;
 	}
@@ -42,5 +36,4 @@ public class Friend extends IdEntity {
 	public void setCreate_time(Date create_time) {
 		this.create_time = create_time;
 	}
-
 }
