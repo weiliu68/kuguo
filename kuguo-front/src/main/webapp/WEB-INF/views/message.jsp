@@ -2,14 +2,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html style="overflow-x: hidden; overflow-y: scroll;" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         
     <title>我的消息</title>
   
         
-    <link media="all" rel="stylesheet" type="text/css" href="http://static.guoku.com/static/css/343529a82201d2afd88a7957d3cf484f/message.css" />
+    <link media="all" rel="stylesheet" type="text/css" href="${ctx }/static/styles/message.css" />
 
 
         <link rel="icon" type="image/ico" href="http://static.guoku.com/static/images/favicon.ico">

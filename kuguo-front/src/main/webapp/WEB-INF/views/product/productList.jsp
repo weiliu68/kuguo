@@ -50,7 +50,7 @@
     <div class="note">
         <div class="avatar">
             <a href="/u/${product.user.id }/likes/" target=_blank>
-               <img src="${product.user.head }" width="50" height="50" />
+               <img src="${product.user.head}" width="50" height="50" />
 
            </a>
         </div>
@@ -135,7 +135,7 @@
     </c:forEach>
 
         
-            <a href="${ctx}/selected?page=0" class="paging-btn">下一页</a>
+            <a href="${ctx}/selected" class="paging-btn">下一页</a>
         
         
             <a href="" class="paging-btn invalid">上一页</a>
@@ -147,7 +147,7 @@
             <div class="sider-login with-border">
 			    <p>果库，尽收世上好物！</p>
 			    <p class="sider-login-bottom">
-			        <a class="btn-v2" href="${ctx}/register">注册帐号</a>已有帐号，<a class="green" href="${ctx}/login/">从这里登录</a>
+			        <a class="btn-v2" href="${ctx}/register">注册帐号</a>已有帐号，<a class="green" href="${ctx}/login">从这里登录</a>
 			    </p>
 			</div>
 		</shiro:guest>
