@@ -7,6 +7,7 @@
 <html>
 <head>
 <title>首页</title>
+<link media="all" rel="stylesheet" type="text/css" href="${ctx}/static/styles/selection.css" />
 </head>
 
 <body>
