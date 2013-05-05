@@ -13,9 +13,6 @@
 
 <body>
 	<div id="wrapper">
-		<div id="popup-layer"></div>
-
-		<div class="clear"></div>
 
 		<div id="navigation" class="with-border">
 			<div class="main-category">
