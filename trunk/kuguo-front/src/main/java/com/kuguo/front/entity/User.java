@@ -1,12 +1,7 @@
 package com.kuguo.front.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
 import org.hibernate.validator.constraints.NotBlank;
 
-@Entity
-@Table(name = "user")
 public class User extends IdEntity {
 	private String name;
 	private String email;
@@ -16,7 +11,7 @@ public class User extends IdEntity {
 	private String address;
 	private String gender;
 	private String website;
-	private String description;
+	private String bio;
 	private String salt;
 
 	public String getSalt() {
@@ -93,11 +88,12 @@ public class User extends IdEntity {
 		this.website = website;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getBio() {
+		return bio;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setBio(String bio) {
+		this.bio = bio;
 	}
+
 }

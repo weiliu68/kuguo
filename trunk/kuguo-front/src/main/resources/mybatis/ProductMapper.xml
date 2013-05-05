@@ -14,36 +14,47 @@
 			<result property="name" column="user_name"/>
 			<result property="head" column="user_head"/>
 		</association>
+		<association property="comment" column="comment_id" javaType="Comment">
+			<id property="id" column="comment_id"/>
+			<result property="content" column="comment_content"/>
+			<result property="poke" column="comment_poke"/>
+			<result property="hoot" column="comment_hoot"/>
+			<result property="create_time" column="comment_time"/>
+		</association>
 	</resultMap>
 
 	<select id="getAll" parameterType="int" resultMap="product">
 		select 
-			p.create_time,
 			p.id,
 			p.name,
-			p.description,
 			p.hots,
 			p.picture,
 			p.user_id,
 			u.name user_name,
-			u.head user_head 
+			u.head user_head,
+			u.bio user_bio,
+			c.id comment_id,
+			c.content comment_content,
+			c.poke comment_poke,
+			c.hoot comment_hoot,
+			c.create_time comment_time
 		from 
-			product p,user u 
+			product p,user u,product_comment c
 		where 
-			p.user_id = u.id 
+			p.user_id = u.id and
+			p.comment_id = c.id
 		limit #{page},20
 	</select>
 	
 	<select id="get" parameterType="int" resultType="Product">
 		select * from product where id = #{id}
 	</select>
-<!-- 	
+	
 	<select id="getPop" parameterType="int" resultMap="product">
 		select 
 			p.create_time,
 			p.id,
 			p.name,
-			p.description,
 			p.hots,
 			p.picture,
 			p.user_id,
@@ -59,17 +70,14 @@
 		order by
 			n
 		desc
-		limit 30;
-	</select> -->
+	</select>
 	
 	<insert id="save" parameterType="Product" useGeneratedKeys="true" keyProperty="id">
 		insert into product (
-			name,picture,order_link,description,brand,price,user_id,channel
+			name,picture,order_link,brand,price,user_id,channel
 		)
 		values (
-			#{name}, #{picture}, #{order_link}, #{description}, #{brand}, #{price}, #{user.id}, #{channel}
+			#{name}, #{picture}, #{order_link},#{brand}, #{price}, #{user.id}, #{channel}
 		)
 	</insert>
-	
-	
 </mapper> 

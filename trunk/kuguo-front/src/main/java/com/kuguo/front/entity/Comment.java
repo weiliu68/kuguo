@@ -6,7 +6,6 @@ public class Comment extends IdEntity {
 	private String content;
 	private int poke;
 	private int hoot;
-	private User user;
 	private Date create_time;
 
 	public String getContent() {
@@ -41,11 +40,4 @@ public class Comment extends IdEntity {
 		this.create_time = create_time;
 	}
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
 }

@@ -19,7 +19,4 @@ public class ChannelService {
 		return channelDao.getAll();
 	}
 
-	public List<Channel> getHotLables(int i) {
-		return null;
-	}
 }
