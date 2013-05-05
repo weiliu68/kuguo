@@ -30,7 +30,6 @@ public class ProductDaoTest extends SpringTransactionalTestCase {
 		product.setName("测试");
 		product.setPicture("http");
 		product.setOrder_link("http://sjfdlsjdfk");
-		product.setDescription("测试");
 		product.setBrand("");
 		product.setPrice(0);
 		product.setChannel("");
