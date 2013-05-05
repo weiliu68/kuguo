@@ -369,9 +369,9 @@
                 <div class="clear"></div>
             </div>
         </div>
+                <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="${ctx}/static/jquery-validation/1.10.0/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="${ctx}/static/js/main.js"></script>
     </body>
 </html>
     
-        <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="${ctx}/static/jquery-validation/1.10.0/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="${ctx}/static/js/main.js"></script>

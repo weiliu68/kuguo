@@ -83,5 +83,7 @@
 	</div>
 
 
+        <script type="text/javascript" src="${ctx}/static/js/main.js"></script>  
+        <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
 </body>
 </html>
