@@ -25,7 +25,7 @@ import com.kuguo.front.service.ProductService;
 import com.kuguo.front.service.UserService;
 
 @Controller
-@RequestMapping(value = "/product")
+@RequestMapping(value = "")
 public class ProductController {
 
 	@Autowired
@@ -40,11 +40,10 @@ public class ProductController {
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping(value = "")
-	public String list(@RequestParam(value = "sortType", defaultValue = "auto") String sortType,
-			@RequestParam(value = "page", defaultValue = "1") int pageNumber, Model model, ServletRequest request) {
+	@RequestMapping(value = "/selected")
+	public String list(@RequestParam(value = "page", defaultValue = "1") int pageNumber, Model model) {
 		List<Product> products = productService.getProductsByPage(pageNumber);
-		List<Channel> channels = channelService.getAllChannel();
+		List<Channel> channels = channelService.getHotLables(5);
 		List<Label> labels = labelService.getLabel(5);
 		List<User> users = userService.getHotUsers(5);
 		model.addAttribute("products", products);
@@ -55,25 +54,22 @@ public class ProductController {
 		return "product/productList";
 	}
 	
-//	@RequestMapping(value = "popular")
-//	public String poplist(@RequestParam(value = "sortType", defaultValue = "auto") String sortType,
-//			 Model model, ServletRequest request) {
-//			List<Product> products = productService.getPopProducts(30);
-//			List<Channel> channels = channelService.getAllChannel();
-//			model.addAttribute("products", products);
-//			model.addAttribute("channels", channels);
-//			
-//			return "popular/popularList";
-//		}
+	@RequestMapping(value = "/popular")
+	public String poplist(Model model, ServletRequest request) {
+		List<Product> products = productService.getPopProducts(30);
+		model.addAttribute("products", products);
 
-	@RequestMapping(value = "create", method = RequestMethod.GET)
+		return "popular/popularList";
+	}
+
+	@RequestMapping(value = "/entity/new/", method = RequestMethod.GET)
 	public String createForm(Model model) {
 		model.addAttribute("product", new Product());
 		model.addAttribute("action", "create");
 		return "product/productForm";
 	}
 
-	@RequestMapping(value = "create", method = RequestMethod.POST)
+	@RequestMapping(value = "/entity/new/", method = RequestMethod.POST)
 	public String create(@Valid Product newProduct, RedirectAttributes redirectAttributes) {
 		User user = new User();
 		newProduct.setUser(user);
@@ -82,32 +78,20 @@ public class ProductController {
 		return "redirect:/product/";
 	}
 
-	@RequestMapping(value = "update/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/detail/{id}/", method = RequestMethod.GET)
 	public String updateForm(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("product", productService.getProduct(id));
 		model.addAttribute("action", "update");
 		return "product/productForm";
 	}
 
-	@RequestMapping(value = "update", method = RequestMethod.POST)
+	@RequestMapping(value = "/entity/note/update/{id}/", method = RequestMethod.POST)
 	public String update(@Valid @ModelAttribute("preloadProduct") Product product, RedirectAttributes redirectAttributes) {
 		productService.saveProduct(product);
 		return "redirect:/product/";
 	}
 	
-	@ModelAttribute("preloadProduct")
-	public Product getProduct(@RequestParam(value = "id", required = false) Long id) {
-		if (id != null) {
-			return productService.getProduct(id);
-		}
-		return null;
-	}
-
 	@RequestMapping(value = "/taobao/info", method = RequestMethod.POST)
 	public void getFromTaobao(String url) {
 	}
-	
-	
-	
-	
 }

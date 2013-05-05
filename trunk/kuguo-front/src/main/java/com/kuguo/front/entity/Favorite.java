@@ -7,15 +7,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "product_like")
 public class Favorite extends IdEntity {
 	private User user;
 	private Product product;
 	private Date create_time;
 
-	@OneToOne
-	@JoinColumn(name = "user_id")
 	public User getUser() {
 		return user;
 	}
@@ -24,8 +20,6 @@ public class Favorite extends IdEntity {
 		this.user = user;
 	}
 
-	@OneToOne
-	@JoinColumn(name = "product_id")
 	public Product getProduct() {
 		return product;
 	}
@@ -41,5 +35,4 @@ public class Favorite extends IdEntity {
 	public void setCreate_time(Date create_time) {
 		this.create_time = create_time;
 	}
-
 }
