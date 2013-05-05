@@ -3,20 +3,20 @@ package com.kuguo.front.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kuguo.front.entity.Product;
 import com.kuguo.front.repository.ProductDao;
+import com.kuguo.front.repository.TaobaoDao;
 import com.kuguo.front.utils.Constant;
+import com.taobao.api.domain.Item;
 
 @Component
 @Transactional(readOnly = true)
 public class ProductService {
 	private ProductDao productDao;
+	private TaobaoDao taobaoDao;
 
 	public List<Product> getProductsByPage(int page) {
 		return productDao.getAll(page * Constant.PAGE_NUMBER);
@@ -35,14 +35,8 @@ public class ProductService {
 		productDao.save(entity);
 	}
 
-	private PageRequest buildPageRequest(int pageNumber, int pageSize, String sortType) {
-		Sort sort = null;
-		if ("auto".equals(sortType)) {
-			sort = new Sort(Direction.DESC, "id");
-		} else if ("title".equals(sortType)) {
-			sort = new Sort(Direction.ASC, "title");
-		}
-		return new PageRequest(pageNumber - 1, pageSize, sort);
+	public Item getTaobaoItemByUrl(String url) {
+		return taobaoDao.getTaoBaoItemByUrl(url);
 	}
 
 	@Autowired
@@ -50,4 +44,8 @@ public class ProductService {
 		this.productDao = productDao;
 	}
 
+	@Autowired
+	public void setTaobaoDao(TaobaoDao taobaoDao) {
+		this.taobaoDao = taobaoDao;
+	}
 }
