@@ -201,6 +201,13 @@
         	${user.bio}
         </span>
         
+        <shiro:user>
+       	<a href="javascript:void(0);" thelink="/user/follow/${user.id }/0/" class="btn-v1 followBtn s0 w4">
+        	<span></span>
+        	<em>关注</em>
+    	</a>    	
+        </shiro:user>
+        
         <div class="clear"></div>
     </div>
    </c:forEach>

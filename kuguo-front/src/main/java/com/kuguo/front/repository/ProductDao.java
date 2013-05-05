@@ -13,5 +13,5 @@ public interface ProductDao {
 
 	void save(Product product);
 
-	List<Product> getPop(int num);
+	List<Product> getPop();
 }
