@@ -40,6 +40,7 @@ public class UserController {
 		//1. 保存用户入库、注意密码处理
 		userService.saveUser(newUser);
 		// 2.登录
+		
 		return "redirect:/selected";
 	}
 	
