@@ -10,7 +10,8 @@
 		select
 			l.name
 		from
-			label l	
+			label l
+		limit 5
 	</select>
 	
 </mapper>
