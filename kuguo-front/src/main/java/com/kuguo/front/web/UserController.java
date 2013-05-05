@@ -53,14 +53,4 @@ public class UserController {
 		userService.saveUser(user);
 		return "redirect:/";
 	}
-	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String loginForm() {
-		return "user/login";
-	}
-	
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(String email,String password,HttpServletResponse response) {
-		return "user/login";
-	}
 }
