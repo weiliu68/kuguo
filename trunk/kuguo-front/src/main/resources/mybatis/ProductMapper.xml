@@ -42,7 +42,8 @@
 			product p,user u,product_comment c
 		where 
 			p.user_id = u.id and
-			p.comment_id = c.id
+			p.id = c.product_id
+		group by c.product_id
 		limit #{page},20
 	</select>
 	
@@ -80,5 +81,8 @@
 		values (
 			#{name}, #{picture}, #{order_link},#{brand}, #{price}, #{user.id}, #{channel}
 		)
+		<selectKey keyProperty="id" resultType="long">
+			select LAST_INSERT_ID()
+		</selectKey>
 	</insert>
 </mapper> 
