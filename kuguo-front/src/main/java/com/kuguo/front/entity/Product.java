@@ -2,15 +2,8 @@ package com.kuguo.front.entity;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
 import org.hibernate.validator.constraints.NotBlank;
 
-@Entity
-@Table(name = "product")
 public class Product extends IdEntity {
 	private String name;
 	private String channel;
@@ -105,8 +98,6 @@ public class Product extends IdEntity {
 		this.hots = hots;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "user_id")
 	public User getUser() {
 		return user;
 	}
