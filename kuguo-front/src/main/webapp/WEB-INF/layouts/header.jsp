@@ -21,7 +21,11 @@
                         <a href="${ctx}/discover/">
                             发现 
                         </a>
-                        
+                        <shiro:user>
+                        <a href="/u/<shiro:principal property="id"/>/likes/">
+                                我的果库
+                            </a>
+                        </shiro:user>
                     </div>
                     
                         <shiro:guest>
@@ -36,9 +40,26 @@
                             </div>
                          </shiro:guest>
                         <shiro:user>
-                        	你好, <shiro:principal property="name"/> <a href="${ctx}/logout">退出登录</a>
+                        	<div class="tools-holder">
+                            <div id="user-tools" class="" style="height: 21px;">
+                                <a href="/u/<shiro:principal property="id"/>/likes/">
+                                    <span>
+                                        <shiro:principal property="name"/>
+                                    </span>
+                                </a>
+                                <ul class="drop" style="display: none; width: 87px;">
+                                    
+                                    <li><a href="/setting/" target="_blank">设置</a></li>
+                                    <li><a href="/logout/">退出</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    	<div class="header-nav-right">
+                            <a href="/message/">
+                                消息
+                            </a>
+                        </div>
                         </shiro:user>
-                    
                 </div>
             </div>
             
