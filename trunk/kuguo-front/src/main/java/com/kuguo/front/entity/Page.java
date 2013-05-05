@@ -11,7 +11,7 @@ public class Page {
 		this.pagenum = pagenum;
 		this.totalrecords = totalrecords;
 
-		totalpage = (totalrecords % Constant.PAGE_NUMBER == 0) ? (totalrecords / Constant.PAGE_NUMBER)
-				: (totalrecords / Constant.PAGE_NUMBER + 1);
+		totalpage = (totalrecords % Constant.PAGE_NUMBER == 0) ? (totalrecords / Constant.PAGE_NUMBER) : (totalrecords
+				/ Constant.PAGE_NUMBER + 1);
 	}
 }

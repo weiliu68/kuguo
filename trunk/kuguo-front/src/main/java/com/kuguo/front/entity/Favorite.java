@@ -2,11 +2,6 @@ package com.kuguo.front.entity;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
 public class Favorite extends IdEntity {
 	private User user;
 	private Product product;
