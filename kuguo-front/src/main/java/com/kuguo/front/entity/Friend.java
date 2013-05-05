@@ -2,12 +2,6 @@ package com.kuguo.front.entity;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
 public class Friend extends IdEntity {
 	private User user;
 	private User friend;
@@ -20,7 +14,7 @@ public class Friend extends IdEntity {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
+
 	public User getFriend() {
 		return friend;
 	}

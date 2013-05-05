@@ -2,14 +2,6 @@ package com.kuguo.front.entity;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "label")
 public class Label extends IdEntity {
 	private String name;
 	private User create_user;
@@ -24,8 +16,6 @@ public class Label extends IdEntity {
 		this.name = name;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "create_user_id")
 	public User getCreate_user() {
 		return create_user;
 	}
@@ -34,8 +24,6 @@ public class Label extends IdEntity {
 		this.create_user = create_user;
 	}
 
-	@ManyToMany
-	@JoinColumn(name = "product_id")
 	public Product getProduct() {
 		return product;
 	}
@@ -51,5 +39,4 @@ public class Label extends IdEntity {
 	public void setCreate_time(Date create_time) {
 		this.create_time = create_time;
 	}
-
 }
