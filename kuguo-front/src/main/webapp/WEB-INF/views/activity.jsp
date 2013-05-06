@@ -141,19 +141,19 @@
 <c:forEach items="${users }" var="user">
     <div class="note">
         <div class="avatar">
-            <a href="/u/${user.id}/likes/" target=_blank >
+            <a href="${ctx }/u/${user.id}/likes/" target=_blank >
                 <img src="${user.head }" width="50" height="50" />
 
             </a>
         </div>
-        <a class="name c333" href="/u/${user.id}/likes/" target=_blank>
+        <a class="name c333" href="${ctx }/u/${user.id}/likes/" target=_blank>
             ${user.name}
         </a>
         <span class="desc l24">
         	${user.bio}
         </span>
         
-       	<a href="javascript:void(0);" thelink="/user/follow/${user.id }/0/" class="btn-v1 followBtn s0 w4">
+       	<a href="javascript:void(0);" thelink="${ctx }/user/follow/${user.id }/0/" class="btn-v1 followBtn s0 w4">
         	<span></span>
         	<em>关注</em>
     	</a>    	
@@ -182,7 +182,7 @@
                 <div class="clear"></div>
             </div>
         
-                     <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="${ctx}/static/jquery-validation/1.10.0/jquery.validate.min.js"></script>
         <script type="text/javascript" src="${ctx}/static/js/main.js"></script>
 

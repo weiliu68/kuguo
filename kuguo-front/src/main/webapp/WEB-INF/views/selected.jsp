@@ -32,7 +32,7 @@
             <div class="image">
                 <a href="${ctx }/detail/${product.id }/" target=_blank>
                     <div class="img-mask"></div>
-                    <img src="${product.picture }" alt="" title=""/>
+                    <img src="${product.picture }" alt="${product.name }" title="${product.name }"/>
                 </a>
             </div>
     

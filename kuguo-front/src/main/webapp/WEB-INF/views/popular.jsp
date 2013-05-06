@@ -3,7 +3,6 @@
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html style="overflow-x: hidden; overflow-y: scroll;" xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -52,61 +51,41 @@
     <div class="main-container with-border" id="main-container">
         <ul class="items-list">
             
-                
+    			<c:forEach items="${products}" var="product">
+
+						<li>
+							<div class="image">
+								<a href="${ctx }/detail/${product.id }/" target=_blank>
+									<div class="img-mask"></div> <img src="${product.picture}"
+									alt="${product.name }"
+									title="${product.name }" />
+								</a>
+							</div>
+							<div class="item-info">
+								<a href="${ctx }/u/${product.user.id }/likes/" target=_blank> <img
+									src="${product.user.head}" width="35" height="35" />
+
+								</a>
+								<a href="${ctx }/u/${product.user.id }/likes/" target=_blank> ${product.user.name}</a>
+								 <br />
+								 <label>&nbsp;2011 年 12 月 20 日</label>
+
+								<p class="with-tag"></p>
+								${product.comment.content}
+							</div>
+							<div class="like-row">
 
 
 
+								<div class="like need-login">
+									<span></span>喜爱&nbsp;<em>897</em>
+								</div>
 
-    <li>
-        <div class="image">
-            <a href="/detail/40a0cce4/" target=_blank >
-                <div class="img-mask"></div>
-                <img src="http://img04.taobaocdn.com/bao/uploaded/i4/10523022571794220/T1z2ivXCFfXXXXXXXX_!!0-item_pic.jpg_310x310.jpg" alt="PLUS 2013 年限量版修饰带" title="PLUS 2013 年限量版修饰带" />
-            </a>
-        </div>
-        <div class="item-info">
-            <a href="/u/105/likes/" target=_blank >
-                <img src="http://image.guoku.com/avatar/small_105_7d4321644b555a2a83374e964ec001e6.jpg" width="35" height="35" />
+							</div>
 
-            </a>
-            <a href="/u/105/likes/" target=_blank >
-                P 
-            </a>
-            <br />
-            
-                <label>&nbsp;昨天</label>
-            
-            <p class="with-tag">PLUS 2013 年限量版修饰带。修正带式的修饰带，拉动出花，可以用在笔记、贺卡、包装等场合，新颖别致。各种的款式的替芯都可以兼容使用，互相替换。</p>
-        </div>
-        <div class="like-row">
-            
+						</li>
 
-
-    <div class="like need-login">
-        <span></span>喜爱&nbsp;<em>1087</em>
-    </div>
-
-
-            
-                /
-                <div class="heat">
-                    24 小时热度 1084 
-                </div>
-            
-        </div>
-        
-            <div class="avatar-container">
-                
-                    <a href="/u/161917/likes/" target=_blank>
-                        <img src="http://image.guoku.com/avatar/default_small_2.png" width="25" height="25" />
-
-                    </a>
-      
-            </div>
-        
-    </li>
-
-      
+				</c:forEach>
         </ul>
     </div>
     <a id="back-to-top" href="#"></a>
