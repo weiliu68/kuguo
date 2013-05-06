@@ -52,29 +52,29 @@
             <div class="clear"></div>
         </div>
         <div class="link-bar">
-            <a class="link-v1 active" href="/u/${user.id }/likes/">
+            <a class="link-v1 active" href="${ctx }/u/${user.id }/likes/">
                 喜爱(1)
             </a>
             <span>·</span>
-            <a class="link-v1" href="/u/${user.id }/posts/">
+            <a class="link-v1" href="${ctx }/u/${user.id }/posts/">
                 添加(2)
             </a>
             <span>·</span>
-            <a class="link-v1" href="/u/${user.id }/notes/">
+            <a class="link-v1" href="${ctx }/u/${user.id }/notes/">
                 点评(3)
             </a>
             <span>·</span>
-            <a class="link-v1" href="/u/${user.id }/tags/">
+            <a class="link-v1" href="${ctx }/u/${user.id }/tags/">
                 标签(1)
             </a>
 
             <label class="right ml15">
-                <a href="/u/${user.id }/fans/">
+                <a href="${ctx }/u/${user.id }/fans/">
                     关注者 <b>2</b> 人
                 </a>
             </label>
             <label class="right">
-                <a href="/u/${user.id }/followings/">
+                <a href="${ctx }/u/${user.id }/followings/">
                     关注了 <b>1</b> 人
                 </a>
             </label>
@@ -99,7 +99,7 @@
 
     <li>
         <div class="image">
-            <a href="/detail/id/" target=_blank>
+            <a href="${ctx }/detail/id/" target=_blank>
                 <div class="img-mask"></div>
                 <img src="http://img04.taobaocdn.com/bao/uploaded/i4/17739022547088000/T1MwNOXytaXXXXXXXX_!!0-item_pic.jpg_200x200.jpg" alt="正品 瑞士SKROSS 双USB世界旅行电源插头充电器" title="正品 瑞士SKROSS 双USB世界旅行电源插头充电器"/>
             </a>
@@ -107,7 +107,7 @@
         
 
 
-    <div class="like  active" thelink="/entity/like/75549/1/">
+    <div class="like  active" thelink="${ctx }/entity/like/75549/1/">
         <span></span>喜爱&nbsp;<em>2158</em>
     </div>
 
@@ -133,7 +133,7 @@
 
     <li>
         <div class="image">
-            <a href="/detail//" target=_blank>
+            <a href="${ctx }/detail//" target=_blank>
                 <div class="img-mask"></div>
                 <img src="http://img02.taobaocdn.com/bao/uploaded/i2/12188022137478940/T1EBGhXw8iXXXXXXXX_!!0-item_pic.jpg_200x200.jpg" alt="Nike 耐克官方 AIR MAX RUN LITE 4 女子跑步鞋 554894" title="Nike 耐克官方 AIR MAX RUN LITE 4 女子跑步鞋 554894"/>
             </a>
