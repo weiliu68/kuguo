@@ -55,7 +55,7 @@
 
            </a>
         </div>
-        <a class="name c333" href="" target=_blank>
+        <a class="name c333" href="${ctx }/u/${product.user.id }/likes/" target=_blank>
            ${product.user.name}
         </a>
             <span class="desc">${product.user.bio}</span>
@@ -178,7 +178,7 @@
         
         <c:forEach items="${labels}" var="label">
             <p class="hottag">
-                <span>#</span><a class="c666" href="${ctx }/t/2674049e/" target=_blank>${label.name}</a>
+                <span>#</span><a class="c666" href="${ctx }/t/${label.id }/" target=_blank>${label.name}</a>
             </p>
         </c:forEach>
     </div>
@@ -190,7 +190,7 @@
 <c:forEach items="${users}" var="user">
     <div class="note">
         <div class="avatar">
-            <a href="${ctx }/u/${user.id}/likes/" target=_blank >
+            <a href="${ctx }/u/${user.id }/likes/" target=_blank >
                 <img src="${user.head }" width="50" height="50" />
 
             </a>
