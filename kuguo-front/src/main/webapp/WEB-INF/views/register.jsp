@@ -29,7 +29,7 @@
                 <div class="rlcontainer">
                     <div class="top">
                         <div class="big_logo">
-                            <a href="/selected/">
+                            <a href="${ctx }/selected/">
                                 <img src="${ctx}/static/images/guoku_icon_56.png"/>
                             </a>
                         </div>
