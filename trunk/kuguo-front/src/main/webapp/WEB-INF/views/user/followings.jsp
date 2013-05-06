@@ -14,7 +14,6 @@
     <link media="all" rel="stylesheet" type="text/css" href="${ctx }/static/styles/user.css" />
 
 
-        <link rel="icon" type="image/ico" href="${ctx }/static/images/favicon.ico">
 
         <script type="text/javascript">
         if (window.ActiveXObject) {
@@ -54,8 +53,37 @@
                 
                 
             </div>
-            
+            <div class="clear"></div>
+            </div>
+               <div class="link-bar">
+            <a class="link-v1 active" href="${ctx }/u/${user.id }/likes/">
+                喜爱(1)
+            </a>
+            <span>·</span>
+            <a class="link-v1" href="${ctx }/u/${user.id }/posts/">
+                添加(2)
+            </a>
+            <span>·</span>
+            <a class="link-v1" href="${ctx }/u/${user.id }/notes/">
+                点评(3)
+            </a>
+            <span>·</span>
+            <a class="link-v1" href="${ctx }/u/${user.id }/tags/">
+                标签(1)
+            </a>
 
+            <label class="right ml15">
+                <a href="${ctx }/u/${user.id }/fans/">
+                    关注者 <b>2</b> 人
+                </a>
+            </label>
+            <label class="right">
+                <a href="${ctx }/u/${user.id }/followings/">
+                    关注了 <b>1</b> 人
+                </a>
+            </label>
+        </div>
+</div>
         
             <div id="main">
   
@@ -100,6 +128,8 @@
             
            
         </div>
+          <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="${ctx}/static/js/main.js"></script>
         
     </body>
 </html>
