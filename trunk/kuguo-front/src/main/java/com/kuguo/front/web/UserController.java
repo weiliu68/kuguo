@@ -45,13 +45,43 @@ public class UserController {
 		return "redirect:/selected";
 	}
 	
-	@RequestMapping(value = "/u/{id}/likes/")
+	@RequestMapping(value = "/u/{id}/likes")
 	public String likes(@PathVariable("id") Long id,Model model) {
 		model.addAttribute("user", userService.getUser(id));
 		return "user/likes";
 	}
 	
-	@RequestMapping(value = "/message")
+	@RequestMapping(value = "/u/{id}/fans")
+	public String fans(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("user", userService.getUser(id));
+		return "user/fans";
+	}
+	
+	@RequestMapping(value = "/u/{id}/followings")
+	public String followings(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("user", userService.getUser(id));
+		return "user/followings";
+	}
+	
+	@RequestMapping(value = "/u/{id}/notes")
+	public String notes(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("user", userService.getUser(id));
+		return "user/notes";
+	}
+	
+	@RequestMapping(value = "/u/{id}/posts")
+	public String posts(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("user", userService.getUser(id));
+		return "user/posts";
+	}
+	
+	@RequestMapping(value = "/u/{id}/tags")
+	public String tags(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("user", userService.getUser(id));
+		return "user/tags";
+	}
+	
+	@RequestMapping(value = "user/message")
 	public String message(Model model) {
 		List<Label> labels = labelService.getLabel(5);
 		List<User> users = userService.getHotUsers(5);
