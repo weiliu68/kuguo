@@ -220,11 +220,11 @@
             
             <div class="aside">
                 <p class="into-time">
-                    <a href="/u/${product.user.id }/liked/" target=_blank>
+                    <a href="/u/${product.user.id }/likes/" target=_blank>
                         <img src="${product.user.head }" width="25" height="25" />
 
                     </a>
-                    <a href="/u/${product.user.id }/liked/" target=_blank>${product.user.name }</a>  添加于 ${product.comment.create_time}
+                    <a href="/u/${product.user.id }/likes/" target=_blank>${product.user.name }</a>  添加于 ${product.comment.create_time}
                 </p>
             </div>
             <div class="aside">

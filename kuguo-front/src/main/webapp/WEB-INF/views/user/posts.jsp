@@ -59,12 +59,12 @@
 
             <div class="clear"></div>
         </div>
-        <div class="link-bar">
-            <a class="link-v1" href="${ctx }/u/${user.id }/likes/">
-                喜爱(4)
+                  <div class="link-bar">
+            <a class="link-v1 active" href="${ctx }/u/${user.id }/likes/">
+                喜爱(1)
             </a>
             <span>·</span>
-            <a class="link-v1 active" href="${ctx }/u/${user.id }/posts/">
+            <a class="link-v1" href="${ctx }/u/${user.id }/posts/">
                 添加(2)
             </a>
             <span>·</span>
@@ -73,7 +73,7 @@
             </a>
             <span>·</span>
             <a class="link-v1" href="${ctx }/u/${user.id }/tags/">
-                标签(0)
+                标签(1)
             </a>
 
             <label class="right ml15">
@@ -87,6 +87,7 @@
                 </a>
             </label>
         </div>
+    </div>
     </div>
 
         
