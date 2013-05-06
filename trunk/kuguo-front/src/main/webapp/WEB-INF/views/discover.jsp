@@ -18,10 +18,10 @@
 
 		<div id="navigation" class="with-border">
 			<div class="main-category">
-				<a class="left all-category active" href="/discover/">所有</a> <em>|</em>
+				<a class="left all-category active" href="${ctx }/discover/">所有</a> <em>|</em>
 				<ul>
 					<c:forEach items="${channels}" var="channel">
-						<li> · <a href="/discover/?cat=${channel.id }">
+						<li> · <a href="${ctx }/discover/?cat=${channel.id }">
 								${channel.name } </a></li>
 					</c:forEach>
 				</ul>
@@ -35,23 +35,23 @@
 		<div id="main">
 
 			<div class="main-container with-border discover" id="main-container">
-				<c:forEach items="${products}" var="product">
 					<ul class="items-list">
+				<c:forEach items="${products}" var="product">
 
 						<li>
 							<div class="image">
-								<a href="/detail/9fc02dcd/" target=_blank>
+								<a href="${ctx }/detail/${product.id }/" target=_blank>
 									<div class="img-mask"></div> <img src="${product.picture}"
 									alt="${product.name }"
 									title="${product.name }" />
 								</a>
 							</div>
 							<div class="item-info">
-								<a href="/u/2534/likes/" target=_blank> <img
+								<a href="${ctx }/u/${product.user.id }/likes/" target=_blank> <img
 									src="${product.user.head}" width="35" height="35" />
 
 								</a>
-								<a href="/u/2534/likes/" target=_blank> ${product.user.name}</a>
+								<a href="${ctx }/u/${product.user.id }/likes/" target=_blank> ${product.user.name}</a>
 								 <br />
 								 <label>&nbsp;2011 年 12 月 20 日</label>
 
@@ -70,8 +70,8 @@
 
 						</li>
 
-					</ul>
 				</c:forEach>
+					</ul>
 				<!-- <div id="items-loading">加载中</div> -->
 			</div>
 
@@ -81,7 +81,6 @@
 		</div>
 
 	</div>
-
 
         <script type="text/javascript" src="${ctx}/static/js/main.js"></script>  
         <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>

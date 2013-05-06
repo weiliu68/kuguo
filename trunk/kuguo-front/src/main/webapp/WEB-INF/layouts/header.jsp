@@ -36,7 +36,7 @@
 				</div>
 			</div>
 			<div class="header-nav-right">
-				<a href="${ctx}/user/message/">消息</a>
+				<a href="${ctx}/user/message">消息</a>
 			</div>
 		</shiro:user>
 	</div>
