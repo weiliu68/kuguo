@@ -44,9 +44,12 @@
             <input type="hidden" name="taobao_id" value="${item.numIid }">
             <input type="hidden" name="category_id" value="128">
             <input type="hidden" name="brand" value="">
+            <input type="hidden" name="price" value="${item.price}">
+            <input type="hidden" name="order_link" value="${item.detailUrl}">
             <input type="hidden" name="name" value="${item.title }">
             <input type="hidden" name="picture" value="${item.picUrl }">
             <input type="hidden" name="taobaoke_info" value="">
+            
             <textarea name="comment.content" defaultValue="写点评  #加标签">写点评  #加标签</textarea>
             <div class="note-prompt">
                 <div class="arrow-fcfcfc"></div>
