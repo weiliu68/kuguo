@@ -30,13 +30,13 @@
 						<span><shiro:principal property="name" /></span>
 					</a>
 					<ul class="drop" style="display: none; width: 87px;">
-						<li><a href="${ctx}/setting/" target="_blank">设置</a></li>
+						<li><a href="${ctx}/user/setting/" target="_blank">设置</a></li>
 						<li><a href="${ctx}/logout/">退出</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="header-nav-right">
-				<a href="/message/">消息</a>
+				<a href="${ctx}/user/message/">消息</a>
 			</div>
 		</shiro:user>
 	</div>

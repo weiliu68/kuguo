@@ -42,8 +42,8 @@
 			product p,user u,product_comment c
 		where 
 			p.user_id = u.id and
-			p.id = c.product_id
-		group by c.product_id
+			p.comment_id = c.id
+		group by p.user_id
 		limit #{page},20
 	</select>
 	

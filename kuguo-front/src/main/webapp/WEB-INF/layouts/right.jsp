@@ -4,13 +4,13 @@
 <div id="popup-login" class="with-border">
 	<a class="close-btn" href="javascript:void(0);">关闭</a>
 	<div class="top">
-		<form action="/login/" id="popup-login-form" method="post" enable="true">
+		<form action="${ctx }/login/" id="popup-login-form" method="post" enable="true">
 			<div class="content">
 				<p>
 					<b>登录</b> | 没有帐号？ <a href="${ctx}/register" class="green">请注册</a>
 				</p>
 				<div class="row">
-					<label>邮箱</label> <input name="email" type="text" value="" />
+					<label>邮箱</label> <input name="username" type="text" value="" />
 				</div>
 				<div class="row">
 					<label>密码</label> <input name="password" type="password" value="" />

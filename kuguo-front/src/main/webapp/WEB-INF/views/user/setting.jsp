@@ -55,11 +55,11 @@
             
             <div class="row">
                 <label>昵称</label>
-                <input name="nickname" value="有劲没劲" original="有劲没劲" type="text">
+                <input name="nickname" value="${user.name }" original="${user.name }" type="text">
             </div>
             <div class="row">
                 <label>登录邮箱</label>
-                <input name="email" value="weiliu68@gmail.com" type="email" original="weiliu68@gmail.com">
+                <input name="email" value="${user.email }" type="email" original="${user.email }">
             </div>
             <div class="row-textarea">
                 <label>个人介绍</label>
