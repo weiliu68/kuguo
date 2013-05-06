@@ -22,7 +22,7 @@
 			<result property="create_time" column="comment_time"/>
 		</association>
 	</resultMap>
-
+	
 	<select id="getAll" parameterType="int" resultMap="product">
 		select 
 			p.id,
@@ -42,8 +42,9 @@
 			product p,user u,product_comment c
 		where 
 			p.user_id = u.id and
-			p.comment_id = c.id
-		group by p.user_id
+			p.id = c.product_id
+		group by c.product_id
+		order by p.create_time desc
 		limit #{page},20
 	</select>
 	
@@ -54,8 +55,8 @@
 	<select id="getPop" parameterType="int" resultMap="product">
 		select 
 			p.id,
-			p.hots,
 			p.name,
+			p.hots,
 			p.picture,
 			p.user_id,
 			u.name user_name,
@@ -70,7 +71,9 @@
 			product p,user u,product_comment c
 		where 
 			p.user_id = u.id and
-			p.comment_id = c.id
+			p.id = c.product_id
+		group by c.product_id
+		order by p.hots desc
 		limit 30
 	</select>
 	
