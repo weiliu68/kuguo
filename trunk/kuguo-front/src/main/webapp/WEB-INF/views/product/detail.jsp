@@ -74,7 +74,7 @@
 
            </a>
         </div>
-        <a class="name c333" href="/u/132404/likes/" target=_blank>
+        <a class="name c333" href="/u/${product.user.id }/likes/" target=_blank>
             ${product.user.name }
         </a>
         
@@ -151,7 +151,7 @@
                     <a href="${ctx }/register" class="btn-v2 w4">现在注册</a>
                     <span class="right">
                         已有帐号，
-                        <a href="${ctz }/login" class="green">从这里登录</a>
+                        <a href="${ctx }/login" class="green">从这里登录</a>
                     </span> 
                 </div>  
             </div>

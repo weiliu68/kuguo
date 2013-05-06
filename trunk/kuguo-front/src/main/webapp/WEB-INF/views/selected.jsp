@@ -24,13 +24,13 @@
     <div class="entity with-border">
         <div class="entity-attrs">
             <h3>
-                    <a href="/detail/${product.id }/" target=_blank>
+                    <a href="${ctx }/detail/${product.id }/" target=_blank>
                         ${product.name }
                     </a>
             </h3>
     
             <div class="image">
-                <a href="/detail/${product.id }/" target=_blank>
+                <a href="${ctx }/detail/${product.id }/" target=_blank>
                     <div class="img-mask"></div>
                     <img src="${product.picture }" alt="" title=""/>
                 </a>
@@ -50,7 +50,7 @@
             
     <div class="note">
         <div class="avatar">
-            <a href="/u/${product.user.id }/likes/" target=_blank>
+            <a href="${ctx }/u/${product.user.id }/likes/" target=_blank>
                <img src="${product.user.head}" width="50" height="50" />
 
            </a>
@@ -69,14 +69,14 @@
 
             <span class="splite-icon left"></span>
             
-                <div class="disapprove-btn left need-login" thelink="/entity/note/poke/147604/">
+                <div class="disapprove-btn left need-login" thelink="${ctx }/entity/note/poke/147604/">
                     <span></span><em></em>
                 </div>
             
             
             <span class="splite-icon left"></span>
             
-                <div class="comment-btn left  need-login" thelink="/entity/note/poke/147604/">
+                <div class="comment-btn left  need-login" thelink="${ctx }/entity/note/poke/147604/">
                     <span></span><em></em>
                 </div>
             
@@ -98,7 +98,7 @@
             </div>
             <shiro:user>
                 <div class="new-comment">
-                    <form action="/entity/note/comment/create/" class="new-comment-form" method="POST" onsubmit="return false;">
+                    <form action="${ctx }/entity/note/comment/create/" class="new-comment-form" method="POST" onsubmit="return false;">
                         <input name="entity_note_id" type="hidden" value="147684" /> 
                         <input name="comment" type="text" class="content" value="写下你的评论…" defaultValue="写下你的评论…" autocomplete="off" />
                         <input type="submit" class="btn-v1 disable right" value="评论" />
@@ -139,7 +139,7 @@
             <a href="${ctx}/selected" class="paging-btn">下一页</a>
         
         
-            <a href="" class="paging-btn invalid">上一页</a>
+            <a href="${ctx }" class="paging-btn invalid">上一页</a>
         
         
     </div>
@@ -156,14 +156,14 @@
         
         <div class="siderbar with-border">
             <div class="aside">
-                    <a  class="all-cate active " href="/selected/">
+                    <a  class="all-cate active " href="${ctx }/selected/">
                         所有
                     </a>
                 <ul>
                     <c:forEach items="${channels}" var="channel">
                     
                         <li>·
-                            <a class="link-v1" href="/selected/?c=${channel.id}">
+                            <a class="link-v1" href="${ctx }/selected/?c=${channel.id}">
                                 ${channel.name}
                             </a>
                         </li>
@@ -178,7 +178,7 @@
         
         <c:forEach items="${labels}" var="label">
             <p class="hottag">
-                <span>#</span><a class="c666" href="/t/2674049e/" target=_blank>${label.name}</a>
+                <span>#</span><a class="c666" href="${ctx }/t/2674049e/" target=_blank>${label.name}</a>
             </p>
         </c:forEach>
     </div>
@@ -190,12 +190,12 @@
 <c:forEach items="${users}" var="user">
     <div class="note">
         <div class="avatar">
-            <a href="/u/${user.id}/likes/" target=_blank >
+            <a href="${ctx }/u/${user.id}/likes/" target=_blank >
                 <img src="${user.head }" width="50" height="50" />
 
             </a>
         </div>
-        <a class="name c333" href="/u/${user.id}/likes/" target=_blank>
+        <a class="name c333" href="${ctx }/u/${user.id}/likes/" target=_blank>
             ${user.name}
         </a>
         <span class="desc l24">
@@ -203,7 +203,7 @@
         </span>
         
         <shiro:user>
-       	<a href="javascript:void(0);" thelink="/user/follow/${user.id }/0/" class="btn-v1 followBtn s0 w4">
+       	<a href="javascript:void(0);" thelink="${ctx }/user/follow/${user.id }/0/" class="btn-v1 followBtn s0 w4">
         	<span></span>
         	<em>关注</em>
     	</a>    	

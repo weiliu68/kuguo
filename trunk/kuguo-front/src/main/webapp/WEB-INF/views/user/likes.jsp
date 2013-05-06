@@ -99,7 +99,7 @@
 
     <li>
         <div class="image">
-            <a href="/detail//" target=_blank>
+            <a href="/detail/id/" target=_blank>
                 <div class="img-mask"></div>
                 <img src="http://img04.taobaocdn.com/bao/uploaded/i4/17739022547088000/T1MwNOXytaXXXXXXXX_!!0-item_pic.jpg_200x200.jpg" alt="正品 瑞士SKROSS 双USB世界旅行电源插头充电器" title="正品 瑞士SKROSS 双USB世界旅行电源插头充电器"/>
             </a>

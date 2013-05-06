@@ -32,7 +32,7 @@ public class UserController {
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String createForm(Model model) {
-		return "user/register";
+		return "register";
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -48,7 +48,7 @@ public class UserController {
 	@RequestMapping(value = "/u/{id}/likes/")
 	public String likes(@PathVariable("id") Long id,Model model) {
 		model.addAttribute("user", userService.getUser(id));
-		return "likes";
+		return "user/likes";
 	}
 	
 	@RequestMapping(value = "/message")
@@ -57,7 +57,7 @@ public class UserController {
 		List<User> users = userService.getHotUsers(5);
 		model.addAttribute("labels", labels);
 		model.addAttribute("users", users);
-		return "message";
+		return "user/message";
 	}
 
 	@ResponseBody
