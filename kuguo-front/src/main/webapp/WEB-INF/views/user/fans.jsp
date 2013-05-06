@@ -10,10 +10,10 @@
     
         <title>${user.name } 的果库</title>
 
-    <link media="all" rel="stylesheet" type="text/css" href="http://static.guoku.com/static/css/343529a82201d2afd88a7957d3cf484f/user.css" />
+    <link media="all" rel="stylesheet" type="text/css" href="${ctx }/static/styles/user.css" />
 
 
-        <link rel="icon" type="image/ico" href="http://static.guoku.com/static/images/favicon.ico">
+        <link rel="icon" type="image/ico" href="${ctx }/static/images/favicon.ico">
 
         <script type="text/javascript">
         if (window.ActiveXObject) {
