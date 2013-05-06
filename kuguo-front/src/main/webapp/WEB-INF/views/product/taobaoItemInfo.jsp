@@ -40,14 +40,14 @@
         <a class="name c333" href=""><shiro:principal property="name"/></a>
         <span class="desc"><shiro:principal property="bio"/></span>
 
-        <form action="/entity/new/" id="add-form" method="post">
+        <form action="${ctx}/entity/new/" id="add-form" method="post">
             <input type="hidden" name="taobao_id" value="${item.numIid }">
             <input type="hidden" name="category_id" value="128">
             <input type="hidden" name="brand" value="">
-            <input type="hidden" name="title" value="${item.title }">
-            <input type="hidden" name="image_url" value="${item.picUrl }">
+            <input type="hidden" name="name" value="${item.title }">
+            <input type="hidden" name="picture" value="${item.picUrl }">
             <input type="hidden" name="taobaoke_info" value="">
-            <textarea name="note" defaultValue="写点评  #加标签">写点评  #加标签</textarea>
+            <textarea name="comment.content" defaultValue="写点评  #加标签">写点评  #加标签</textarea>
             <div class="note-prompt">
                 <div class="arrow-fcfcfc"></div>
                 来说说你的评价吧？欢迎真实、有用、有趣的商品点评。
@@ -60,6 +60,6 @@
     </div>
 </div>
 </c:if>
-<<c:if test="${item==null }">
+<c:if test="${item==null}">
 <div>获取商品失败</div>
 </c:if>
