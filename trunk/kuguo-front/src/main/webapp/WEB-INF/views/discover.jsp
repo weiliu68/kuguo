@@ -53,7 +53,7 @@
 								</a>
 								<a href="${ctx }/u/${product.user.id }/likes/" target=_blank> ${product.user.name}</a>
 								 <br />
-								 <label>&nbsp;2011 年 12 月 20 日</label>
+								 <label>&nbsp;${product.comment.create_time }</label>
 
 								<p class="with-tag"></p>
 								${product.comment.content}
@@ -63,7 +63,7 @@
 
 
 								<div class="like need-login">
-									<span></span>喜爱&nbsp;<em>897</em>
+									<span></span>喜爱&nbsp;<em>${product.favorite_num }</em>
 								</div>
 
 							</div>

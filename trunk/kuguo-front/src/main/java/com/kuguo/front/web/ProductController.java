@@ -17,6 +17,7 @@ import com.kuguo.front.entity.Label;
 import com.kuguo.front.entity.Product;
 import com.kuguo.front.entity.User;
 import com.kuguo.front.service.ChannelService;
+import com.kuguo.front.service.CommentService;
 import com.kuguo.front.service.LabelService;
 import com.kuguo.front.service.ProductService;
 import com.kuguo.front.service.UserService;
@@ -36,6 +37,9 @@ public class ProductController {
 
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private CommentService commentService;
 	
 
 	@RequestMapping(value = "/selected")
@@ -81,7 +85,9 @@ public class ProductController {
 	@RequestMapping(value = "/detail/{id}/", method = RequestMethod.GET)
 	public String updateForm(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("product", productService.getProduct(id));
-		model.addAttribute("action", "update");
+		//要传一个参数，获取到所有的评论
+		model.addAttribute("comment", commentService.getComment(id));
+		
 		return "product/detail";
 	}
 }

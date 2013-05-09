@@ -80,7 +80,7 @@
         
             <span class="desc">${product.user.bio }</span>
         
-        <p class="with-tag">${product.comment.content }</p>
+        <p class="with-tag">${comment.content}</p>
         <div class="link-row">
             
                 <div class="approve-btn left need-login">
@@ -104,7 +104,7 @@
  
             
             <div class="note-time right">
-                ${product.comment.create_time} 
+                ${comment.create_time} 
             </div>
             
             <a class="right note-weibo-share" href="javascript:void(0);">分享</a>
@@ -209,8 +209,8 @@
                 <h3>${product.favorite_num } 人喜爱</h3>
                 <div class="small-avatar-container">
                     
-                        <a href="${ctx }/u/${product.user.id }/liked/" target="_blank">
-                            <img src="http://image.guoku.com/avatar/small_120032_e0ed76d7c5a01899884c717adb67019d.jpg" width="25" height="25" />
+                        <a href="${ctx }/u/${user.id}/liked/" target="_blank">
+                            <img src="" width="25" height="25" />
 
                         </a>
                     
@@ -224,7 +224,7 @@
                         <img src="${product.user.head }" width="25" height="25" />
 
                     </a>
-                    <a href="${ctx }/u/${product.user.id }/likes/" target=_blank>${product.user.name }</a>  添加于 ${product.comment.create_time}
+                    <a href="${ctx }/u/${product.user.id }/likes/" target=_blank>${product.user.name }</a>  添加于 ${product.create_time}
                 </p>
             </div>
             <div class="aside">
