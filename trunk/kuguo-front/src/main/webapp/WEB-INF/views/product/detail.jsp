@@ -48,7 +48,7 @@
 
 
     <div class="like need-login">
-        <span></span>喜爱&nbsp;<em>93</em>
+        <span></span>喜爱&nbsp;<em>${product.favorite_num }</em>
     </div>
 
 
@@ -69,12 +69,12 @@
 
     <div class="note">
         <div class="avatar">
-            <a href="/u/${product.user.id }/likes/" target=_blank>
+            <a href="${ctx }/u/${product.user.id }/likes/" target=_blank>
                <img src="${product.user.head}" width="50" height="50" />
 
            </a>
         </div>
-        <a class="name c333" href="/u/${product.user.id }/likes/" target=_blank>
+        <a class="name c333" href="${ctx }/u/${product.user.id }/likes/" target=_blank>
             ${product.user.name }
         </a>
         
@@ -118,7 +118,7 @@
             </div>
             <shiro:user>
                 <div class="new-comment">
-                    <form action="/entity/note/comment/create/" class="new-comment-form" method="post" onsubmit="return false;">
+                    <form action="${ctx }/entity/note/comment/create/" class="new-comment-form" method="post" onsubmit="return false;">
                         <input name="entity_note_id" type="hidden" value="147684" /> 
                         <input name="comment" type="text" class="content" value="写下你的评论…" defaultValue="写下你的评论…" autocomplete="off" />
                         <input type="submit" class="btn-v1 disable right" value="评论" />
@@ -160,23 +160,23 @@
    <shiro:user>
  <div class="note new-note with-border">
     <div class="avatar">
-        <a href="/u/163105/">
+        <a href="${ctx }/u/<shiro:principal property="id"></shiro:principal>/">
             <img src="http://image.guoku.com/avatar/default_small_4.png" width="50" height="50" />
 
         </a>
     </div>
-    <a class="name c333" href="/u/163105/">Jerryliu</a>
+    <a class="name c333" href="${ctx }/u/<shiro:principal property="id"></shiro:principal>/"><shiro:principal property="name"></shiro:principal></a>
     
-        <span class="desc">。。。</span>
+        <span class="desc"><shiro:principal property="bio"></shiro:principal></span>
     
     
-    <form action="/entity/note/create/" method="post" id="new-note-form">
-        <textarea name="note" class="tag-ac" defaultValue="写点评  #贴标签">写点评  #贴标签</textarea>
+    <form action="${ctx }/entity/note/create/" method="post" id="new-note-form">
+        <textarea name="content" class="tag-ac" defaultValue="写点评  #贴标签">写点评  #贴标签</textarea>
         <div class="note-prompt">
             <div class="arrow-fcfcfc"></div>
             说说你的评价？欢迎真实、有用、有趣的商品点评。
         </div> 
-        <input type="hidden" name="entity_id" value="82339" />
+        <input type="hidden" name="productId" value="${product.id }" />
         <input class="btn-v2 right" type="submit" value="点评" />
     </form>
     
@@ -206,10 +206,10 @@
                         详情 <span>￥${product.price}</span>
                     </a>
                 
-                <h3>93 人喜爱</h3>
+                <h3>${product.favorite_num } 人喜爱</h3>
                 <div class="small-avatar-container">
                     
-                        <a href="/u/120032/liked/" target="_blank">
+                        <a href="${ctx }/u/${product.user.id }/liked/" target="_blank">
                             <img src="http://image.guoku.com/avatar/small_120032_e0ed76d7c5a01899884c717adb67019d.jpg" width="25" height="25" />
 
                         </a>
@@ -220,11 +220,11 @@
             
             <div class="aside">
                 <p class="into-time">
-                    <a href="/u/${product.user.id }/likes/" target=_blank>
+                    <a href="${ctx }/u/${product.user.id }/likes/" target=_blank>
                         <img src="${product.user.head }" width="25" height="25" />
 
                     </a>
-                    <a href="/u/${product.user.id }/likes/" target=_blank>${product.user.name }</a>  添加于 ${product.comment.create_time}
+                    <a href="${ctx }/u/${product.user.id }/likes/" target=_blank>${product.user.name }</a>  添加于 ${product.comment.create_time}
                 </p>
             </div>
             <div class="aside">
@@ -251,7 +251,7 @@
         </div>
                 <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="${ctx}/static/jquery-validation/1.10.0/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="${ctx}/static/js/main.js"></script>
+        <%-- <script type="text/javascript" src="${ctx}/static/js/main.js"></script> --%>
     </body>
 </html>
     
