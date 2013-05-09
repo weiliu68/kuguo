@@ -28,7 +28,7 @@
 	</select>
 		
 	<select id="get" parameterType="int" resultType="User">
-		select * from User where id = #{id}
+		select * from user where id = #{id}
 	</select>
 	
 	<insert id="save" parameterType="User" useGeneratedKeys="true" keyProperty="id">
