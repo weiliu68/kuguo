@@ -139,7 +139,7 @@
             <a href="${ctx}/selected" class="paging-btn">下一页</a>
         
         
-            <a href="${ctx }" class="paging-btn invalid">上一页</a>
+            <a href="${ctx}" class="paging-btn invalid">上一页</a>
         
         
     </div>
@@ -190,8 +190,8 @@
 <c:forEach items="${users}" var="user">
     <div class="note">
         <div class="avatar">
-            <a href="${ctx }/u/${user.id }/likes/" target=_blank >
-                <img src="${user.head }" width="50" height="50" />
+            <a href="${ctx }/u/${user.id}/likes/" target=_blank >
+                <img src="${user.head}" width="50" height="50" />
 
             </a>
         </div>
@@ -203,7 +203,7 @@
         </span>
         
         <shiro:user>
-       	<a href="javascript:void(0);" thelink="${ctx }/user/follow/${user.id }/0/" class="btn-v1 followBtn s0 w4">
+       	<a href="javascript:void(0);" thelink="${ctx}/user/follow/${user.id }/0/" class="btn-v1 followBtn s0 w4">
         	<span></span>
         	<em>关注</em>
     	</a>    	
