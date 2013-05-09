@@ -9,10 +9,15 @@
 		<result column="id" property="id"/>
 		<result column="picture" property="picture"/>
 		<result column="hots" property="hots"/>
+		<result column="favorite_num" property="favorite_num"/>
+		<result column="create_time" property="create_time"/>
+		<result column="price" property="price"/>
+		<result column="order_link" property="order_link"/>
 		<association property="user" column="user_id" javaType="User">
 			<id property="id" column="user_id"/>
 			<result property="name" column="user_name"/>
 			<result property="head" column="user_head"/>
+			<result property="bio" column="user_bio"/>
 		</association>
 		<association property="comment" column="comment_id" javaType="Comment">
 			<id property="id" column="comment_id"/>
@@ -48,8 +53,25 @@
 		limit #{page},20
 	</select>
 	
-	<select id="get" parameterType="int" resultType="Product">
-		select * from product where id = #{id}
+	<select id="get" parameterType="int" resultMap="product">
+		select
+		 	p.id,
+			p.name,
+			p.hots,
+			p.picture,
+			p.user_id,
+			p.favorite_num,
+			p.order_link,
+			p.price,
+			p.create_time,
+			u.name user_name,
+			u.head user_head,
+			u.bio user_bio
+		from
+			product p,user u
+		where
+			p.user_id = u.id and
+			p.id = #{id}
 	</select>
 	
 	<select id="getPop" parameterType="int" resultMap="product">
