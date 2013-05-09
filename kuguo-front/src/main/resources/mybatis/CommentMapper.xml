@@ -6,4 +6,8 @@
 		insert into product_comment(content,user_id,product_id)
 		values(#{content},#{user.id},#{productId})
 	</insert>
+	
+	<select id="getComment" parameterType="int" resultType="Comment">
+		select * from product_comment c where c.product_id = #{id} 
+	</select>
 </mapper>
