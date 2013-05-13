@@ -20,7 +20,7 @@
         </h1>
 
 
-	<c:forEach items="${products }" var="product">
+	<c:forEach items="${products}" var="product">
     <div class="entity with-border">
         <div class="entity-attrs">
             <h3>
@@ -135,11 +135,11 @@
     </div>
     </c:forEach>
 
+			
+            <a href="${ctx}/selected/?page=" class="paging-btn">下一页</a>
         
-            <a href="${ctx}/selected" class="paging-btn">下一页</a>
         
-        
-            <a href="${ctx}" class="paging-btn invalid">上一页</a>
+            <a href="${ctx}/selected/?page=0" class="paging-btn invalid">上一页</a>
         
         
     </div>
@@ -230,5 +230,9 @@
 
                 <div class="clear"></div>
             </div>
+            
+                <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="${ctx}/static/jquery-validation/1.10.0/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="${ctx}/static/js/main.js"></script>
 </body>
 </html>
