@@ -31,6 +31,10 @@
 		select * from user where id = #{id}
 	</select>
 	
+	<select id="getUser" parameterType="int" resultType="User">
+		select * from user
+	</select>
+	
 	<insert id="save" parameterType="User" useGeneratedKeys="true" keyProperty="id">
 		insert into user (
 			name, password, email,head,address,gender,website,bio,salt

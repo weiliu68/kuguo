@@ -19,6 +19,7 @@
 			<result property="head" column="user_head"/>
 			<result property="bio" column="user_bio"/>
 		</association>
+		
 		<association property="comment" column="comment_id" javaType="Comment">
 			<id property="id" column="comment_id"/>
 			<result property="content" column="comment_content"/>
@@ -79,11 +80,10 @@
 			p.id,
 			p.name,
 			p.hots,
-			p.picture,
 			p.user_id,
+			p.picture,
 			u.name user_name,
 			u.head user_head,
-			u.bio user_bio,
 			c.id comment_id,
 			c.content comment_content,
 			c.poke comment_poke,

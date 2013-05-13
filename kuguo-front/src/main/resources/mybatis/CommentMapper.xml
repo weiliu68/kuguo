@@ -10,4 +10,8 @@
 	<select id="getComment" parameterType="int" resultType="Comment">
 		select * from product_comment c where c.product_id = #{id} 
 	</select>
+	
+	<select id="getAllComment" parameterType="String" resultType="Comment">
+		select * from product_comment
+	</select>
 </mapper>
