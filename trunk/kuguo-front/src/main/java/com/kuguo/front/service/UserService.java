@@ -69,4 +69,8 @@ public class UserService {
 		return userDao.getUserByEmail(email);
 	}
 
+	public List<User> getAllUser() {
+		return userDao.getUser();
+	}
+	
 }
