@@ -1,5 +1,7 @@
 package com.kuguo.front.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,5 +22,9 @@ public class CommentService {
 	@Transactional(readOnly = false)
 	public void saveComment(Comment comment) {
 		commentDao.save(comment);
+	}
+	
+	public List<Comment> getAllComment() {
+		return commentDao.getAllComment();
 	}
 }
