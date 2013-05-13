@@ -38,6 +38,8 @@
 		<jdbc.driver.groupId>mysql</jdbc.driver.groupId>
 		<jdbc.driver.artifactId>mysql-connector-java</jdbc.driver.artifactId>
 		<jdbc.driver.version>5.1.21</jdbc.driver.version>
+		
+		<war.name>ROOT</war.name>
 	</properties>
 	
 	<repositories>
@@ -413,7 +415,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.3</version>
 				<configuration>
-					<warName>${project.artifactId}</warName>
+					<warName>${war.name}</warName>
 				</configuration>
 			</plugin>
 
