@@ -97,12 +97,12 @@ public class UserController {
 		return "true";	
 	}
 
-	@RequestMapping(value = "/setting", method = RequestMethod.GET)
+	@RequestMapping(value = "user/setting", method = RequestMethod.GET)
 	public String updateFrom(Model model) {
 		return "user/setting";
 	}
 
-	@RequestMapping(value = "/setting", method = RequestMethod.POST)
+	@RequestMapping(value = "user/setting", method = RequestMethod.POST)
 	public String update(@Valid User user, RedirectAttributes redirectAttributes) {
 		userService.saveUser(user);
 		return "redirect:/selected";
