@@ -68,17 +68,14 @@
 								</a>
 								<a href="${ctx }/u/${product.user.id }/likes/" target=_blank> ${product.user.name}</a>
 								 <br />
-								 <label>&nbsp;2011 年 12 月 20 日</label>
+								 <label>&nbsp;${product.create_time}</label>
 
 								<p class="with-tag"></p>
 								${product.comment.content}
 							</div>
 							<div class="like-row">
-
-
-
-								<div class="like need-login">
-									<span></span>喜爱&nbsp;<em>897</em>
+							<div class="like need-login">
+									<span></span>喜爱&nbsp;<em>${product.favorite_num}</em>
 								</div>
 
 							</div>
@@ -89,7 +86,6 @@
         </ul>
     </div>
     <a id="back-to-top" href="#"></a>
-
                 <div class="clear"></div>
             </div>
         
@@ -122,7 +118,7 @@
             
 
         </div>
-        
+        <script type="text/javascript" src="${ctx}/static/jquery-validation/1.10.0/jquery.validate.min.js"></script>
         <script type="text/javascript" src="${ctx}/static/js/main.js"></script>  
         <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
     </body>

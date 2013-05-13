@@ -33,7 +33,7 @@
         <fieldset>
             <div class="user-item">
                 <div class="avatar with-border">
-                    <img src="http://image.guoku.com/avatar/large_69567_8d159ceb664499ee4d63503dcd808cee.jpg" />
+                    <img src="${user.head }" />
                 </div>
 
                 <span class="img-upload">
@@ -55,11 +55,11 @@
             
             <div class="row">
                 <label>昵称</label>
-                <input name="nickname" value="${user.name }" original="${user.name }" type="text">
+                <input name="name" value="${user.name }" original="${user.name }" type="text">
             </div>
             <div class="row">
                 <label>登录邮箱</label>
-                <input name="email" value="${user.email }" type="email" original="${user.email }">
+                <input name="username" value="${user.email }" type="email" original="${user.email }">
             </div>
             <div class="row-textarea">
                 <label>个人介绍</label>

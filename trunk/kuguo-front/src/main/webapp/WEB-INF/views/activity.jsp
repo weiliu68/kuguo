@@ -47,21 +47,21 @@
 
     <div class="activity user-info">
         <div class="avatar">
-            <a href="/u/69567/likes/" target=_blank >
-                <img src="http://image.guoku.com/avatar/small_69567_b6a015dbd91b22c31717939a0ab6f325.jpg" width="35" height="35" />
+            <a href="/u/${user.id }/likes/" target=_blank >
+                <img src="${user.head }" />
 
             </a>
         </div>
-        <a href="/u/69567/likes/" class="name" target=_blank >
-            有劲没劲
+        <a href="/u/${user.id }/likes/" class="name" target=_blank >
+            ${user.name }
         </a>
         <span class="desc">推荐了 1 件商品</span>
         
         <div class="content add-container">
             <div class="image">
-                <a href="/detail/ad02e35f/" target=_blank>
+                <a href="/detail/${product.id }/" target=_blank>
                     <div class="img-mask"></div>
-                    <img src="http://img04.taobaocdn.com/bao/uploaded/i4/15895022110029029/T1OXOkXqJeXXXXXXXX_!!0-item_pic.jpg_310x310.jpg" />
+                    <img src="${product.head }" />
                 </a>
             </div>
             
