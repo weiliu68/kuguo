@@ -59,4 +59,8 @@ public class ProductService {
 	public void setTaobaoDao(TaobaoDao taobaoDao) {
 		this.taobaoDao = taobaoDao;
 	}
+
+	public Product getUserProduct(Long id) {
+		return productDao.getUP(id);
+	}
 }

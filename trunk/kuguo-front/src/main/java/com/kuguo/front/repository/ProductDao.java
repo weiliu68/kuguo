@@ -13,4 +13,6 @@ public interface ProductDao {
 	void save(Product product);
 
 	List<Product> getPop();
+
+	Product getUP(Long id);
 }

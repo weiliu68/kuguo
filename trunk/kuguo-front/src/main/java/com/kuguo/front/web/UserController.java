@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.kuguo.front.entity.Label;
 import com.kuguo.front.entity.User;
 import com.kuguo.front.service.LabelService;
+import com.kuguo.front.service.ProductService;
 import com.kuguo.front.service.UserService;
 
 @Controller
@@ -29,6 +30,9 @@ public class UserController {
 	
 	@Autowired
 	private LabelService labelService;
+	
+	@Autowired
+	private ProductService productService;
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String createForm(Model model) {
@@ -72,6 +76,7 @@ public class UserController {
 	@RequestMapping(value = "/u/{id}/posts")
 	public String posts(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("user", userService.getUser(id));
+		model.addAttribute("product", productService.getUserProduct(id));
 		return "user/posts";
 	}
 	
