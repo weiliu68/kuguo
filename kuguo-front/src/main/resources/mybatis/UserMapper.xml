@@ -30,7 +30,7 @@
 	<select id="get" parameterType="int" resultType="User">
 		select * from user where id = #{id}
 	</select>
-	
+		
 	<select id="getUser" parameterType="int" resultType="User">
 		select * from user
 	</select>

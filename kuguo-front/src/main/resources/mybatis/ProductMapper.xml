@@ -75,6 +75,15 @@
 			p.id = #{id}
 	</select>
 	
+	<select id="getUP" parameterType="int" resultMap="product">
+		select
+			*
+		from
+			product p
+		where
+			p.user_id = #{id}
+	</select>
+	
 	<select id="getPop" parameterType="int" resultMap="product">
 		select 
 			p.id,
