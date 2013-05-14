@@ -7,8 +7,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>欢迎加入</title>
-        <link rel="icon" type="image/png" href="${ctx}/static/images/logo.jpg">
         <link media="all" rel="stylesheet" type="text/css" href="${ctx}/static/styles/register.css" />
+        <link rel="icon" type="image/png" href="${ctx}/static/images/logo.jpg">
 
         <script type="text/javascript">
         if (window.ActiveXObject) {
@@ -30,7 +30,7 @@
                     <div class="top">
                         <div class="big_logo">
                             <a href="${ctx }/selected/">
-                                <img src="${ctx}/static/images/guoku_icon_56.png"/>
+                                <img src="${ctx}/static/images/logo.jpg"/>
                             </a>
                         </div>
                         
@@ -53,7 +53,7 @@
                                     <label>密码（至少 6 位数字或字母）</label>
                                     密码:<input name="plainPassword" type="password" value=""/><br />
                                 </div>
-                                <input type="checkbox" checked />
+                                <input type="checkbox" />
                                 <span>同意<a href="/agreement/">《使用协议》</a></span>
                                 <input type="submit" value="注册" class="btn-v2 ml80" />
                             </div>

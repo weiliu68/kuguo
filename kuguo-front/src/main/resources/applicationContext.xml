@@ -27,7 +27,7 @@
 		<!-- 显式指定Mapper文件位置 -->
 		<property name="mapperLocations" value="classpath:/mybatis/*Mapper.xml" />
 	</bean>
-	<!-- 扫描basePackage下所有以@MyBatisRepository标识的 接口-->
+	<!-- 扫描basePackage下所有以@MyBatisRepository标识的 DAO接口-->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.kuguo.front" />
 		<property name="annotationClass" value="com.kuguo.front.repository.MyBatisRepository"/>

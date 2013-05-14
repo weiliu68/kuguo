@@ -53,29 +53,29 @@
         </div>
         <div class="link-bar">
             <a class="link-v1 active" href="${ctx }/u/${user.id }/likes/">
-                喜爱(1)
+                喜爱()
             </a>
             <span>·</span>
             <a class="link-v1" href="${ctx }/u/${user.id }/posts/">
-                添加(2)
+                添加()
             </a>
             <span>·</span>
             <a class="link-v1" href="${ctx }/u/${user.id }/notes/">
-                点评(3)
+                点评()
             </a>
             <span>·</span>
             <a class="link-v1" href="${ctx }/u/${user.id }/tags/">
-                标签(1)
+                标签()
             </a>
 
             <label class="right ml15">
                 <a href="${ctx }/u/${user.id }/fans/">
-                    关注者 <b>2</b> 人
+                    关注者 <b></b> 人
                 </a>
             </label>
             <label class="right">
                 <a href="${ctx }/u/${user.id }/followings/">
-                    关注了 <b>1</b> 人
+                    关注了 <b></b> 人
                 </a>
             </label>
         </div>
