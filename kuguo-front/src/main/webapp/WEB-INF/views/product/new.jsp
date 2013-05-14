@@ -24,16 +24,16 @@
 		<div class="main-right" id="main-right">
 			<div class="siderbar with-border">
 				<div class="aside">
-					<h3>果库全是好商品</h3>
+					<h3>全是好商品</h3>
 					<p class="c999">如果，一件商品，</p>
 					<p class="c999">你愿意让家人使用或与朋友分享，也许这就应该是件不错的东西。</p>
 				</div>
 				<div class="aside">
 					<h3>创建人信息</h3>
-					<p class="c999">作为第一个把商品推荐到果库的人，你将被永久记录在商品页。</p>
+					<p class="c999">作为第一个把商品推荐到的人，你将被永久记录在商品页。</p>
 				</div>
 				<div class="aside mobile-download">
-					<h3>下载果库客户端</h3>
+					<h3>下载客户端</h3>
 					<p>
 						<a href="http://itunes.apple.com/cn/app/id477652209?mt=8"
 							target="_blank" bi="download_iphone">iPhone</a> / <a
