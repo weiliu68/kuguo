@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>欢迎加入果库</title>
-        <link rel="icon" type="image/png" href="${ctx}/static/images/guoku_favicon.png">
+        <link rel="icon" type="image/png" href="${ctx}/static/images/logo.jpg">
         <link media="all" rel="stylesheet" type="text/css" href="${ctx}/static/styles/register.css" />
 
         <script type="text/javascript">
