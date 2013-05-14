@@ -7,7 +7,7 @@
 <html style="overflow-x: hidden; overflow-y: scroll;" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         
-     <title>热门 - 果库</title>
+     <title>热门 - </title>
 
         
     <link media="all" rel="stylesheet" type="text/css" href="${ctx }/static/styles/discover.css" />

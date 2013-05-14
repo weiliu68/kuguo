@@ -9,7 +9,7 @@
 <html>
 <head>
 
-<title>所有 - 果库</title>
+<title>所有</title>
 <link media="all" rel="stylesheet" type="text/css" href="${ctx }/static/styles/discover.css" />
 </head>
 

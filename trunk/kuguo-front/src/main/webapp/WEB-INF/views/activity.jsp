@@ -8,7 +8,7 @@
 <html style="overflow-x: hidden; overflow-y: scroll;" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         
-    <title>动态 - 果库</title>
+    <title>动态</title>
 	        
     <link media="all" rel="stylesheet" type="text/css" href="${ctx }/static/styles/activity.css" />
 
@@ -167,7 +167,7 @@
 
 
             <div class="aside mobile-download">
-    <h3>下载果库客户端</h3>
+    <h3>下载客户端</h3>
     <p>
         <a href="http://itunes.apple.com/cn/app/id477652209?mt=8" target="_blank" bi="download_iphone">iPhone</a> /
         <a href="http://itunes.apple.com/cn/app/id450507565?mt=8" target="_blank" bi="download_ipad">iPad</a> /
