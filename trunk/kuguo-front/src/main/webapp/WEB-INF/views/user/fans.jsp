@@ -60,7 +60,7 @@
             <div class="clear"></div>
         </div>
                <div class="link-bar">
-            <a class="link-v1 active" href="${ctx }/u/${user.id }/likes/">
+            <a class="link-v1" href="${ctx }/u/${user.id }/likes/">
                 喜爱(1)
             </a>
             <span>·</span>

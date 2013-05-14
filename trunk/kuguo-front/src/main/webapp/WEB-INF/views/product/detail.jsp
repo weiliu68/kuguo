@@ -233,7 +233,7 @@
  <div class="note new-note with-border">
     <div class="avatar">
         <a href="${ctx }/u/<shiro:principal property="id"></shiro:principal>/">
-            <img src="http://image.guoku.com/avatar/default_small_4.png" width="50" height="50" />
+            <img src="<shiro:principal property="head"></shiro:principal>" width="50" height="50" />
 
         </a>
     </div>
@@ -281,7 +281,7 @@
                 <h3>${product.favorite_num } 人喜爱</h3>
                 <div class="small-avatar-container">
                     
-                        <a href="${ctx }/u/${user.id}/liked/" target="_blank">
+                        <a href="${ctx }/u/${user.id}/likes/" target="_blank">
                             <img src="" width="25" height="25" />
 
                         </a>
