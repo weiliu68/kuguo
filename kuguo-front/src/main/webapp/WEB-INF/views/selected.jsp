@@ -136,7 +136,7 @@
     </c:forEach>
 
 			
-            <a href="${ctx}/selected/?page=" class="paging-btn">下一页</a>
+            <a href="${ctx}/selected/?page=1" class="paging-btn">下一页</a>
         
         
             <a href="${ctx}/selected/?page=0" class="paging-btn invalid">上一页</a>

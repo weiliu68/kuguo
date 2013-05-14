@@ -6,7 +6,7 @@
 <div id="header">
 	<div class="header-holder">
 		<div class="logo">
-			<a href="${ctx }/selected/"><img src="${ctx}/static/images/guoku_icon_32.png" alt="Logo" height="32"></a>
+			<a href="${ctx }/selected/"><img src="${ctx}/static/images/logo.jpg" alt="Logo" height="32"></a>
 		</div>
 		<div class="header-nav">
 			<a class="active" href="${ctx}/selected"> 精选 </a>
@@ -14,7 +14,7 @@
 			<a href="${ctx}/popular/"> 热门 </a>
 			<a href="${ctx}/discover/"> 发现 </a>
 			<shiro:user>
-				<a href="${ctx }/u/<shiro:principal property="id"/>/likes">我的果库</a>
+				<a href="${ctx }/u/<shiro:principal property="id"/>/likes">我的分享</a>
 			</shiro:user>
 		</div>
 
