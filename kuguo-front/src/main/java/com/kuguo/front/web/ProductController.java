@@ -1,8 +1,9 @@
 package com.kuguo.front.web;
 
+import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -56,7 +57,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value = "/popular")
-	public String poplist(Model model, ServletRequest request) {
+	public String poplist(Model model, HttpServletResponse response) {
 		List<Product> products = productService.getPopProducts();
 		model.addAttribute("products", products);
 		model.addAttribute("comment", commentService.getAllComment());
