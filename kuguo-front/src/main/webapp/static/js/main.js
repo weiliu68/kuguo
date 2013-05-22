@@ -279,6 +279,7 @@ function initLayout() {
 		$("#main-left .no-data").css("min-height", height - 22)
 	}
 }
+
 function initInput() {
 	$("input[type='text'], textarea").live("focus", function() {
 		this.style.color = "#666666";
@@ -295,6 +296,7 @@ function initInput() {
 				}
 			})
 }
+
 function initLocation() {
 	var GP = [ "安徽", "澳门", "北京", "福建", "甘肃", "广东", "广西", "贵州", "海南", "河北",
 			"河南", "黑龙江", "湖北", "湖南", "吉林", "江苏", "江西", "辽宁", "内蒙古", "宁夏", "青海",
@@ -412,6 +414,7 @@ function initLocation() {
 		})
 	})
 }
+
 function initBackToTop() {
 	if (!$("#back-to-top").get(0)) {
 		return false
@@ -502,6 +505,7 @@ function initLikeAction() {
 				}
 			})
 }
+
 function initNewEntityForm() {
 	$("#new-entity-url").focus(function() {
 		this.select()
