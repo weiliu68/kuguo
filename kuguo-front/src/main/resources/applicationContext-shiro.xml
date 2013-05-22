@@ -30,7 +30,7 @@
 				/register/** = anon
 				/entity/new/ = user
 				/entity/taobao/info = user
-				/activity = user
+				/activity/ = user
 				/** = anon
 			</value>
 		</property>
