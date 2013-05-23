@@ -36,6 +36,7 @@
 			p.hots,
 			p.picture,
 			p.user_id,
+			p.favorite_num,
 			u.name user_name,
 			u.head user_head,
 			u.bio user_bio,
