@@ -13,9 +13,6 @@
         
     <link media="all" rel="stylesheet" type="text/css" href="${ctx }/static/styles/user.css" />
 
-
-        <link rel="icon" type="image/ico" href="${ctx }/static/images/favicon.ico">
-
         <script type="text/javascript">
         if (window.ActiveXObject) {
             var ua = navigator.userAgent.toLowerCase();
@@ -49,7 +46,6 @@
             <div class="other-info">
                 
                     <span class="location">
-                        
                         ${user.address }
                     </span>
                 

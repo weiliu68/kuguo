@@ -9,7 +9,7 @@
 			<a href="${ctx }/selected/"><img src="${ctx}/static/images/logo.jpg" alt="Logo" height="32"></a>
 		</div>
 		<div class="header-nav">
-			<a class="active" href="${ctx}/selected"> 精选 </a>
+			<a href="${ctx}/selected"> 精选 </a>
 			<a href="${ctx}/activity/"> 动态 </a>
 			<a href="${ctx}/popular/"> 热门 </a>
 			<a href="${ctx}/discover/"> 发现 </a>

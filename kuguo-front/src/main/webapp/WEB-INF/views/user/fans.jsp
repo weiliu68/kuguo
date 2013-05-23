@@ -4,16 +4,13 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html style="overflow-x: hidden; overflow-y: scroll;" xmlns="http://www.w3.org/1999/xhtml">
+<html>
     <head>
         
     
-        <title>${user.name } 的果库</title>
+        <title>${user.name }</title>
 
     <link media="all" rel="stylesheet" type="text/css" href="${ctx }/static/styles/user.css" />
-
-
-        <link rel="icon" type="image/ico" href="${ctx }/static/images/favicon.ico">
 
         <script type="text/javascript">
         if (window.ActiveXObject) {
