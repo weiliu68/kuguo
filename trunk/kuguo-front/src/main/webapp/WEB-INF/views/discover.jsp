@@ -59,7 +59,6 @@
 								${product.comment.content}
 							</div>
 							<div class="like-row">
-<!-- /home/q/tools/bin/restart_tomcat.sh kuguo -->
 
 
 								<div class="like need-login">

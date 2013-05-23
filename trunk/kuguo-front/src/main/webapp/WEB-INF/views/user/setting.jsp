@@ -6,7 +6,7 @@
 <html style="overflow-x: hidden; overflow-y: scroll;" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         
-    <title>设置 - 果库</title>
+    <title>设置</title>
 
     <link media="all" rel="stylesheet" type="text/css" href="${ctx}/static/styles/setting.css" />
   <link rel="icon" type="image/ico" href="${ctx}/static/images/favicon.ico">

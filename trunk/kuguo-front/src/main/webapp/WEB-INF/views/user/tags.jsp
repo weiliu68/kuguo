@@ -8,7 +8,7 @@
     <head>
         
     
-        <title>${user.name } 的果库</title>
+        <title>${user.name }</title>
   
         
         
@@ -59,7 +59,7 @@
             <div class="clear"></div>
         </div>
                     <div class="link-bar">
-            <a class="link-v1 active" href="${ctx }/u/${user.id }/likes/">
+            <a class="link-v1" href="${ctx }/u/${user.id }/likes/">
                 喜爱(1)
             </a>
             <span>·</span>
@@ -71,7 +71,7 @@
                 点评(3)
             </a>
             <span>·</span>
-            <a class="link-v1" href="${ctx }/u/${user.id }/tags/">
+            <a class="link-v1 active" href="${ctx }/u/${user.id }/tags/">
                 标签(1)
             </a>
 

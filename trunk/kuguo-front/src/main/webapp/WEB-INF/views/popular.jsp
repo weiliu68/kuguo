@@ -4,16 +4,13 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html style="overflow-x: hidden; overflow-y: scroll;" xmlns="http://www.w3.org/1999/xhtml">
+<html>
     <head>
         
      <title>热门 - </title>
 
         
     <link media="all" rel="stylesheet" type="text/css" href="${ctx }/static/styles/discover.css" />
-
-
-        <link rel="icon" type="image/ico" href="${ctx }/static/images/favicon.ico">
 
         <script type="text/javascript">
         if (window.ActiveXObject) {
@@ -40,7 +37,7 @@
                 <a class="nav-popular" href="/popular/?group=monthly">30 天</a>
 
                 <div class="nav-desc-right">
-                    最近更新：4 分钟前
+                    最近更新： 分钟前
                 </div>
             </div>
         </div>

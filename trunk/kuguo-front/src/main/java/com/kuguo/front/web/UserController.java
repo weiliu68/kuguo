@@ -42,7 +42,7 @@ public class UserController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String create(@Valid User newUser,HttpServletResponse response,
 			RedirectAttributes redirectAttributes) {
-		//1. 保存用户入库、注意密码处理
+		//1. 保存用户入库、密码用salt处理
 		userService.saveUser(newUser);
 		// 2.登录
 		

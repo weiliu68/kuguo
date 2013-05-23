@@ -20,6 +20,8 @@
 	}
 </script>
 <sitemesh:head/>
+
+
 </head>
 <body>
 	<div id="wrapper">
@@ -30,5 +32,6 @@
 		<%@ include file="/WEB-INF/layouts/footer.jsp"%>
 		<%@ include file="/WEB-INF/layouts/right.jsp"%>
 	</div>
+
 </body>
 </html>

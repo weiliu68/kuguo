@@ -1,6 +1,5 @@
 package com.kuguo.front.web;
 
-import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -61,7 +60,6 @@ public class ProductController {
 		List<Product> products = productService.getPopProducts();
 		model.addAttribute("products", products);
 		model.addAttribute("comment", commentService.getAllComment());
-		
 		return "popular";
 	}
 
