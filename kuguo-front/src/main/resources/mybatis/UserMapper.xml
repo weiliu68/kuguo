@@ -61,7 +61,7 @@
 		select * from User where email = #{email}
 	</select>
 	
-	<select id="getLikedProducts" parameterType="int" resultType="Product">
+		<select id="getLikedProducts" parameterType="int" resultType="Product">
 		select
 			p.id,
 			p.favorite_num,
@@ -76,5 +76,5 @@
 			l.create_time
 		desc
 	</select>
-	
+		
 </mapper>

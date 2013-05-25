@@ -68,4 +68,8 @@ public class ProductService {
 	public List<User> getLikedUsers(Long id) {
 		return productDao.getLikedUsers(id);
 	}
+
+	public List<Product> getCommentProducts(Long id) {
+		return productDao.getCommentProducts(id);
+	}
 }

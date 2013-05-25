@@ -86,7 +86,6 @@ public class ProductController {
 	public String updateForm(@PathVariable("id") Long id, Model model) {
 		//1. 商品信息(带第一条评论)
 		model.addAttribute("product", productService.getProduct(id));
-		
 		//2. 评论列表
 		model.addAttribute("comments", commentService.getComments(id));
 		
