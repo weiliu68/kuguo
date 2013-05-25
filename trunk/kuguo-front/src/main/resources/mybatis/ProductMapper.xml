@@ -139,6 +139,21 @@
 		</selectKey>
 	</insert>
 	
+	<select id="getCommentProducts" parameterType="int" resultType="Product">
+		select
+			p.id,
+			p.name,
+			p.favorite_num,
+			p.picture,
+			c.content 'comment.content',
+			c.create_time 'comment.create_time'
+		from
+			product_comment c,product p
+		where
+			c.product_id = p.id and
+			c.user_id = #{id}
+	</select>
+	
 <!-- <insert id="saveLikedUsers" parameterType="" >
 		insert into product_like (
 			user_id,product_id

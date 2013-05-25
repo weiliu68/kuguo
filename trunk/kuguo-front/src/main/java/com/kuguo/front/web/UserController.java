@@ -53,7 +53,6 @@ public class UserController {
 	@RequestMapping(value = "/u/{id}/likes")
 	public String likes(@PathVariable("id") Long id,Model model) {
 		model.addAttribute("user", userService.getUser(id));
-		
 		model.addAttribute("products", userService.getLikedProducts(id));
 		return "user/likes";
 	}
@@ -76,7 +75,7 @@ public class UserController {
 	public String notes(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("user", userService.getUser(id));
 		//点评过的商品
-		
+		model.addAttribute("products", productService.getCommentProducts(id));
 		return "user/notes";
 	}
 	

@@ -18,4 +18,6 @@ public interface ProductDao {
 	List<Product> getUP(Long id);
 
 	List<User> getLikedUsers(Long id);
+
+	List<Product> getCommentProducts(Long id);
 }
