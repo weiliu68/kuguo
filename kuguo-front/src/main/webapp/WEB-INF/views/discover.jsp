@@ -62,7 +62,7 @@
 
 
 								<div class="like need-login">
-									<span></span>喜爱&nbsp;<em>${product.favorite_num }</em>
+									<span></span>喜爱&nbsp;<em>${product.favorite_num}</em>
 								</div>
 
 							</div>

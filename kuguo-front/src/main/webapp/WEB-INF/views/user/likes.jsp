@@ -7,7 +7,7 @@
     <head>
         
     
-        <title>我的果库</title>
+        <title>我的分享</title>
 
         <script type="text/javascript">
         if (window.ActiveXObject) {
@@ -86,76 +86,31 @@
                 
        
         <div class="main-container with-border">
-            <h2>
-                
-                    2013 年 5 月
-                
-            </h2>
+           
             <ul class="items">
-                
-                    
-
-
-
+	<c:forEach items="${products }" var="product">
     <li>
         <div class="image">
-            <a href="${ctx }/detail/id/" target=_blank>
+            <a href="${ctx }/detail/${product.id }/" target=_blank>
                 <div class="img-mask"></div>
-                <img src="http://img04.taobaocdn.com/bao/uploaded/i4/17739022547088000/T1MwNOXytaXXXXXXXX_!!0-item_pic.jpg_200x200.jpg" alt="正品 瑞士SKROSS 双USB世界旅行电源插头充电器" title="正品 瑞士SKROSS 双USB世界旅行电源插头充电器"/>
+                <img src="${product.picture }" title="${product.name }"/>
             </a>
         </div>
         
 
 
-    <div class="like  active" thelink="${ctx }/entity/like/75549/1/">
-        <span></span>喜爱&nbsp;<em>2158</em>
+    <div class="like  active" >
+        <span></span>喜爱&nbsp;<em>${product.favorite_num }</em>
     </div>
 
-
     </li>
-              
+       </c:forEach>       
             </ul>
             
     
         </div>
     
-        <div class="main-container with-border">
-            <h2>
-                
-                    2013 年 4 月
-                
-            </h2>
-            <ul class="items">
-                
-                    
-
-
-
-    <li>
-        <div class="image">
-            <a href="${ctx }/detail//" target=_blank>
-                <div class="img-mask"></div>
-                <img src="http://img02.taobaocdn.com/bao/uploaded/i2/12188022137478940/T1EBGhXw8iXXXXXXXX_!!0-item_pic.jpg_200x200.jpg" alt="Nike 耐克官方 AIR MAX RUN LITE 4 女子跑步鞋 554894" title="Nike 耐克官方 AIR MAX RUN LITE 4 女子跑步鞋 554894"/>
-            </a>
-        </div>
-        
-
-
-    <div class="like  active" thelink="/entity/like/81314/1/">
-        <span></span>喜爱&nbsp;<em>1</em>
-    </div>
-
-
-    </li>
-
-
-                
-            </ul>
-            
-    
-        </div>
-    
-    
+  
     <a id="back-to-top" href="#"></a>
 
                 <div class="clear"></div>

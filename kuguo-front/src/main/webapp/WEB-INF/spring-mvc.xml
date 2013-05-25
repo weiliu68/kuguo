@@ -24,6 +24,5 @@
 	</bean>
 	
 	<!-- 定义无Controller的path<->view直接映射 -->
-	<mvc:view-controller path="/" view-name="redirect:/user"/>
 	<mvc:view-controller path="/" view-name="redirect:/selected"/>
 </beans>

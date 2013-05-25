@@ -60,4 +60,21 @@
 	<select id="getUserByEmail" parameterType="string" resultType="User">
 		select * from User where email = #{email}
 	</select>
+	
+	<select id="getLikedProducts" parameterType="int" resultType="Product">
+		select
+			p.id,
+			p.favorite_num,
+			p.picture,
+			p.name
+		from
+			product_like l,product p 
+		where
+			l.product_id = p.id and
+			l.user_id = #{id}
+		order by
+			l.create_time
+		desc
+	</select>
+	
 </mapper>

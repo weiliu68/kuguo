@@ -3,14 +3,11 @@
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html style="overflow-x: hidden; overflow-y: scroll;" xmlns="http://www.w3.org/1999/xhtml">
+<html>
     <head>
     <title>${product.name}</title>
         
     <link media="all" rel="stylesheet" type="text/css" href="${ctx}/static/styles/detail.css" />
-
-
-        <link rel="icon" type="image/ico" href="${ctx}/static/images/favicon.ico">
 
         <script type="text/javascript">
         if (window.ActiveXObject) {
@@ -31,7 +28,6 @@
     <div class="main-left" id="main-left">
         <h1>
             ${product.name}
-            <!-- <a href="#"><span>报告问题</span></a> -->
         </h1>
         <div class="with-border upper">
             <div class="entity">
@@ -41,39 +37,35 @@
                         <img src="${product.picture }" />
                     </a>
                 </div>
-
                 
                     <div class="row">
-                        
-
 
     <div class="like need-login">
         <span></span>喜爱&nbsp;<em>${product.favorite_num }</em>
     </div>
 
 
-                    </div>
+            </div>
                 
             </div>
             
 
 
-
 <div class="notes">
     <div id="display-area">
-        
+        <c:forEach items="${comments }" var="comment">
      <div class="note">
         <div class="avatar">
-            <a href="${ctx }/u/${product.user.id }/likes/" target=_blank>
-               <img src="${product.user.head}" width="50" height="50" />
+            <a href="${ctx }/u/${comment.user.id }/likes/" target=_blank>
+               <img src="${comment.user.head}" width="50" height="50" />
 
            </a>
         </div>
-        <a class="name c333" href="${ctx }/u/${product.user.id }/likes/" target=_blank>
-            ${product.user.name }
+        <a class="name c333" href="${ctx }/u/${comment.user.id }/likes/" target=_blank>
+            ${comment.user.name }
         </a>
         
-            <span class="desc">${product.user.bio }</span>
+            <span class="desc">${comment.user.bio }</span>
         
         <p class="with-tag">${comment.content}</p>
         <div class="link-row">
@@ -125,94 +117,14 @@
             
         </div>
     </div>
-
-<!-- 显示多条评论时,需要做判断 -->
-  <div class="note">
-        <div class="avatar">
-            <a href="/u/163105/likes/" target=_blank>
-               <img src="http://image.guoku.com/avatar/default_small_4.png" width="50" height="50" />
-
-           </a>
-        </div>
-        <a class="name c333" href="/u/163105/likes/" target=_blank>
-            username
-        </a>
-        
-            <span class="desc">bio</span>
-        
-        <p class="with-tag">${product.comment.content }</p>
-        <div class="link-row">
-            
-                
-                    <div class="approve-btn left" thelink="/entity/note/poke/149163/">
-                        <span></span><em></em>
-                    </div>
-                
-            
-
-            <span class="splite-icon left"></span>
-            
-                
-                    <div class="disapprove-btn left" thelink="/entity/note/hoot/149163/">
-                        <span></span><em></em>
-                    </div>
-                
-            
-            
-            <span class="splite-icon left"></span>
-            
-                <div class="comment-btn left ">
-                    <span></span><em></em>
-                </div>
-            
- 
-            
-            <div class="note-time right">
-                4 秒前 
-            </div>
-            
-            
-            
-                <span class="splite-icon left"></span>
-                <a class="modify-btn left" href="javascript:void(0);" thelink="/entity/note/update/149163/ " >修改</a>
-                <div class="yours right">你的点评</div>
-            
-
-            
-
-
-            <a class="right note-weibo-share" href="javascript:void(0);">分享</a>
-
-            <div class="clear"></div>
-        </div>
-        <div class="comments">
-            <div class="arrow-grey"></div>
-            <div class="container">
-                
-            </div>
-            
-                <div class="new-comment">
-                    <form action="/entity/note/comment/create/" class="new-comment-form" method="post" onsubmit="return false;">
-                        <input name="entity_note_id" type="hidden" value="149163" /> 
-                        <input name="comment" type="text" class="content" value="写下你的评论…" defaultValue="写下你的评论…" autocomplete="off" />
-                        <input type="submit" class="btn-v1 disable right" value="评论" />
-                        <a href="javascript:void(0);" class="right new-comment-cancel">取消</a>
-                    </form>
-                    <div class="clear"></div>
-                </div>
-            
-        </div>
-    </div>
-
+</c:forEach>
         
     </div>
 
     
-</div>
-
-        </div>
-
 <!-- 这里要判断用户是否登录 -->
+ </div>
+</div>
 
         <div id="new">
 <shiro:guest>
@@ -280,13 +192,11 @@
                 
                 <h3>${product.favorite_num } 人喜爱</h3>
                 <div class="small-avatar-container">
-                    
+                    <c:forEach items="${likedUsers}" var="user">
                         <a href="${ctx }/u/${user.id}/likes/" target="_blank">
-                            <img src="" width="25" height="25" />
-
+                            <img src="${user.head}" width="25" height="25" />
                         </a>
-                    
-                       
+                    </c:forEach>
                 </div>
             </div>
             
@@ -316,12 +226,10 @@
     </div>
 </div>
 
-
-
                 <div class="clear"></div>
             </div>
         </div>
-                <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
+       	<script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="${ctx}/static/jquery-validation/1.10.0/jquery.validate.min.js"></script>
         <%-- <script type="text/javascript" src="${ctx}/static/js/main.js"></script> --%>
     </body>

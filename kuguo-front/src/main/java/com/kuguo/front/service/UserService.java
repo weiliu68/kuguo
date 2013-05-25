@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.kuguo.front.entity.Product;
 import com.kuguo.front.entity.User;
 import com.kuguo.front.repository.UserDao;
 import com.kuguo.front.utils.Digests;
@@ -71,6 +72,10 @@ public class UserService {
 
 	public List<User> getAllUser() {
 		return userDao.getUser();
+	}
+
+	public List<Product> getLikedProducts(Long id) {
+		return userDao.getLikedProducts(id);
 	}
 	
 }

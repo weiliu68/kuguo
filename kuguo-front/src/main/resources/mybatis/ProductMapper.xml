@@ -93,7 +93,10 @@
 	
 	<select id="getUP" parameterType="int" resultMap="product">
 		select
-			*
+			p.id,
+			p.order_link,
+			p.picture,
+			p.favorite_num
 		from
 			product p
 		where
@@ -135,4 +138,13 @@
 			select LAST_INSERT_ID()
 		</selectKey>
 	</insert>
+	
+<!-- <insert id="saveLikedUsers" parameterType="" >
+		insert into product_like (
+			user_id,product_id
+		) values (
+			#{user.id},#{product.id}
+		)
+	</insert>
+	 -->
 </mapper> 

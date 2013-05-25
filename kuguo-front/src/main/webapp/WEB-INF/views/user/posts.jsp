@@ -4,7 +4,7 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html style="overflow-x: hidden; overflow-y: scroll;" xmlns="http://www.w3.org/1999/xhtml">
+<html>
     <head>
         
     
@@ -87,28 +87,25 @@
     </div>
         
      
-        <div class="main-container with-border">
    <div id="main">
+        <div class="main-container with-border">
  
 <ul class="items">        
-            
+     <c:forEach items="${products}" var="product">   
     <li>
         <div class="image">
             <a href="${ctx }/detail/${product.id}/" target=_blank>
                 <div class="img-mask"></div>
-                <img src="${product.picture }" title="${product.name}"/>
+                <img src="${product.picture }" alt="${product.name }" title="${product.name}"/>
             </a>
         </div>
-        
-
-
-    <div class="like need-login">
+ 
+    <div class="like">
         <span></span>喜爱&nbsp;<em>${product.favorite_num}</em>
     </div>
 
-
     </li>
-                
+      </c:forEach>           
   </ul>
             
         </div>
@@ -119,7 +116,7 @@
             </div>
             
         
-                <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="${ctx}/static/js/main.js"></script>
     </body>
 </html>
