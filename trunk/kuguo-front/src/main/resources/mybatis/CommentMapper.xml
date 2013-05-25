@@ -25,8 +25,9 @@
 			c.product_id = #{id}
 		order by
 			c.create_time
-		
 	</select>
-	<!-- 不会排序 -->
+	
+	
+	
 
 </mapper>

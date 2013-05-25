@@ -40,7 +40,7 @@
 
 
     <div class="like need-login">
-        <span></span>喜爱&nbsp;<em>${product.favorite_num }</em>
+        <span></span>喜爱&nbsp;<em>${product.favorite_num}</em>
     </div>
 
 
@@ -98,7 +98,7 @@
             </div>
             <shiro:user>
                 <div class="new-comment">
-                    <form action="${ctx }/entity/note/comment/create/" class="new-comment-form" method="POST" onsubmit="return false;">
+                    <form action="${ctx}/entity/note/comment/create/" class="new-comment-form" method="POST" onsubmit="return false;">
                         <input name="entity_note_id" type="hidden" value="147684" /> 
                         <input name="comment" type="text" class="content" value="写下你的评论…" defaultValue="写下你的评论…" autocomplete="off" />
                         <input type="submit" class="btn-v1 disable right" value="评论" />
@@ -139,7 +139,7 @@
             <a href="${ctx}/selected/?page=1" class="paging-btn">下一页</a>
         
         
-            <a href="${ctx}/selected/?page=0" class="paging-btn invalid">上一页</a>
+            <a href="${ctx}/selected/?page=0" class="paging-btn">上一页</a>
         
         
     </div>
@@ -156,7 +156,7 @@
         
         <div class="siderbar with-border">
             <div class="aside">
-                    <a  class="all-cate active " href="${ctx }/selected/">
+                    <a  class="all-cate active " href="${ctx}/selected/">
                         所有
                     </a>
                 <ul>

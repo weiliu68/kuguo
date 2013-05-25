@@ -2,6 +2,7 @@ package com.kuguo.front.repository;
 
 import java.util.List;
 
+import com.kuguo.front.entity.Product;
 import com.kuguo.front.entity.User;
 
 @MyBatisRepository
@@ -17,4 +18,6 @@ public interface UserDao {
 	User getUserByEmail(String email);
 
 	List<User> getUser();
+
+	List<Product> getLikedProducts(Long id);
 }
