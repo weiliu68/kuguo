@@ -49,18 +49,21 @@ public class UserController {
 		return "redirect:/selected";
 	}
 	
+	//喜爱的商品
 	@RequestMapping(value = "/u/{id}/likes")
 	public String likes(@PathVariable("id") Long id,Model model) {
 		model.addAttribute("user", userService.getUser(id));
 		return "user/likes";
 	}
 	
+	//被谁关注
 	@RequestMapping(value = "/u/{id}/fans")
 	public String fans(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("user", userService.getUser(id));
 		return "user/fans";
 	}
 	
+	//关注的人
 	@RequestMapping(value = "/u/{id}/followings")
 	public String followings(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("user", userService.getUser(id));
@@ -70,22 +73,27 @@ public class UserController {
 	@RequestMapping(value = "/u/{id}/notes")
 	public String notes(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("user", userService.getUser(id));
+		//点评过的商品
+		
 		return "user/notes";
 	}
 	
+	//添加的商品，ok
 	@RequestMapping(value = "/u/{id}/posts")
 	public String posts(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("user", userService.getUser(id));
-		model.addAttribute("product", productService.getUserProduct(id));
+		model.addAttribute("products", productService.getUserProducts(id));
 		return "user/posts";
 	}
 	
+	//添加的标签
 	@RequestMapping(value = "/u/{id}/tags")
 	public String tags(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("user", userService.getUser(id));
 		return "user/tags";
 	}
 	
+	//用户消息
 	@RequestMapping(value = "user/message")
 	public String message(Model model) {
 		List<Label> labels = labelService.getLabel(5);
