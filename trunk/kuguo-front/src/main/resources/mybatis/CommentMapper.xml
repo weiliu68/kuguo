@@ -7,11 +7,26 @@
 		values(#{content},#{user.id},#{productId})
 	</insert>
 	
-	<select id="getComment" parameterType="int" resultType="Comment">
-		select * from product_comment c where c.product_id = #{id} 
+	<select id="getComments" parameterType="int" resultType="Comment">
+		select
+			c.id,
+			c.content,
+			c.poke,
+			c.hoot,
+			c.create_time,
+			u.id `user.id`,
+			u.head `user.head`,
+			u.bio 'user.bio',
+			u.name 'user.name'
+		from		
+			product_comment c,user u
+		where
+			c.user_id = u.id and
+			c.product_id = #{id}
+		order by
+			c.create_time
+		
 	</select>
-	
-	<select id="getAllComment" parameterType="String" resultType="Comment">
-		select * from product_comment
-	</select>
+	<!-- 不会排序 -->
+
 </mapper>

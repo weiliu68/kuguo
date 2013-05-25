@@ -76,6 +76,21 @@
 			p.id = #{id}
 	</select>
 	
+	<select id="getLikedUsers" parameterType="int" resultType="User">
+		select
+			u.id,
+			u.head
+		from
+			user u,product_like p
+		where
+			p.user_id = u.id and
+			p.product_id = #{id}
+		order by
+			p.create_time
+		desc
+		limit 24
+	</select>
+	
 	<select id="getUP" parameterType="int" resultMap="product">
 		select
 			*
