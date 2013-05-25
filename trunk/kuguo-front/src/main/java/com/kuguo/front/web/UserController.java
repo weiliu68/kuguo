@@ -49,7 +49,7 @@ public class UserController {
 		return "redirect:/selected";
 	}
 	
-	//显示喜爱的商品
+	//显示喜爱的商品 ok
 	@RequestMapping(value = "/u/{id}/likes")
 	public String likes(@PathVariable("id") Long id,Model model) {
 		model.addAttribute("user", userService.getUser(id));
@@ -74,7 +74,7 @@ public class UserController {
 	@RequestMapping(value = "/u/{id}/notes")
 	public String notes(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("user", userService.getUser(id));
-		//点评过的商品
+		//点评过的商品ok
 		model.addAttribute("products", productService.getCommentProducts(id));
 		return "user/notes";
 	}
