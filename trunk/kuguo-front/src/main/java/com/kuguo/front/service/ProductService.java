@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.kuguo.front.entity.Comment;
 import com.kuguo.front.entity.Product;
+import com.kuguo.front.entity.User;
 import com.kuguo.front.repository.CommentDao;
 import com.kuguo.front.repository.ProductDao;
 import com.kuguo.front.repository.TaobaoDao;
@@ -60,7 +61,11 @@ public class ProductService {
 		this.taobaoDao = taobaoDao;
 	}
 
-	public Product getUserProduct(Long id) {
+	public List<Product> getUserProducts(Long id) {
 		return productDao.getUP(id);
+	}
+
+	public List<User> getLikedUsers(Long id) {
+		return productDao.getLikedUsers(id);
 	}
 }

@@ -15,16 +15,12 @@ public class CommentService {
 	@Autowired
 	private CommentDao commentDao;
 	
-	public Comment getComment(Long id) {
-		return commentDao.getComment(id);
+	public List<Comment> getComments(Long id) {
+		return commentDao.getComments(id);
 	}
 	
 	@Transactional(readOnly = false)
 	public void saveComment(Comment comment) {
 		commentDao.save(comment);
-	}
-	
-	public List<Comment> getAllComment() {
-		return commentDao.getAllComment();
 	}
 }

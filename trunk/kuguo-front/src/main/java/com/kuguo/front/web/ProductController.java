@@ -59,7 +59,6 @@ public class ProductController {
 	public String poplist(Model model, HttpServletResponse response) {
 		List<Product> products = productService.getPopProducts();
 		model.addAttribute("products", products);
-		model.addAttribute("comment", commentService.getAllComment());
 		return "popular";
 	}
 
@@ -85,8 +84,13 @@ public class ProductController {
 	
 	@RequestMapping(value = "/detail/{id}/", method = RequestMethod.GET)
 	public String updateForm(@PathVariable("id") Long id, Model model) {
+		//1. 商品信息(带第一条评论)
 		model.addAttribute("product", productService.getProduct(id));
-		model.addAttribute("comment", commentService.getComment(id));
+		
+		//2. 评论列表
+		model.addAttribute("comments", commentService.getComments(id));
+		
+		model.addAttribute("likedUsers", productService.getLikedUsers(id));
 		return "product/detail";
 	}
 }

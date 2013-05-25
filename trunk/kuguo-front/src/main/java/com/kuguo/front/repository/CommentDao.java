@@ -8,7 +8,6 @@ import com.kuguo.front.entity.Comment;
 public interface CommentDao {
 	void save(Comment comment);
 
-	Comment getComment(Long id);
+	List<Comment> getComments(Long id);
 
-	List<Comment> getAllComment();
 }
