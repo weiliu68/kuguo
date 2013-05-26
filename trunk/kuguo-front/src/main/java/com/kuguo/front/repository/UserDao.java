@@ -20,4 +20,7 @@ public interface UserDao {
 	List<User> getUser();
 
 	List<Product> getLikedProducts(Long id);
+
+	List<User> getFriends(Long id);
+	
 }

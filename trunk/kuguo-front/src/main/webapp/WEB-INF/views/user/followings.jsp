@@ -57,29 +57,29 @@
             </div>
                <div class="link-bar">
             <a class="link-v1" href="${ctx }/u/${user.id }/likes/">
-                喜爱(1)
+                喜爱()
             </a>
             <span>·</span>
             <a class="link-v1" href="${ctx }/u/${user.id }/posts/">
-                添加(2)
+                添加()
             </a>
             <span>·</span>
             <a class="link-v1" href="${ctx }/u/${user.id }/notes/">
-                点评(3)
+                点评()
             </a>
             <span>·</span>
             <a class="link-v1" href="${ctx }/u/${user.id }/tags/">
-                标签(1)
+                标签()
             </a>
 
             <label class="right ml15">
                 <a href="${ctx }/u/${user.id }/fans/">
-                    关注者 <b>2</b> 人
+                    关注者 <b></b> 人
                 </a>
             </label>
             <label class="right">
                 <a href="${ctx }/u/${user.id }/followings/">
-                    关注了 <b>1</b> 人
+                    关注了 <b></b> 人
                 </a>
             </label>
         </div>
@@ -96,17 +96,17 @@
         
             
 
-
+<c:forEach items="${friends}" var="friend">
     <li>
         <div class="avatar">
-            <a href="/u/69567/likes/" target=_blank >
-                <img src="http://image.guoku.com/avatar/large_69567_8d159ceb664499ee4d63503dcd808cee.jpg" width="100" height="100" />
+            <a href="/u/${friend.id }/likes/" target=_blank >
+                <img src="${friend.head }" width="100" height="100" />
 
             </a>
         </div>
         <div class="user-info">
-            <a class="c333" href="/u/69567/likes/" target=_blank >
-                有劲没劲
+            <a class="c333" href="/u/${friend.id }/likes/" target=_blank >
+                ${friend.name }
             </a>
             <p class="desc">
                 
@@ -114,7 +114,7 @@
             
         </div>
     </li>
-
+</c:forEach>
 
         
     </ul> 
