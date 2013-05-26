@@ -61,6 +61,7 @@ public class UserController {
 	@RequestMapping(value = "/u/{id}/fans")
 	public String fans(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("user", userService.getUser(id));
+		model.addAttribute("fans", userService.getFans(id));
 		return "user/fans";
 	}
 	

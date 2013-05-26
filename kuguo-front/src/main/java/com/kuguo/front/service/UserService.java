@@ -81,5 +81,9 @@ public class UserService {
 	public List<User> getFriends(Long id) {
 		return userDao.getFriends(id);
 	}
+
+	public List<User> getFans(Long id) {
+		return userDao.getFans(id);
+	}
 	
 }

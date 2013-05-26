@@ -99,13 +99,13 @@
 <c:forEach items="${friends}" var="friend">
     <li>
         <div class="avatar">
-            <a href="/u/${friend.id }/likes/" target=_blank >
+            <a href="${ctx }/u/${friend.id }/likes/" target=_blank >
                 <img src="${friend.head }" width="100" height="100" />
 
             </a>
         </div>
         <div class="user-info">
-            <a class="c333" href="/u/${friend.id }/likes/" target=_blank >
+            <a class="c333" href="${ctx }/u/${friend.id }/likes/" target=_blank >
                 ${friend.name }
             </a>
             <p class="desc">
