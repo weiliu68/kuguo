@@ -68,6 +68,7 @@ public class UserController {
 	@RequestMapping(value = "/u/{id}/followings")
 	public String followings(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("user", userService.getUser(id));
+		model.addAttribute("friends", userService.getFriends(id));
 		return "user/followings";
 	}
 	
@@ -113,6 +114,7 @@ public class UserController {
 
 	@RequestMapping(value = "user/setting", method = RequestMethod.GET)
 	public String updateFrom(Model model) {
+		//model.addAttribute("user",);
 		return "user/setting";
 	}
 

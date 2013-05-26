@@ -2,16 +2,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html style="overflow-x: hidden; overflow-y: scroll;" xmlns="http://www.w3.org/1999/xhtml">
     <head>
+        <meta name="msvalidate.01" content="AC5BC2B7EE50E9FED342DC08F3BA6BAC" />
         
     <title>设置</title>
 
-    <link media="all" rel="stylesheet" type="text/css" href="${ctx}/static/styles/setting.css" />
-  <link rel="icon" type="image/ico" href="${ctx}/static/images/favicon.ico">
+        
+    <link media="all" rel="stylesheet" type="text/css" href="${ctx }/static/styles/setting.css" />
 
-        <script type="text/javascript">
+      <script type="text/javascript">
         if (window.ActiveXObject) {
             var ua = navigator.userAgent.toLowerCase();
             var ie=ua.match(/msie ([\d.]+)/)[1]
@@ -23,7 +25,12 @@
     </head>
 
     <body>
-        <div id="wrapper">   
+        <div id="wrapper">
+            <div id="popup-layer"></div>
+                   <div class="clear"></div>
+        
+            
+            
         
             <div id="main">
                 
@@ -33,7 +40,7 @@
         <fieldset>
             <div class="user-item">
                 <div class="avatar with-border">
-                    <img src="${user.head }" />
+                    <img src="http://image.guoku.com/avatar/default_large_8.png" />
                 </div>
 
                 <span class="img-upload">
@@ -51,19 +58,17 @@
         <fieldset>
             <h4 class="heading">个人资料</h4>
             
-            
-            
             <div class="row">
                 <label>昵称</label>
-                <input name="name" value="${user.name }" original="${user.name }" type="text">
+                <input name="nickname" value="${user.name }" original="${user.name }" type="text">
             </div>
             <div class="row">
                 <label>登录邮箱</label>
-                <input name="username" value="${user.email }" type="email" original="${user.email }">
+                <input name="email" value="${user.email }" type="email" original="${user.email }">
             </div>
             <div class="row-textarea">
                 <label>个人介绍</label>
-                <textarea name="bio" cols="25" rows="2" maxLength="30"></textarea>
+                <textarea name="bio" cols="25" rows="2" maxLength="30">${user.bio }</textarea>
             </div>
             <div class="row">
                 <label>所在地</label>
@@ -74,7 +79,7 @@
                 </select>
                 <select id="city" name="city" class="select-2 default">
                     <option selected="selected">
-                        None
+                        朝阳
                     </option>
                 </select>
             </div>
@@ -99,6 +104,7 @@
             </div>
         </fieldset>
     </form>
+
     <form novalidate="novalidate" action="/setting/" class="mid-form" method="post" id="password-setting-form">
         <fieldset>
             
@@ -123,10 +129,16 @@
         </fieldset>
     </form>
 </div>
-    </div>
-            <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="${ctx}/static/jquery-validation/1.10.0/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="${ctx}/static/js/main.js"></script>
+
+                <div class="clear"></div>
+            </div>
+   
+        </div>
+        
+    <script type="text/javascript" src="${ctx }/static/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="${ctx }/static/jquery/jquery.form.js"></script>
+    <script type="text/javascript" src="${ctx }/static/jquery-validation/1.10.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="${ctx }/static/js/main.js"></script>
     </body>
 </html>
-
+    

@@ -77,5 +77,9 @@ public class UserService {
 	public List<Product> getLikedProducts(Long id) {
 		return userDao.getLikedProducts(id);
 	}
+
+	public List<User> getFriends(Long id) {
+		return userDao.getFriends(id);
+	}
 	
 }
