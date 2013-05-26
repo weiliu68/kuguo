@@ -80,6 +80,7 @@
 	
 	<select id="getFriends" parameterType="int" resultType="User">
 		select
+			u.id,
 			u.name,
 			u.head
 		from
@@ -90,6 +91,20 @@
 		order by
 			f.create_time
 		desc
+	</select>
+	
+	<select id="getFans" parameterType="int" resultType="User">
+		select
+			u.id,
+			u.name,
+			u.head
+		from
+			user u, user_friend f
+		where
+			f.user_id = u.id and
+			f.friend_id = #{id}
+		order by
+			f.create_time
 	</select>
 		
 </mapper>
