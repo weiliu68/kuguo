@@ -110,6 +110,7 @@
 			p.hots,
 			p.user_id,
 			p.picture,
+			p.favorite_num,
 			u.name user_name,
 			u.head user_head,
 			c.id comment_id,
@@ -123,7 +124,7 @@
 			p.user_id = u.id and
 			p.id = c.product_id
 		group by c.product_id
-		order by p.hots desc
+		order by p.favorite_num desc
 		limit 30
 	</select>
 	
