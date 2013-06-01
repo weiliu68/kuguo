@@ -117,7 +117,7 @@
                 ${fan.name }
             </a>
             <p class="desc">
-                
+                ${fan.bio }
             </p>
             
         </div>

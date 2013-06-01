@@ -109,7 +109,7 @@
                 ${friend.name }
             </a>
             <p class="desc">
-                
+                ${friend.bio }
             </p>
             
         </div>
