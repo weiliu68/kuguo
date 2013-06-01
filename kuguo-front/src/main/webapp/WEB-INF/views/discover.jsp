@@ -55,8 +55,7 @@
 								 <br />
 								 <label>&nbsp;${product.comment.create_time }</label>
 
-								<p class="with-tag"></p>
-								${product.comment.content}
+								<p class="with-tag">${product.comment.content}</p>
 							</div>
 							<div class="like-row">
 
@@ -79,7 +78,7 @@
 		</div>
 
 	</div>
-<script type="text/javascript" src="${ctx}/static/jquery-validation/1.10.0/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="${ctx}/static/jquery-validation/1.10.0/jquery.validate.min.js"></script>
         <script type="text/javascript" src="${ctx}/static/js/main.js"></script>  
         <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
 </body>
