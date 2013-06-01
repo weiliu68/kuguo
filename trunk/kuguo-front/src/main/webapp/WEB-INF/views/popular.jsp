@@ -7,7 +7,7 @@
 <html>
     <head>
         
-     <title>热门 - </title>
+     <title>热门</title>
 
         
     <link media="all" rel="stylesheet" type="text/css" href="${ctx }/static/styles/discover.css" />
@@ -30,15 +30,9 @@
             
         <div id="navigation" class="with-border">
             <div class="nav-desc">
-                <a class="nav-popular active" href="/popular/">24 小时</a>
-                <span>|</span>
-                <a class="nav-popular" href="/popular/?group=weekly">7 天</a>
-                <span>|</span>
-                <a class="nav-popular" href="/popular/?group=monthly">30 天</a>
-
-                <div class="nav-desc-right">
+                
                     最近更新： 分钟前
-                </div>
+                
             </div>
         </div>
 
@@ -65,10 +59,10 @@
 								</a>
 								<a href="${ctx }/u/${product.user.id }/likes/" target=_blank> ${product.user.name}</a>
 								 <br />
-								 <label>&nbsp;${product.create_time}</label>
+								 <label>&nbsp;${product.comment.create_time}</label>
 
-								<p class="with-tag"></p>
-								${product.comment.content}
+								<p class="with-tag">${product.comment.content}</p>
+								
 							</div>
 							<div class="like-row">
 							<div class="like need-login">
