@@ -119,10 +119,10 @@
 			c.hoot comment_hoot,
 			c.create_time comment_time
 		from 
-			product p,user u,product_comment c
+			product_comment c,product p,user u
 		where 
 			p.user_id = u.id and
-			p.id = c.product_id
+			c.product_id = p.id
 		group by c.product_id
 		order by p.favorite_num desc
 		limit 30
