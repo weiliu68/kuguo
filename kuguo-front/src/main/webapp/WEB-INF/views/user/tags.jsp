@@ -101,9 +101,9 @@
 
                 <div class="clear"></div>
             </div>
-
-
-        </div>
+        <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="${ctx}/static/js/main.js"></script>
+        
     </body>
 </html>
 
