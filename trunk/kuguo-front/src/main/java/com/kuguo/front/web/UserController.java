@@ -49,7 +49,7 @@ public class UserController {
 		return "redirect:/selected";
 	}
 	
-	//显示喜爱的商品 ok
+	//显示喜爱的商品 
 	@RequestMapping(value = "/u/{id}/likes")
 	public String likes(@PathVariable("id") Long id,Model model) {
 		model.addAttribute("user", userService.getUser(id));
@@ -76,12 +76,12 @@ public class UserController {
 	@RequestMapping(value = "/u/{id}/notes")
 	public String notes(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("user", userService.getUser(id));
-		//点评过的商品ok
+		//点评过的商品
 		model.addAttribute("products", productService.getCommentProducts(id));
 		return "user/notes";
 	}
 	
-	//显示添加的商品，ok
+	//显示添加的商品
 	@RequestMapping(value = "/u/{id}/posts")
 	public String posts(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("user", userService.getUser(id));
@@ -115,7 +115,8 @@ public class UserController {
 
 	@RequestMapping(value = "user/setting", method = RequestMethod.GET)
 	public String updateFrom(Model model) {
-		//model.addAttribute("user",);
+		//这里要带用户信息
+		model.addAttribute("user",userService.getActiveUser());
 		return "user/setting";
 	}
 
