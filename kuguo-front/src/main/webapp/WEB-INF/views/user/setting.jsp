@@ -40,7 +40,7 @@
         <fieldset>
             <div class="user-item">
                 <div class="avatar with-border">
-                    <img src="http://image.guoku.com/avatar/default_large_8.png" />
+                    <img src="${user.head }" />
                 </div>
 
                 <span class="img-upload">
@@ -74,28 +74,28 @@
                 <label>所在地</label>
                 <select id="location" name="location" class="select-1 default">
                     <option selected="selected">
-                        北京 
+                        ${user.address }
                     </option>
                 </select>
                 <select id="city" name="city" class="select-2 default">
                     <option selected="selected">
-                        朝阳
+                        ${user.city }
                     </option>
                 </select>
             </div>
-            <div class="row">
-                <label>性别</label>
-                <input class="radio" name="gender" checked="checked" value="M" type="radio">
+          <div class="row">
+               <label>性别</label>
+                <input class="radio" name="gender" value="M" type="radio" <c:if test="${user.gender == 'M'}">checked="checked"</c:if>/>
                 <span>男</span>
-                <input class="radio" name="gender" value="F" type="radio">
+                <input class="radio" name="gender" value="F" type="radio" <c:if test="${user.gender == 'F'}">checked="checked"</c:if>/>
                 <span>女</span>
-                <input class="radio" name="gender" value="O" type="radio">
-                <span>其他</span>
+                <input class="radio" name="gender" value="O" type="radio" <c:if test="${user.gender == 'O'}">checked="checked"</c:if>/>
+               <span>其他</span>
             </div>
             <div class="row">
                 <label for="label5">网址</label>
                 
-                    <input id="label5" name="website" value="" class="default" type="text">
+                    <input id="label5" name="website" value="${user.website }" class="default" type="text">
                 
             </div>
             <div class="row">
