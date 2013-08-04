@@ -31,6 +31,7 @@
 				/entity/new/ = user
 				/entity/taobao/info = user
 				/activity/ = user
+				/user/setting/ = user
 				/** = anon
 			</value>
 		</property>
