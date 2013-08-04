@@ -7,7 +7,6 @@
 		<result column="name" property="name" />
 		<result column="bio" property="bio"/>
 		<result column="head" property="head"/>
-		
 	</resultMap>
 
 	<select id="getHotUsers" parameterType="int" resultType="user">
@@ -109,5 +108,12 @@
 		order by
 			f.create_time
 	</select>
+	
+	<select id="getUserByName" parameterType="String" resultType="User">
+		select * from User where name = #{userName}
+	</select>
+	
+	
+
 		
 </mapper>

@@ -13,6 +13,16 @@ public class User extends IdEntity {
 	private String website;
 	private String bio;
 	private String salt;
+	private String city;
+
+	
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
 
 	public String getSalt() {
 		return salt;

@@ -2,6 +2,8 @@ package com.kuguo.front.service;
 
 import java.util.List;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -47,6 +49,12 @@ public class UserService {
 	@Transactional(readOnly = false)
 	public void updateUser(User user) {
 		userDao.update(user);
+	}
+	
+	public User getActiveUser() {
+		Subject subject = SecurityUtils.getSubject();
+		String userName = subject.getPrincipal().toString();
+		return userDao.getUserByName(userName);
 	}
 
 	public User getUser(Long id) {
