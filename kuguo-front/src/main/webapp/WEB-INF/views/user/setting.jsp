@@ -130,9 +130,8 @@
     </form>
 </div>
 
-                <div class="clear"></div>
+            <div class="clear"></div>
             </div>
-   
         </div>
         
     <script type="text/javascript" src="${ctx }/static/jquery/jquery.min.js"></script>
